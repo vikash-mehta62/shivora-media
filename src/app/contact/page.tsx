@@ -5,8 +5,8 @@ import Footer from "@/components/Footer";
 import { Mail, Phone, MapPin, Clock, ArrowRight, Loader2, CheckCircle, MessageCircle, Send, Facebook, Instagram, Twitter, Linkedin } from "lucide-react";
 
 const contactInfo = [
-  { icon: Mail, label: "Email Us", value: "hello@shivoramedia.com", link: "mailto:hello@shivoramedia.com", desc: "We reply within 24 hours" },
-  { icon: Phone, label: "Call Us", value: "+91 98765 43210", link: "tel:+919876543210", desc: "Mon-Sat, 10AM-7PM" },
+  { icon: Mail, label: "Email Us", value: "shivoramedia@gmail.com", link: "mailto:shivoramedia@gmail.com", desc: "We reply within 24 hours" },
+  { icon: Phone, label: "Call Us", value: "+91 7067235788", link: "tel:+917067235788", desc: "Mon-Sat, 10AM-7PM" },
   { icon: MapPin, label: "Visit Us", value: "Connaught Place, New Delhi, India", link: "#map", desc: "By appointment only" },
   { icon: Clock, label: "Working Hours", value: "Mon - Sat: 10AM - 7PM", link: "#", desc: "Sunday closed" }
 ];
@@ -62,8 +62,7 @@ export default function ContactPage() {
               Let&apos;s Start Your <span className="text-[var(--deep-blue)] dark:text-[var(--baby-blue)]">Growth Journey</span>
             </h1>
             <p className="text-xl text-secondary max-w-3xl mx-auto">
-              Ready to transform your digital presence? Get a free consultation and custom 
-              strategy tailored to your business goals.
+              We&apos;re excited to connect with you! Whether you have a question or a project idea, we&apos;re here to listen. Send us a message using the contact form, or drop us an email we&apos;ll get back to you promptly.
             </p>
           </div>
         </div>
@@ -94,8 +93,11 @@ export default function ContactPage() {
             {/* Left - Info */}
             <div className="lg:col-span-2 space-y-8">
               <div>
-                <h2 className="text-3xl font-bold mb-4">Get in Touch</h2>
-                <p className="text-secondary">Have a project in mind? Fill out the form and we&apos;ll get back to you within 24 hours with a custom proposal.</p>
+                <h2 className="text-3xl font-bold mb-4">LET&apos;S TALK</h2>
+                <h3 className="text-2xl font-bold mb-4">Join Us</h3>
+                <p className="text-secondary">We&apos;re excited to connect with you! Whether you have a question or a project idea, we&apos;re here to listen.</p>
+                <p className="text-secondary mt-2">Send us a message using the contact form, or drop us an email we&apos;ll get back to you promptly.</p>
+                <p className="text-secondary mt-4"><strong>Contact Us:</strong> <a href="https://wa.me/917067235788" target="_blank" rel="noopener noreferrer" className="text-[var(--deep-blue)] dark:text-[var(--baby-blue)] hover:underline">WhatsApp: +91 7067235788</a></p>
               </div>
 
               {/* Quick Stats */}
@@ -158,7 +160,7 @@ export default function ContactPage() {
                       <div>
                         <label className="block text-sm font-medium mb-2">Phone Number</label>
                         <input type="tel" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                          className="w-full px-4 py-3 input-field rounded-xl" placeholder="+91 98765 43210" />
+                          className="w-full px-4 py-3 input-field rounded-xl" placeholder="+91 7067235788" />
                       </div>
                       <div>
                         <label className="block text-sm font-medium mb-2">Company Name</label>

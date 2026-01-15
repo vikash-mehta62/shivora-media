@@ -48,17 +48,16 @@ export default function Footer() {
             <div className="relative z-10">
               <div className="flex items-center justify-center gap-2 mb-4">
                 <Award className="w-6 h-6 text-[var(--golden-yellow)]" />
-                <span className="text-[var(--baby-blue)] font-medium">Free Digital Marketing Audit</span>
+                <span className="text-[var(--baby-blue)] font-medium">LET&apos;S TALK</span>
               </div>
               <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
                 Ready to 10x Your <span className="text-[var(--golden-yellow)]">Growth?</span>
               </h3>
               <p className="text-[var(--baby-blue)] mb-8 max-w-2xl mx-auto text-lg">
-                Get a comprehensive audit of your digital presence and discover untapped 
-                opportunities to grow your business.
+                Let&apos;s discuss how we can help grow your business.
               </p>
-              <a href="/contact" className="inline-flex items-center gap-2 px-8 py-4 btn-gold rounded-full font-semibold text-lg">
-                Get Free Audit <ArrowRight className="w-5 h-5" />
+              <a href="mailto:shivoramedia@gmail.com" className="inline-flex items-center gap-2 px-8 py-4 btn-gold rounded-full font-semibold text-lg">
+                Enquire Now <ArrowRight className="w-5 h-5" />
               </a>
             </div>
           </div>
@@ -87,15 +86,15 @@ export default function Footer() {
               
               {/* Contact Info */}
               <div className="space-y-3 mb-6">
-                <a href="mailto:hello@shivoramedia.com" className="flex items-center gap-2 text-sm text-secondary hover:text-[var(--deep-blue)] transition">
-                  <Mail className="w-4 h-4" /> hello@shivoramedia.com
+                <a href="mailto:shivoramedia@gmail.com" className="flex items-center gap-2 text-sm text-secondary hover:text-[var(--deep-blue)] transition">
+                  <Mail className="w-4 h-4" /> shivoramedia@gmail.com
                 </a>
-                <a href="tel:+919876543210" className="flex items-center gap-2 text-sm text-secondary hover:text-[var(--deep-blue)] transition">
-                  <Phone className="w-4 h-4" /> +91 98765 43210
+                <a href="tel:+917067235788" className="flex items-center gap-2 text-sm text-secondary hover:text-[var(--deep-blue)] transition">
+                  <Phone className="w-4 h-4" /> +91 7067235788
                 </a>
-                <div className="flex items-center gap-2 text-sm text-secondary">
-                  <MapPin className="w-4 h-4" /> Connaught Place, New Delhi
-                </div>
+                <a href="https://wa.me/917067235788" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-secondary hover:text-[var(--deep-blue)] transition">
+                  <Phone className="w-4 h-4" /> WhatsApp: +91 7067235788
+                </a>
               </div>
 
               {/* Social Links */}
@@ -151,26 +150,20 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* Certifications */}
+            {/* Quick Links */}
             <div>
-              <h4 className="font-bold mb-4 text-[var(--deep-blue)] dark:text-[var(--baby-blue)]">Certifications</h4>
+              <h4 className="font-bold mb-4 text-[var(--deep-blue)] dark:text-[var(--baby-blue)]">Quick Links</h4>
               <div className="space-y-3">
                 <div className="flex items-center gap-2">
-                  <Award className="w-5 h-5 text-[var(--golden-yellow)]" />
-                  <span className="text-sm text-secondary">Google Partner</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Award className="w-5 h-5 text-[var(--golden-yellow)]" />
-                  <span className="text-sm text-secondary">Meta Partner</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Award className="w-5 h-5 text-[var(--golden-yellow)]" />
-                  <span className="text-sm text-secondary">HubSpot Certified</span>
-                </div>
-                <div className="flex items-center gap-2 mt-4">
                   <Star className="w-5 h-5 text-[var(--golden-yellow)] fill-[var(--golden-yellow)]" />
                   <span className="text-sm font-semibold">5.0 Rating (150+ Reviews)</span>
                 </div>
+                <a href="https://wa.me/917067235788" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-secondary hover:text-[var(--deep-blue)] transition">
+                  <Phone className="w-4 h-4" /> Contact on WhatsApp
+                </a>
+                <a href="mailto:shivoramedia@gmail.com" className="flex items-center gap-2 text-sm text-secondary hover:text-[var(--deep-blue)] transition">
+                  <Mail className="w-4 h-4" /> Email Us
+                </a>
               </div>
             </div>
           </div>

@@ -2,10 +2,10 @@ import Image from "next/image";
 import { Target, Lightbulb, Users, BarChart3, Rocket, Star, CheckCircle, Award, TrendingUp, Clock, Shield, Headphones } from "lucide-react";
 
 const values = [
-  { icon: Target, title: "Results-Driven", desc: "Every strategy is designed with measurable outcomes and ROI in mind" },
-  { icon: Lightbulb, title: "Innovation First", desc: "We stay ahead of trends to give you a competitive edge" },
-  { icon: Users, title: "True Partnership", desc: "Your success is our success - we grow together as partners" },
-  { icon: BarChart3, title: "Data-Backed", desc: "All decisions are driven by analytics, not assumptions" }
+  { icon: Target, title: "Results-Driven", desc: "Every strategy is designed with measurable outcomes and ROI in mind. We focus on what matters - your business growth." },
+  { icon: Lightbulb, title: "Innovation First", desc: "We stay ahead of digital trends to give you a competitive edge. Our team constantly learns and adapts to new technologies." },
+  { icon: Users, title: "True Partnership", desc: "Your success is our success. We work as an extension of your team, not just another vendor." },
+  { icon: BarChart3, title: "Data-Backed", desc: "All decisions are driven by analytics, not assumptions. We measure everything and optimize continuously." }
 ];
 
 const stats = [
@@ -60,10 +60,14 @@ export default function About() {
               digital presence. From startups to enterprises, we&apos;ve delivered results that matter.
             </p>
             
-            <p className="text-muted mb-8">
+            <p className="text-muted mb-6">
               Our team of 50+ experts combines creativity with data to deliver campaigns that 
               don&apos;t just look good – they drive real business results. We believe in transparency, 
               accountability, and most importantly, delivering ROI.
+            </p>
+
+            <p className="text-muted mb-8">
+              Every project starts with understanding your story. We don&apos;t do one-size-fits-all—we craft solutions that fit your brand, your goals, and your audience.
             </p>
 
             {/* Values Grid */}
@@ -134,22 +138,62 @@ export default function About() {
           </div>
         </div>
 
-        {/* Why Choose Us */}
+        {/* Ready to Grow With Us */}
         <div className="card rounded-3xl p-8 sm:p-12 shadow-xl bg-[var(--deep-blue)] text-white">
           <div className="text-center mb-10">
-            <h3 className="text-2xl sm:text-3xl font-bold mb-2">Why Choose Shivora Media?</h3>
-            <p className="text-[var(--baby-blue)]">What sets us apart from other agencies</p>
+            <h3 className="text-2xl sm:text-3xl font-bold mb-2">Ready to Grow With Us?</h3>
+            <p className="text-[var(--baby-blue)]">Our proven 3-step process</p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {whyUs.map((item, i) => (
-              <div key={i} className="text-center">
-                <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <item.icon className="w-8 h-8 text-[var(--golden-yellow)]" />
-                </div>
-                <h4 className="font-semibold mb-1">{item.title}</h4>
-                <p className="text-[var(--baby-blue)] text-sm">{item.desc}</p>
+          <div className="grid sm:grid-cols-3 gap-8 mb-10">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <Target className="w-8 h-8 text-[var(--golden-yellow)]" />
               </div>
-            ))}
+              <h4 className="font-semibold mb-2">1. Plan Your Growth</h4>
+              <p className="text-[var(--baby-blue)] text-sm">We map out clear strategies that turn your ideas into measurable results.</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <Rocket className="w-8 h-8 text-[var(--golden-yellow)]" />
+              </div>
+              <h4 className="font-semibold mb-2">2. Handover the Project</h4>
+              <p className="text-[var(--baby-blue)] text-sm">Our team handles everything from creative design to video production and marketing campaigns so you can focus on your business.</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <BarChart3 className="w-8 h-8 text-[var(--golden-yellow)]" />
+              </div>
+              <h4 className="font-semibold mb-2">3. Count the Results</h4>
+              <p className="text-[var(--baby-blue)] text-sm">We track performance, optimize every step, and ensure you see real growth and profit.</p>
+            </div>
+          </div>
+
+          <div className="text-center mb-8">
+            <h4 className="text-xl font-bold mb-4">What Makes Us Different?</h4>
+            <p className="text-[var(--baby-blue)] mb-6">Our Client Projects</p>
+          </div>
+          
+          <div className="grid sm:grid-cols-2 gap-6">
+            <div className="bg-white/5 rounded-xl p-6">
+              <h5 className="font-semibold mb-4 text-[var(--golden-yellow)]">Others</h5>
+              <ul className="space-y-2 text-sm text-[var(--baby-blue)]">
+                <li>• Focus only on likes and views</li>
+                <li>• Generic, one-size-fits-all campaigns</li>
+                <li>• Designs that look good but don&apos;t convert</li>
+                <li>• Complicated processes and lack of support</li>
+                <li>• No clear insights or ROI</li>
+              </ul>
+            </div>
+            <div className="bg-white/10 rounded-xl p-6 border-2 border-[var(--golden-yellow)]">
+              <h5 className="font-semibold mb-4 text-[var(--golden-yellow)]">Shivora Media</h5>
+              <ul className="space-y-2 text-sm">
+                <li>• Focus on performance and measurable growth</li>
+                <li>• Tailored strategies for your brand and audience</li>
+                <li>• Creative, high-impact visuals that drive results</li>
+                <li>• Seamless execution from start to finish</li>
+                <li>• Data-backed campaigns that show real profit</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>

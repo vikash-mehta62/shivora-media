@@ -56,8 +56,7 @@ export default function AboutPage() {
               <span className="block text-[var(--golden-yellow)]">Since 2018</span>
             </h1>
             <p className="text-xl text-secondary max-w-3xl mx-auto">
-              We&apos;re not just another agency. We&apos;re a team of passionate digital marketers, 
-              designers, and developers dedicated to transforming businesses into successful brands.
+              The Minds Behind the Brand - At Shivora Media, we are a team of creative thinkers, strategists, and performance-driven marketers. We combine strategy, design, and technology to help brands stand out, connect with their audience, and grow.
             </p>
           </div>
         </div>
@@ -98,10 +97,13 @@ export default function AboutPage() {
                 don&apos;t just look good – they drive real business results. We believe in transparency, 
                 accountability, and most importantly, delivering ROI.
               </p>
-              <p className="text-muted mb-8">
+              <p className="text-muted mb-6">
                 What started as a small team with big dreams has grown into one of India&apos;s most 
                 trusted digital marketing agencies. Our journey has been defined by our commitment 
                 to client success and continuous innovation.
+              </p>
+              <p className="text-muted mb-8">
+                Every project starts with understanding your story. We don&apos;t do one-size-fits-all—we craft solutions that fit your brand, your goals, and your audience.
               </p>
               <a href="/contact" className="inline-flex items-center gap-2 px-6 py-3 btn-primary rounded-full font-semibold">
                 Work With Us <Rocket className="w-4 h-4" />
@@ -142,26 +144,93 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Timeline Section */}
+      {/* Ready to Grow Section */}
       <section className="py-20 section-alt">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Our Journey</h2>
-            <p className="text-secondary">From humble beginnings to industry leaders</p>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Ready to Grow With Us?</h2>
+            <p className="text-secondary">Our proven 3-step process</p>
           </div>
-          <div className="relative">
-            <div className="hidden md:block absolute top-1/2 left-0 right-0 h-1 bg-[var(--deep-blue)]/20"></div>
-            <div className="grid grid-cols-2 md:grid-cols-7 gap-4">
-              {timeline.map((item, i) => (
-                <div key={i} className="text-center relative">
-                  <div className="card rounded-xl p-4 mb-4 hover:shadow-lg transition">
-                    <div className="text-2xl font-bold text-[var(--deep-blue)] dark:text-[var(--golden-yellow)]">{item.year}</div>
-                    <div className="font-semibold text-sm">{item.title}</div>
-                    <div className="text-xs text-muted mt-1">{item.desc}</div>
-                  </div>
-                  <div className="hidden md:block w-4 h-4 bg-[var(--deep-blue)] rounded-full mx-auto"></div>
-                </div>
-              ))}
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            <div className="card rounded-2xl p-8 text-center hover:shadow-xl transition">
+              <div className="w-16 h-16 icon-bg rounded-xl flex items-center justify-center mx-auto mb-4">
+                <Target className="w-8 h-8 text-[var(--deep-blue)] dark:text-[var(--baby-blue)]" />
+              </div>
+              <h3 className="text-xl font-bold mb-3">1. Plan Your Growth</h3>
+              <p className="text-muted">We map out clear strategies that turn your ideas into measurable results.</p>
+            </div>
+            <div className="card rounded-2xl p-8 text-center hover:shadow-xl transition">
+              <div className="w-16 h-16 icon-bg rounded-xl flex items-center justify-center mx-auto mb-4">
+                <Rocket className="w-8 h-8 text-[var(--deep-blue)] dark:text-[var(--baby-blue)]" />
+              </div>
+              <h3 className="text-xl font-bold mb-3">2. Handover the Project</h3>
+              <p className="text-muted">Our team handles everything from creative design to video production and marketing campaigns so you can focus on your business.</p>
+            </div>
+            <div className="card rounded-2xl p-8 text-center hover:shadow-xl transition">
+              <div className="w-16 h-16 icon-bg rounded-xl flex items-center justify-center mx-auto mb-4">
+                <BarChart3 className="w-8 h-8 text-[var(--deep-blue)] dark:text-[var(--baby-blue)]" />
+              </div>
+              <h3 className="text-xl font-bold mb-3">3. Count the Results</h3>
+              <p className="text-muted">We track performance, optimize every step, and ensure you see real growth and profit.</p>
+            </div>
+          </div>
+
+          <div className="card rounded-3xl p-8 sm:p-12 shadow-xl">
+            <div className="text-center mb-8">
+              <h3 className="text-2xl font-bold mb-2">What Makes Us Different?</h3>
+              <p className="text-secondary">Our Client Projects</p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="bg-[var(--bg-secondary)] rounded-xl p-6">
+                <h4 className="text-xl font-bold mb-4">Others</h4>
+                <ul className="space-y-3 text-muted">
+                  <li className="flex items-start gap-2">
+                    <span className="text-red-500 mt-1">✗</span>
+                    <span>Focus only on likes and views</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-red-500 mt-1">✗</span>
+                    <span>Generic, one-size-fits-all campaigns</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-red-500 mt-1">✗</span>
+                    <span>Designs that look good but don&apos;t convert</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-red-500 mt-1">✗</span>
+                    <span>Complicated processes and lack of support</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-red-500 mt-1">✗</span>
+                    <span>No clear insights or ROI</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="bg-[var(--deep-blue)] text-white rounded-xl p-6">
+                <h4 className="text-xl font-bold mb-4 text-[var(--golden-yellow)]">Shivora Media</h4>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-5 h-5 text-[var(--golden-yellow)] mt-0.5 shrink-0" />
+                    <span>Focus on performance and measurable growth</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-5 h-5 text-[var(--golden-yellow)] mt-0.5 shrink-0" />
+                    <span>Tailored strategies for your brand and audience</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-5 h-5 text-[var(--golden-yellow)] mt-0.5 shrink-0" />
+                    <span>Creative, high-impact visuals that drive results</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-5 h-5 text-[var(--golden-yellow)] mt-0.5 shrink-0" />
+                    <span>Seamless execution from start to finish</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-5 h-5 text-[var(--golden-yellow)] mt-0.5 shrink-0" />
+                    <span>Data-backed campaigns that show real profit</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -190,23 +259,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Certifications */}
-      <section className="py-20 section-alt">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Our Certifications</h2>
-            <p className="text-secondary">Recognized by industry leaders</p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {["Google Partner", "Meta Business Partner", "HubSpot Certified", "Semrush Certified"].map((cert, i) => (
-              <div key={i} className="card rounded-xl p-6 text-center hover:shadow-lg transition">
-                <Award className="w-12 h-12 text-[var(--golden-yellow)] mx-auto mb-3" />
-                <div className="font-semibold">{cert}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+
 
       {/* CTA */}
       <section className="py-20">

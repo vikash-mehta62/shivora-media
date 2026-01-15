@@ -3,8 +3,8 @@ import { useState } from "react";
 import { Mail, Phone, MapPin, Clock, ArrowRight, Loader2, CheckCircle, MessageCircle, Send } from "lucide-react";
 
 const contactInfo = [
-  { icon: Mail, label: "Email Us", value: "hello@shivoramedia.com", link: "mailto:hello@shivoramedia.com", desc: "We reply within 24 hours" },
-  { icon: Phone, label: "Call Us", value: "+91 98765 43210", link: "tel:+919876543210", desc: "Mon-Sat, 10AM-7PM" },
+  { icon: Mail, label: "Email Us", value: "shivoramedia@gmail.com", link: "mailto:shivoramedia@gmail.com", desc: "We reply within 24 hours" },
+  { icon: Phone, label: "Call Us", value: "+91 7067235788", link: "tel:+917067235788", desc: "Mon-Sat, 10AM-7PM" },
   { icon: MapPin, label: "Visit Us", value: "Connaught Place, New Delhi", link: "#", desc: "By appointment only" },
   { icon: Clock, label: "Working Hours", value: "Mon - Sat: 10AM - 7PM", link: "#", desc: "Sunday closed" }
 ];
@@ -54,8 +54,7 @@ export default function Contact() {
             <span className="text-[var(--deep-blue)] dark:text-[var(--baby-blue)]"> Growth Journey</span>
           </h2>
           <p className="text-lg text-secondary max-w-3xl mx-auto">
-            Ready to transform your digital presence? Get a free consultation and custom 
-            strategy tailored to your business goals.
+            We&apos;re excited to connect with you! Whether you have a question or a project idea, we&apos;re here to listen. Send us a message using the contact form, or drop us an email we&apos;ll get back to you promptly.
           </p>
         </div>
 
@@ -141,7 +140,7 @@ export default function Contact() {
                     <div>
                       <label className="block text-sm font-medium mb-2">Phone Number</label>
                       <input type="tel" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                        className="w-full px-4 py-3 input-field rounded-xl" placeholder="+91 98765 43210" />
+                        className="w-full px-4 py-3 input-field rounded-xl" placeholder="+91 7067235788" />
                     </div>
                     <div>
                       <label className="block text-sm font-medium mb-2">Company Name</label>

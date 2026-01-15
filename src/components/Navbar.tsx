@@ -45,13 +45,9 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative w-12 h-12 sm:w-14 sm:h-14 rounded-xl overflow-hidden shadow-lg border-2 border-[var(--deep-blue)]/30 group-hover:border-[var(--deep-blue)] transition-all">
-              <Image src="/logo.jpeg" alt="Shivora Media" fill className="object-cover" priority />
-            </div>
-            <div className="hidden sm:block">
-              <span className="font-bold text-xl text-[var(--deep-blue)] dark:text-[var(--baby-blue)]">Shivora</span>
-              <span className="text-[var(--golden-yellow)] font-semibold text-sm block -mt-0.5">Media</span>
+          <Link href="/" className="flex items-center gap-2 group">
+            <div className="relative h-12 sm:h-14 w-auto">
+              <Image src="/Logo_2A.png" alt="Shivora Media" width={180} height={56} className="h-full w-auto object-contain" priority />
             </div>
           </Link>
 
@@ -88,11 +84,11 @@ export default function Navbar() {
               className="w-10 h-10 rounded-xl card flex items-center justify-center hover:border-[var(--deep-blue)] transition shadow-sm">
               {theme === "dark" ? <Sun className="w-5 h-5 text-[var(--golden-yellow)]" /> : <Moon className="w-5 h-5 text-[var(--deep-blue)]" />}
             </button>
-            <a href="tel:+919876543210" className="hidden xl:flex items-center gap-2 text-secondary hover:text-[var(--deep-blue)] transition text-sm font-medium">
+            <a href="tel:+917067235788" className="hidden xl:flex items-center gap-2 text-secondary hover:text-[var(--deep-blue)] transition text-sm font-medium">
               <div className="w-8 h-8 bg-[var(--deep-blue)]/10 rounded-lg flex items-center justify-center">
                 <Phone className="w-4 h-4 text-[var(--deep-blue)]" />
               </div>
-              +91 98765 43210
+              +91 7067235788
             </a>
             <Link href="/contact" className="px-6 py-2.5 btn-gold rounded-full font-semibold text-sm">
               Get Free Quote
