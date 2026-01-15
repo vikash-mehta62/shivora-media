@@ -41,19 +41,19 @@ export default function Footer() {
       {/* CTA Section */}
       <div className="border-t border-[var(--border-color)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
-          <div className="card rounded-3xl p-8 sm:p-12 lg:p-16 text-center relative overflow-hidden shadow-2xl bg-[var(--deep-blue)] text-white">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-[var(--baby-blue)]/20 rounded-full -translate-y-1/2 translate-x-1/2"></div>
-            <div className="absolute bottom-0 left-0 w-48 h-48 bg-[var(--golden-yellow)]/20 rounded-full translate-y-1/2 -translate-x-1/2"></div>
+          <div className="card rounded-3xl p-8 sm:p-12 lg:p-16 text-center relative overflow-hidden shadow-2xl">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[var(--baby-blue)]/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+            <div className="absolute bottom-0 left-0 w-48 h-48 bg-[var(--golden-yellow)]/10 rounded-full translate-y-1/2 -translate-x-1/2"></div>
             
             <div className="relative z-10">
               <div className="flex items-center justify-center gap-2 mb-4">
                 <Award className="w-6 h-6 text-[var(--golden-yellow)]" />
-                <span className="text-[var(--baby-blue)] font-medium">LET&apos;S TALK</span>
+                <span className="text-[var(--deep-blue)] font-medium">Take Your Brand Further</span>
               </div>
-              <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-                Ready to 10x Your <span className="text-[var(--golden-yellow)]">Growth?</span>
+              <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-[var(--deep-blue)]">
+                Book A Consultation <span className="text-[var(--golden-yellow)]">Today</span>
               </h3>
-              <p className="text-[var(--baby-blue)] mb-8 max-w-2xl mx-auto text-lg">
+              <p className="text-secondary mb-8 max-w-2xl mx-auto text-lg">
                 Let&apos;s discuss how we can help grow your business.
               </p>
               <a href="mailto:shivoramedia@gmail.com" className="inline-flex items-center gap-2 px-8 py-4 btn-gold rounded-full font-semibold text-lg">
@@ -70,14 +70,8 @@ export default function Footer() {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 lg:gap-12">
             {/* Brand */}
             <div className="col-span-2">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="relative w-14 h-14 rounded-xl overflow-hidden shadow-lg border-2 border-[var(--deep-blue)]/30">
-                  <Image src="/logo.jpeg" alt="Shivora Media" fill className="object-cover" />
-                </div>
-                <div>
-                  <span className="font-bold text-2xl text-[var(--deep-blue)] dark:text-[var(--baby-blue)]">Shivora</span>
-                  <span className="text-[var(--golden-yellow)] font-semibold text-sm block">Media</span>
-                </div>
+              <div className="mb-6">
+                <Image src="/Logo_2A.png" alt="Shivora Media" width={180} height={56} className="h-12 w-auto object-contain" />
               </div>
               <p className="text-secondary mb-6 max-w-sm">
                 Full-service digital marketing agency helping businesses grow online since 2018. 

@@ -1,0 +1,16 @@
+{
+  "name": "Shivora Media - Digital Marketing Agency",
+  "short_name": "Shivora Media",
+  "description": "Your trusted digital marketing partner since 2018. SEO, Social Media Marketing, PPC, Web Development & more.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1e3a8a",
+  "icons": [
+    {
+      "src": "/Logo_2A.png",
+      "sizes": "any",
+      "type": "image/png"
+    }
+  ]
+}

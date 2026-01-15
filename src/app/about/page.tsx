@@ -52,11 +52,10 @@ export default function AboutPage() {
               <span className="text-sm font-medium text-[var(--deep-blue)] dark:text-[var(--baby-blue)]">About Us</span>
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-              Your Trusted <span className="text-[var(--deep-blue)] dark:text-[var(--baby-blue)]">Growth Partner</span>
-              <span className="block text-[var(--golden-yellow)]">Since 2018</span>
+              <span className="text-[var(--deep-blue)] dark:text-[var(--baby-blue)]">The Minds Behind the Brand</span>
             </h1>
             <p className="text-xl text-secondary max-w-3xl mx-auto">
-              The Minds Behind the Brand - At Shivora Media, we are a team of creative thinkers, strategists, and performance-driven marketers. We combine strategy, design, and technology to help brands stand out, connect with their audience, and grow.
+              At Shivora Media, we are a team of creative thinkers, strategists, and performance-driven marketers. We combine strategy, design, and technology to help brands stand out, connect with their audience, and grow.
             </p>
           </div>
         </div>
@@ -178,7 +177,6 @@ export default function AboutPage() {
           <div className="card rounded-3xl p-8 sm:p-12 shadow-xl">
             <div className="text-center mb-8">
               <h3 className="text-2xl font-bold mb-2">What Makes Us Different?</h3>
-              <p className="text-secondary">Our Client Projects</p>
             </div>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-[var(--bg-secondary)] rounded-xl p-6">
@@ -239,19 +237,19 @@ export default function AboutPage() {
       {/* Why Choose Us */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="card rounded-3xl p-8 sm:p-12 shadow-xl bg-[var(--deep-blue)] text-white">
+          <div className="card rounded-3xl p-8 sm:p-12 shadow-xl">
             <div className="text-center mb-10">
-              <h2 className="text-3xl sm:text-4xl font-bold mb-2">Why Choose Shivora Media?</h2>
-              <p className="text-[var(--baby-blue)]">What sets us apart from other agencies</p>
+              <h2 className="text-3xl sm:text-4xl font-bold mb-2 text-[var(--deep-blue)]">Why Choose Shivora Media?</h2>
+              <p className="text-secondary">What sets us apart from other agencies</p>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {whyUs.map((item, i) => (
                 <div key={i} className="text-center">
-                  <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <div className="w-16 h-16 bg-[var(--golden-yellow)]/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
                     <item.icon className="w-8 h-8 text-[var(--golden-yellow)]" />
                   </div>
-                  <h3 className="font-semibold mb-1">{item.title}</h3>
-                  <p className="text-[var(--baby-blue)] text-sm">{item.desc}</p>
+                  <h3 className="font-semibold mb-1 text-[var(--deep-blue)]">{item.title}</h3>
+                  <p className="text-secondary text-sm">{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -264,10 +262,10 @@ export default function AboutPage() {
       {/* CTA */}
       <section className="py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="card rounded-3xl p-10 sm:p-16 text-center bg-[var(--deep-blue)] text-white">
+          <div className="card rounded-3xl p-10 sm:p-16 text-center shadow-2xl">
             <Star className="w-16 h-16 text-[var(--golden-yellow)] mx-auto mb-6" />
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Ready to Work Together?</h2>
-            <p className="text-[var(--baby-blue)] mb-8 text-lg">Let&apos;s discuss how we can help grow your business.</p>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-[var(--deep-blue)]">Ready to Work Together?</h2>
+            <p className="text-secondary mb-8 text-lg">Let&apos;s discuss how we can help grow your business.</p>
             <a href="/contact" className="inline-flex items-center gap-2 px-8 py-4 btn-gold rounded-full font-semibold text-lg">
               Get in Touch <ArrowRight className="w-5 h-5" />
             </a>

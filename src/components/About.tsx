@@ -38,12 +38,10 @@ export default function About() {
             <span className="text-sm font-medium text-[var(--deep-blue)] dark:text-[var(--baby-blue)]">About Us</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-            Your Trusted <span className="text-[var(--deep-blue)] dark:text-[var(--baby-blue)]">Growth Partner</span>
-            <span className="block text-[var(--golden-yellow)]">Since 2018</span>
+            <span className="text-[var(--deep-blue)] dark:text-[var(--baby-blue)]">The Minds Behind the Brand</span>
           </h2>
           <p className="text-lg text-secondary max-w-3xl mx-auto">
-            We&apos;re not just another agency. We&apos;re a team of passionate digital marketers, 
-            designers, and developers dedicated to transforming businesses into successful brands.
+            At Shivora Media, we are a team of creative thinkers, strategists, and performance-driven marketers. We combine strategy, design, and technology to help brands stand out, connect with their audience, and grow.
           </p>
         </div>
 
@@ -142,7 +140,7 @@ export default function About() {
         <div className="card rounded-3xl p-8 sm:p-12 shadow-xl bg-[var(--deep-blue)] text-white">
           <div className="text-center mb-10">
             <h3 className="text-2xl sm:text-3xl font-bold mb-2">Ready to Grow With Us?</h3>
-            <p className="text-[var(--baby-blue)]">Our proven 3-step process</p>
+            <p className="text-white/80">Our proven 3-step process</p>
           </div>
           <div className="grid sm:grid-cols-3 gap-8 mb-10">
             <div className="text-center">
@@ -150,33 +148,32 @@ export default function About() {
                 <Target className="w-8 h-8 text-[var(--golden-yellow)]" />
               </div>
               <h4 className="font-semibold mb-2">1. Plan Your Growth</h4>
-              <p className="text-[var(--baby-blue)] text-sm">We map out clear strategies that turn your ideas into measurable results.</p>
+              <p className="text-white/80 text-sm">We map out clear strategies that turn your ideas into measurable results.</p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <Rocket className="w-8 h-8 text-[var(--golden-yellow)]" />
               </div>
               <h4 className="font-semibold mb-2">2. Handover the Project</h4>
-              <p className="text-[var(--baby-blue)] text-sm">Our team handles everything from creative design to video production and marketing campaigns so you can focus on your business.</p>
+              <p className="text-white/80 text-sm">Our team handles everything from creative design to video production and marketing campaigns so you can focus on your business.</p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <BarChart3 className="w-8 h-8 text-[var(--golden-yellow)]" />
               </div>
               <h4 className="font-semibold mb-2">3. Count the Results</h4>
-              <p className="text-[var(--baby-blue)] text-sm">We track performance, optimize every step, and ensure you see real growth and profit.</p>
+              <p className="text-white/80 text-sm">We track performance, optimize every step, and ensure you see real growth and profit.</p>
             </div>
           </div>
 
           <div className="text-center mb-8">
-            <h4 className="text-xl font-bold mb-4">What Makes Us Different?</h4>
-            <p className="text-[var(--baby-blue)] mb-6">Our Client Projects</p>
+            <h4 className="text-xl font-bold mb-2">What Makes Us Different?</h4>
           </div>
           
           <div className="grid sm:grid-cols-2 gap-6">
             <div className="bg-white/5 rounded-xl p-6">
               <h5 className="font-semibold mb-4 text-[var(--golden-yellow)]">Others</h5>
-              <ul className="space-y-2 text-sm text-[var(--baby-blue)]">
+              <ul className="space-y-2 text-sm text-white/80">
                 <li>• Focus only on likes and views</li>
                 <li>• Generic, one-size-fits-all campaigns</li>
                 <li>• Designs that look good but don&apos;t convert</li>

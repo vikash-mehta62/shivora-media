@@ -6,8 +6,61 @@ import { ThemeProvider } from "@/context/ThemeContext";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Shivora Media | Digital Marketing Agency",
-  description: "We build brands that stand out. Digital marketing, branding, web development & more.",
+  title: "Shivora Media | Digital Marketing Agency in India",
+  description: "Shivora Media - Your trusted digital marketing partner since 2018. We offer SEO, Social Media Marketing, PPC, Content Marketing, Web Development & Brand Identity services. Contact: +91 7067235788",
+  keywords: ["digital marketing agency", "SEO services", "social media marketing", "PPC advertising", "web development", "brand identity", "content marketing", "Shivora Media", "digital marketing India"],
+  authors: [{ name: "Shivora Media" }],
+  creator: "Shivora Media",
+  publisher: "Shivora Media",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL('https://shivoramedia.com'),
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    title: "Shivora Media | Digital Marketing Agency in India",
+    description: "Transform your business with data-driven digital marketing strategies. SEO, Social Media, PPC & more. 150+ happy clients since 2018.",
+    url: 'https://shivoramedia.com',
+    siteName: 'Shivora Media',
+    images: [
+      {
+        url: '/Logo_2A.png',
+        width: 1200,
+        height: 630,
+        alt: 'Shivora Media - Digital Marketing Agency',
+      },
+    ],
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Shivora Media | Digital Marketing Agency",
+    description: "Transform your business with data-driven digital marketing strategies. 150+ happy clients since 2018.",
+    images: ['/Logo_2A.png'],
+    creator: '@shivoramedia',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/favicon.ico',
+  },
+  manifest: '/site.webmanifest',
 };
 
 export default function RootLayout({
@@ -15,8 +68,53 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Shivora Media',
+    description: 'Digital Marketing Agency helping businesses grow online since 2018',
+    url: 'https://shivoramedia.com',
+    logo: 'https://shivoramedia.com/Logo_2A.png',
+    image: 'https://shivoramedia.com/Logo_2A.png',
+    email: 'shivoramedia@gmail.com',
+    telephone: '+917067235788',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'New Delhi',
+      addressRegion: 'Delhi',
+      addressCountry: 'IN',
+    },
+    sameAs: [
+      'https://www.facebook.com/shivoramedia',
+      'https://www.instagram.com/shivoramedia',
+      'https://twitter.com/shivoramedia',
+      'https://www.linkedin.com/company/shivoramedia',
+    ],
+    foundingDate: '2018',
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '5.0',
+      reviewCount: '150',
+    },
+    areaServed: 'IN',
+    serviceType: [
+      'SEO Services',
+      'Social Media Marketing',
+      'PPC Advertising',
+      'Content Marketing',
+      'Web Development',
+      'Brand Identity',
+    ],
+  };
+
   return (
     <html lang="en" className="dark">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className={inter.className}>
         <ThemeProvider>{children}</ThemeProvider>
       </body>
