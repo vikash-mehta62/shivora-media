@@ -11,12 +11,12 @@ const navLinks = [
     name: "Services", 
     href: "/services",
     dropdown: [
-      { name: "SEO Services", href: "/services#seo" },
-      { name: "Social Media Marketing", href: "/services#smm" },
-      { name: "PPC Advertising", href: "/services#ppc" },
-      { name: "Content Marketing", href: "/services#content" },
-      { name: "Web Development", href: "/services#web" },
-      { name: "Brand Identity", href: "/services#branding" },
+      { name: "PPC Advertising", href: "/services/ppc" },
+      { name: "Graphic Design", href: "/services/graphic-design" },
+      { name: "Social Media Management", href: "/services/social-media" },
+      { name: "SEO Services", href: "/services/seo" },
+      { name: "Marketing Automation", href: "/services/automation" },
+      { name: "Video Production", href: "/services/video" },
     ]
   },
   { name: "About", href: "/about" },
@@ -54,7 +54,7 @@ export default function Navbar() {
           {/* Desktop Nav */}
           <div className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => (
-              <div key={link.name} className="relative"
+              <div key={link.name} className="relative group"
                 onMouseEnter={() => link.dropdown && setActiveDropdown(link.name)}
                 onMouseLeave={() => setActiveDropdown(null)}>
                 <Link href={link.href}
@@ -65,10 +65,13 @@ export default function Navbar() {
                 
                 {/* Dropdown */}
                 {link.dropdown && activeDropdown === link.name && (
-                  <div className="absolute top-full left-0 mt-2 w-56 card rounded-xl shadow-xl p-2 animate-fade-in">
+                  <div 
+                    className="absolute top-full left-0 mt-1 w-56 card rounded-xl shadow-xl p-2 animate-fade-in z-50"
+                    onMouseEnter={() => setActiveDropdown(link.name)}
+                    onMouseLeave={() => setActiveDropdown(null)}>
                     {link.dropdown.map((item) => (
                       <Link key={item.name} href={item.href}
-                        className="block px-4 py-2.5 text-sm text-secondary hover:text-[var(--deep-blue)] hover:bg-[var(--deep-blue)]/5 rounded-lg transition">
+                        className="block px-4 py-2.5 text-sm text-secondary hover:text-[var(--deep-blue)] hover:bg-[var(--deep-blue)]/5 rounded-lg transition cursor-pointer">
                         {item.name}
                       </Link>
                     ))}

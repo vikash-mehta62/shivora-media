@@ -1,120 +1,151 @@
 "use client";
-import { useState } from "react";
-import { Search, Share2, DollarSign, FileText, Palette, Code, Monitor, Megaphone, BarChart3, ArrowRight, Check, Target } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Search, Share2, DollarSign, Palette, Cog, Video, ArrowRight, Check, Target } from "lucide-react";
 
 const services = [
   {
-    id: "seo",
-    icon: Search,
-    title: "Search Engine Optimization",
-    shortTitle: "SEO",
-    tagline: "Rank Higher, Get Found",
-    description: "Dominate Google search results and drive organic traffic that converts. Our data-driven SEO strategies help you outrank competitors and capture high-intent customers.",
+    id: "ppc",
+    icon: DollarSign,
+    title: "Pay Per Click (PPC) Advertising",
+    shortTitle: "PPC Ads",
+    tagline: "Instant Traffic & Qualified Leads",
+    description: "Drive instant traffic and qualified leads with performance-focused Pay Per Click advertising. We manage Google Ads, Search Ads, Display Ads, YouTube Ads, and Social Media Ads to maximize ROI and lower cost per click.",
     features: [
-      "Comprehensive SEO Audit & Analysis",
-      "Keyword Research & Strategy",
-      "On-Page & Technical SEO",
-      "High-Quality Link Building",
-      "Local SEO & Google My Business",
-      "Monthly Ranking Reports"
+      "Google Ads Management",
+      "Search Ads Campaigns",
+      "Display Advertising",
+      "YouTube Ads",
+      "Social Media Ads",
+      "ROI Optimization & Lower CPC"
     ],
-    benefits: ["300% Average Traffic Increase", "Top 10 Rankings Guaranteed", "Long-term Sustainable Growth"],
-    stats: { metric: "300%", label: "Avg. Traffic Growth" }
+    benefits: ["Instant Traffic", "Qualified Leads", "Maximum ROI"],
+    stats: { metric: "5x", label: "Average ROAS" }
+  },
+  {
+    id: "graphic-design",
+    icon: Palette,
+    title: "Creative Graphic Design",
+    shortTitle: "Graphic Design",
+    tagline: "Designs That Convert",
+    description: "Build a powerful brand presence with professional graphic design services. From logos and branding to ad creatives and social media visuals, we design assets that convert.",
+    features: [
+      "Logo Design & Branding",
+      "Ad Creative Design",
+      "Social Media Visuals",
+      "Marketing Collateral",
+      "Brand Identity",
+      "Print & Digital Design"
+    ],
+    benefits: ["Professional Designs", "Brand Consistency", "High Conversion"],
+    stats: { metric: "500+", label: "Designs Created" }
   },
   {
     id: "smm",
     icon: Share2,
-    title: "Social Media Marketing",
+    title: "Social Media Management",
     shortTitle: "Social Media",
-    tagline: "Build Your Community",
-    description: "Transform followers into loyal customers. We create engaging content, manage your social presence, and run targeted campaigns across Facebook, Instagram, LinkedIn & more.",
+    tagline: "Grow Your Brand Online",
+    description: "Grow your brand across Instagram, Facebook, LinkedIn, and more. Our social media management services include content planning, reels, post design, paid campaigns, and audience engagement.",
     features: [
-      "Social Media Strategy & Planning",
-      "Content Creation & Curation",
-      "Community Management",
-      "Influencer Marketing",
-      "Paid Social Advertising",
-      "Analytics & Performance Reports"
+      "Content Planning & Strategy",
+      "Reels & Video Content",
+      "Post Design & Graphics",
+      "Paid Social Campaigns",
+      "Audience Engagement",
+      "Analytics & Reporting"
     ],
-    benefits: ["10M+ Reach Generated", "500K+ Followers Grown", "Viral Campaign Expertise"],
+    benefits: ["10M+ Reach", "Viral Content", "Community Growth"],
     stats: { metric: "10M+", label: "Reach Generated" }
   },
   {
-    id: "ppc",
-    icon: DollarSign,
-    title: "Pay-Per-Click Advertising",
-    shortTitle: "PPC Ads",
-    tagline: "Instant Visibility & Leads",
-    description: "Get immediate results with targeted paid campaigns. We manage Google Ads, Facebook Ads, Instagram Ads & LinkedIn Ads to maximize your ROI and minimize wasted spend.",
+    id: "seo",
+    icon: Search,
+    title: "Search Engine Optimization (SEO)",
+    shortTitle: "SEO",
+    tagline: "Rank Higher on Google",
+    description: "Improve your Google rankings and organic visibility with advanced SEO services. We focus on keyword research, on-page SEO, off-page SEO, technical SEO, and local SEO.",
     features: [
-      "Google Ads Management",
-      "Facebook & Instagram Ads",
-      "LinkedIn Advertising",
-      "Retargeting Campaigns",
-      "Landing Page Optimization",
-      "Conversion Tracking & Analytics"
+      "Keyword Research & Strategy",
+      "On-Page SEO Optimization",
+      "Off-Page SEO & Link Building",
+      "Technical SEO Audit",
+      "Local SEO & GMB",
+      "Monthly Ranking Reports"
     ],
-    benefits: ["5x Average ROAS", "Lower Cost Per Lead", "Instant Traffic & Results"],
-    stats: { metric: "5x", label: "Average ROAS" }
+    benefits: ["Top 10 Rankings", "Organic Traffic Growth", "Long-term Results"],
+    stats: { metric: "300%", label: "Avg. Traffic Growth" }
   },
   {
-    id: "content",
-    icon: FileText,
-    title: "Content Marketing",
-    shortTitle: "Content",
-    tagline: "Stories That Sell",
-    description: "Engage your audience with compelling content that builds trust and drives action. From blogs to videos, we create content that positions you as an industry leader.",
+    id: "automation",
+    icon: Cog,
+    title: "Marketing Automation",
+    shortTitle: "Automation",
+    tagline: "Scale Faster, Work Smarter",
+    description: "Save time and scale faster with smart marketing automation solutions. We streamline lead management, email campaigns, CRM automation, and reporting workflows.",
     features: [
-      "Content Strategy Development",
-      "Blog Writing & Management",
-      "Video Content Production",
-      "Infographic Design",
-      "Email Marketing Campaigns",
-      "Content Distribution"
+      "Lead Management Automation",
+      "Email Marketing Automation",
+      "CRM Integration & Automation",
+      "Workflow Automation",
+      "Reporting Dashboards",
+      "Sales Funnel Automation"
     ],
-    benefits: ["200% Engagement Boost", "Thought Leadership", "Lead Generation"],
-    stats: { metric: "200%", label: "Engagement Increase" }
+    benefits: ["Save Time", "Scale Faster", "Better ROI"],
+    stats: { metric: "70%", label: "Time Saved" }
   },
   {
-    id: "web",
-    icon: Code,
-    title: "Web Design & Development",
-    shortTitle: "Web Dev",
-    tagline: "Websites That Convert",
-    description: "Beautiful, fast, and conversion-optimized websites that represent your brand and drive business results. Mobile-first design with SEO built-in from day one.",
+    id: "video",
+    icon: Video,
+    title: "Video Production & Performance Marketing",
+    shortTitle: "Video",
+    tagline: "Capture Attention, Drive Results",
+    description: "Capture attention and drive results with high-impact video production. We create reels, ad videos, promotional videos, brand films, and product videos optimized for ads and social media.",
     features: [
-      "Custom Website Design",
-      "E-commerce Development",
-      "Landing Page Design",
-      "UI/UX Optimization",
-      "Speed & Performance",
-      "Ongoing Maintenance"
+      "Reels & Short-form Videos",
+      "Ad Video Production",
+      "Promotional Videos",
+      "Brand Films",
+      "Product Videos",
+      "Performance Video Marketing"
     ],
-    benefits: ["99% Client Satisfaction", "Mobile-First Design", "SEO Optimized"],
-    stats: { metric: "99%", label: "Client Satisfaction" }
-  },
-  {
-    id: "branding",
-    icon: Palette,
-    title: "Brand Identity Design",
-    shortTitle: "Branding",
-    tagline: "Stand Out & Be Remembered",
-    description: "Create a memorable brand identity that resonates with your audience. From logo design to complete brand guidelines, we shape every element of your visual identity.",
-    features: [
-      "Logo Design & Variations",
-      "Brand Color & Typography",
-      "Brand Guidelines Document",
-      "Business Card & Stationery",
-      "Social Media Templates",
-      "Brand Voice & Messaging"
-    ],
-    benefits: ["100+ Brands Created", "Unique Identity", "Consistent Branding"],
-    stats: { metric: "100+", label: "Brands Created" }
+    benefits: ["High Engagement", "Viral Potential", "Ad Optimized"],
+    stats: { metric: "50M+", label: "Video Views" }
   }
 ];
 
 export default function Services() {
   const [activeService, setActiveService] = useState(services[0]);
+
+  useEffect(() => {
+    // Check if there's a hash in the URL
+    const hash = window.location.hash.replace('#', '');
+    if (hash) {
+      const service = services.find(s => s.id === hash);
+      if (service) {
+        setActiveService(service);
+        // Scroll to specific service detail section
+        setTimeout(() => {
+          const element = document.getElementById(`service-${hash}`);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        }, 300);
+      }
+    }
+  }, []);
+
+  const handleServiceChange = (service: typeof services[0]) => {
+    setActiveService(service);
+    // Update URL hash
+    window.history.pushState(null, '', `#${service.id}`);
+    // Scroll to the service detail section
+    setTimeout(() => {
+      const element = document.getElementById(`service-${service.id}`);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }, 100);
+  };
 
   return (
     <section id="services" className="py-12 sm:py-16 relative overflow-hidden">
@@ -146,7 +177,7 @@ export default function Services() {
           {services.map((service) => (
             <button
               key={service.id}
-              onClick={() => setActiveService(service)}
+              onClick={() => handleServiceChange(service)}
               className={`px-4 sm:px-6 py-2.5 sm:py-3 rounded-full text-sm font-semibold transition-all flex items-center gap-2 ${
                 activeService.id === service.id
                   ? "bg-[var(--deep-blue)] text-white shadow-lg shadow-[var(--deep-blue)]/30"
@@ -161,7 +192,7 @@ export default function Services() {
         </div>
 
         {/* Active Service Detail */}
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start mb-20">
+        <div id={`service-${activeService.id}`} className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start mb-20 scroll-mt-24">
           {/* Left - Info */}
           <div className="card rounded-3xl p-6 sm:p-8 lg:p-10 shadow-xl">
             <div className="flex items-center gap-4 mb-6">
@@ -242,7 +273,7 @@ export default function Services() {
             {services.map((service) => (
               <div
                 key={service.id}
-                onClick={() => setActiveService(service)}
+                onClick={() => handleServiceChange(service)}
                 className={`card rounded-2xl p-6 cursor-pointer transition-all hover:shadow-xl ${
                   activeService.id === service.id ? "border-[var(--deep-blue)] shadow-lg" : ""
                 }`}
