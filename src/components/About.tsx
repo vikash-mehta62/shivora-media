@@ -24,7 +24,7 @@ const whyUs = [
 
 export default function About() {
   return (
-    <section id="about" className="py-20 sm:py-28 relative overflow-hidden section-alt">
+    <section id="about" className="py-12 sm:py-16 relative overflow-hidden section-alt">
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] blob-blue opacity-20"></div>
@@ -167,7 +167,7 @@ export default function About() {
           </div>
 
           <div className="text-center mb-8">
-            <h4 className="text-xl font-bold mb-2">What Makes Us Different?</h4>
+            <h4 className="text-xl font-bold text-white mb-2">What Makes Us Different?</h4>
           </div>
           
           <div className="grid sm:grid-cols-2 gap-6">

@@ -71,7 +71,7 @@ export default function Footer() {
             {/* Brand */}
             <div className="col-span-2">
               <div className="mb-6">
-                <Image src="/Logo_2A.png" alt="Shivora Media" width={180} height={56} className="h-12 w-auto object-contain" />
+                <Image src="/Logo_new.png" alt="Shivora Media" width={180} height={56} className="h-12 w-auto object-contain" />
               </div>
               <p className="text-secondary mb-6 max-w-sm">
                 Full-service digital marketing agency helping businesses grow online since 2018. 

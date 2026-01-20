@@ -47,7 +47,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
             <div className="relative h-12 sm:h-14 w-auto">
-              <Image src="/Logo_2A.png" alt="Shivora Media" width={180} height={56} className="h-full w-auto object-contain" priority />
+              <Image src="/Logo_new.png" alt="Shivora Media" width={180} height={56} className="h-full w-auto object-contain" priority />
             </div>
           </Link>
 
@@ -80,10 +80,10 @@ export default function Navbar() {
 
           {/* Right Side */}
           <div className="hidden lg:flex items-center gap-3">
-            <button onClick={toggleTheme}
+            {/* <button onClick={toggleTheme}
               className="w-10 h-10 rounded-xl card flex items-center justify-center hover:border-[var(--deep-blue)] transition shadow-sm">
               {theme === "dark" ? <Sun className="w-5 h-5 text-[var(--golden-yellow)]" /> : <Moon className="w-5 h-5 text-[var(--deep-blue)]" />}
-            </button>
+            </button> */}
             <a href="tel:+917067235788" className="hidden xl:flex items-center gap-2 text-secondary hover:text-[var(--deep-blue)] transition text-sm font-medium">
               <div className="w-8 h-8 bg-[var(--deep-blue)]/10 rounded-lg flex items-center justify-center">
                 <Phone className="w-4 h-4 text-[var(--deep-blue)]" />
@@ -97,9 +97,9 @@ export default function Navbar() {
 
           {/* Mobile Buttons */}
           <div className="flex lg:hidden items-center gap-2">
-            <button onClick={toggleTheme} className="w-10 h-10 rounded-xl card flex items-center justify-center shadow-sm">
+            {/* <button onClick={toggleTheme} className="w-10 h-10 rounded-xl card flex items-center justify-center shadow-sm">
               {theme === "dark" ? <Sun className="w-5 h-5 text-[var(--golden-yellow)]" /> : <Moon className="w-5 h-5 text-[var(--deep-blue)]" />}
-            </button>
+            </button> */}
             <button onClick={() => setIsOpen(!isOpen)} className="w-10 h-10 rounded-xl card flex items-center justify-center shadow-sm">
               {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>

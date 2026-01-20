@@ -200,7 +200,7 @@ body {
 }
 
 /* Text colors */
-.text-primary { color: var(--text-primary); }
+.text-primary { color: var(--text-primary) !important; }
 .text-secondary { color: var(--text-secondary); }
 .text-muted { color: var(--text-muted); }
 .text-blue { color: var(--deep-blue); }

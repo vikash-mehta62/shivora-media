@@ -37,24 +37,40 @@ export default function Hero() {
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-[var(--deep-blue)]/10 dark:bg-[var(--baby-blue)]/10 rounded-full mb-6">
               <Zap className="w-4 h-4 text-[var(--golden-yellow)]" />
-              <span className="text-sm font-medium text-[var(--deep-blue)] dark:text-[var(--baby-blue)]">
+              <span className="text-sm font-medium text-white dark:text-[var(--baby-blue)]">
                 #1 Digital Marketing Agency in India
               </span>
             </div>
 
             {/* Heading */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] mb-6">
-              We Help Brands
-              <span className="block text-[var(--deep-blue)] dark:text-[var(--baby-blue)]">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] mb-6">
+              We Help Brands{" "}
+              <span className="text-[var(--deep-blue)] dark:text-[var(--baby-blue)]">
                 Grow & Dominate
-              </span>
-              <span className="block text-[var(--golden-yellow)]">Online</span>
+              </span>{" "}
+              <span className="text-[var(--golden-yellow)]">Online</span>
             </h1>
 
+            {/* Subheading Box */}
+            <div className="inline-block bg-[var(--baby-blue)]/20 dark:bg-[var(--baby-blue)]/10 px-6 py-3 rounded-lg mb-6">
+              <p className="text-xl font-semibold text-white">
+                Rank, Grow & Succeed Online
+              </p>
+            </div>
+
             {/* Description */}
-            <p className="text-lg sm:text-xl text-secondary mb-8 max-w-xl leading-relaxed">
-              Full-service digital marketing agency specializing in SEO, Social Media, 
-              PPC, Content Marketing & Web Development. We transform businesses into brands.
+            <p className="text-lg text-white mb-4 max-w-xl leading-relaxed">
+              A results-driven digital marketing company offering{" "}
+              <span className="font-semibold">
+                search engine optimization (SEO), social media management, video production, 
+                video marketing, paid advertising, content creation, and web design services
+              </span>.
+            </p>
+            <p className="text-lg text-white mb-8 max-w-xl leading-relaxed">
+              Turning businesses into{" "}
+              <span className="font-semibold">
+                powerful digital brands
+              </span>.
             </p>
 
             {/* Features */}

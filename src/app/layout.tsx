@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: "Shivora Media | Digital Marketing Agency",
     description: "Transform your business with data-driven digital marketing. Creative strategies that drive real results. 150+ happy clients since 2018.",
-    images: ['/Logo_2A.png'],
+    images: ['/Logo_new.png'],
     creator: '@shivoramedia',
   },
   robots: {
@@ -74,8 +74,8 @@ export default function RootLayout({
     name: 'Shivora Media',
     description: 'Digital Marketing Agency - Creative thinkers, strategists, and performance-driven marketers helping businesses grow online since 2018',
     url: 'https://shivoramedia.com',
-    logo: 'https://shivoramedia.com/Logo_2A.png',
-    image: 'https://shivoramedia.com/Logo_2A.png',
+    logo: 'https://shivoramedia.com/Logo_new.png',
+    image: 'https://shivoramedia.com/Logo_new.png',
     email: 'shivoramedia@gmail.com',
     telephone: '+917067235788',
     address: {
