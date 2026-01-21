@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Image from "next/image";
 import { Target, Lightbulb, Users, BarChart3, Rocket, Award, TrendingUp, Clock, Shield, Headphones, CheckCircle, Star, ArrowRight } from "lucide-react";
+import About from "@/components/About";
 
 const values = [
   { icon: Target, title: "Results-Driven", desc: "Every strategy is designed with measurable outcomes and ROI in mind. We focus on what matters - your business growth." },
@@ -38,43 +39,9 @@ export default function AboutPage() {
   return (
     <main>
       <Navbar />
+      <About />
 
-      {/* New Hero Section */}
-      <section className="pt-32 pb-20 relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-20 right-0 w-[600px] h-[600px] blob-blue opacity-30"></div>
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-4xl">
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-8 leading-tight">
-              We Help Brands{" "}
-              <span className="text-[var(--deep-blue)] dark:text-[var(--baby-blue)]">
-                Grow &<br />Dominate
-              </span>{" "}
-              <span className="text-[var(--golden-yellow)]">Online</span>
-            </h1>
-            
-            <div className="inline-block bg-[var(--baby-blue)]/20 dark:bg-[var(--baby-blue)]/10 px-6 py-3 rounded-lg mb-8">
-              <p className="text-xl font-semibold text-white ">
-                Rank, Grow & Succeed Online
-              </p>
-            </div>
-
-            <p className="text-lg text-white dark:text-gray-300 leading-relaxed mb-4">
-              A results-driven digital marketing company offering{" "}
-              <span className="font-semibold text-white dark:text-white">
-                search engine optimization (SEO), social media management, video production, 
-                video marketing, paid advertising, content creation, and web design services
-              </span>
-              . Turning businesses into{" "}
-              <span className="font-semibold text-white dark:text-white">
-                powerful digital brands
-              </span>.
-            </p>
-          </div>
-        </div>
-      </section>
+ 
 
       {/* Original Hero Section - Removed */}
 
@@ -160,96 +127,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Ready to Grow Section */}
-      <section className="py-20 section-alt">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-white dark:text-white">Ready to Grow With Us?</h2>
-            <p className="text-[#4a5568] dark:text-gray-300">Our proven 3-step process</p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <div className="card rounded-2xl p-8 text-center hover:shadow-xl transition">
-              <div className="w-16 h-16 icon-bg rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Target className="w-8 h-8 text-[var(--deep-blue)] dark:text-[var(--baby-blue)]" />
-              </div>
-              <h3 className="text-xl font-bold mb-3 text-white dark:text-white">1. Plan Your Growth</h3>
-              <p className="text-[#4a5568] dark:text-gray-300">We map out clear strategies that turn your ideas into measurable results.</p>
-            </div>
-            <div className="card rounded-2xl p-8 text-center hover:shadow-xl transition">
-              <div className="w-16 h-16 icon-bg rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Rocket className="w-8 h-8 text-[var(--deep-blue)] dark:text-[var(--baby-blue)]" />
-              </div>
-              <h3 className="text-xl font-bold mb-3 text-white dark:text-white">2. Handover the Project</h3>
-              <p className="text-[#4a5568] dark:text-gray-300">Our team handles everything from creative design to video production and marketing campaigns so you can focus on your business.</p>
-            </div>
-            <div className="card rounded-2xl p-8 text-center hover:shadow-xl transition">
-              <div className="w-16 h-16 icon-bg rounded-xl flex items-center justify-center mx-auto mb-4">
-                <BarChart3 className="w-8 h-8 text-[var(--deep-blue)] dark:text-[var(--baby-blue)]" />
-              </div>
-              <h3 className="text-xl font-bold mb-3 text-white dark:text-white">3. Count the Results</h3>
-              <p className="text-[#4a5568] dark:text-gray-300">We track performance, optimize every step, and ensure you see real growth and profit.</p>
-            </div>
-          </div>
-
-          <div className="card rounded-3xl p-8 sm:p-12 shadow-xl">
-            <div className="text-center mb-8">
-              <h3 className="text-2xl font-bold mb-2 text-white">What Makes Us Different?</h3>
-            </div>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-[var(--bg-secondary)] rounded-xl p-6">
-                <h4 className="text-xl font-bold mb-4 text-white">Others</h4>
-                <ul className="space-y-3 text-[#c6cfde] dark:text-gray-300">
-                  <li className="flex items-start gap-2">
-                    <span className="text-red-500 mt-1">✗</span>
-                    <span>Focus only on likes and views</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-red-500 mt-1">✗</span>
-                    <span>Generic, one-size-fits-all campaigns</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-red-500 mt-1">✗</span>
-                    <span>Designs that look good but don&apos;t convert</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-red-500 mt-1">✗</span>
-                    <span>Complicated processes and lack of support</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-red-500 mt-1">✗</span>
-                    <span>No clear insights or ROI</span>
-                  </li>
-                </ul>
-              </div>
-              <div className="bg-white text-black rounded-xl p-6">
-                <h4 className="text-xl font-bold mb-4 text-[var(--golden-yellow)]">Shivora Media</h4>
-                <ul className="space-y-3">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-black mt-0.5 shrink-0" />
-                    <span>Focus on performance and measurable growth</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-[var(--golden-yellow)] mt-0.5 shrink-0" />
-                    <span>Tailored strategies for your brand and audience</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-[var(--golden-yellow)] mt-0.5 shrink-0" />
-                    <span>Creative, high-impact visuals that drive results</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-[var(--golden-yellow)] mt-0.5 shrink-0" />
-                    <span>Seamless execution from start to finish</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-[var(--golden-yellow)] mt-0.5 shrink-0" />
-                    <span>Data-backed campaigns that show real profit</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Why Choose Us */}
       <section className="py-20">
@@ -277,15 +154,52 @@ export default function AboutPage() {
 
 
       {/* CTA */}
-      <section className="py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="card rounded-3xl p-10 sm:p-16 text-center shadow-2xl">
-            <Star className="w-16 h-16 text-[var(--golden-yellow)] mx-auto mb-6" />
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-white dark:text-white">Ready to Work Together?</h2>
-            <p className="text-gray-700 dark:text-gray-300 mb-8 text-lg">Let&apos;s discuss how we can help grow your business.</p>
-            <a href="/contact" className="inline-flex items-center gap-2 px-8 py-4 btn-gold rounded-full font-semibold text-lg">
-              Get in Touch <ArrowRight className="w-5 h-5" />
-            </a>
+     
+
+      {/* Let's Talk Section */}
+      <section className="py-20 bg-[#0f1419]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="border-t border-gray-800 pt-12">
+            <div className="mb-12">
+              <p className="text-xs font-bold tracking-[0.3em] text-gray-500 uppercase mb-8">LET&apos;S TALK</p>
+              <h3 className="text-5xl sm:text-6xl font-bold text-white mb-8">Join Us</h3>
+            </div>
+            
+            <div className="max-w-4xl space-y-6">
+              <p className="text-xl text-gray-300 leading-relaxed">
+                We&apos;re excited to connect with you! Whether you have a question or a project idea, we&apos;re here to listen.
+              </p>
+              
+              <p className="text-xl text-gray-300 leading-relaxed">
+                Send us a message using the contact form, or drop us an email we&apos;ll get back to you promptly.
+              </p>
+              
+              <div className="flex flex-wrap gap-4 items-center pt-8">
+                <a 
+                  href="https://wa.me/917067235788" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="inline-flex items-center gap-3 px-8 py-4 bg-[#25D366] text-white rounded-full font-semibold text-lg hover:bg-[#20ba5a] transition-all shadow-lg hover:shadow-xl"
+                >
+                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                  </svg>
+                  Contact Us
+                </a>
+                
+                <span className="text-gray-600 text-lg font-medium">or</span>
+                
+                <a 
+                  href="mailto:shivoramedia@gmail.com" 
+                  className="inline-flex items-center gap-3 px-8 py-4 bg-[var(--deep-blue)] text-white rounded-full font-semibold text-lg hover:bg-[#1e3a8a] transition-all shadow-lg hover:shadow-xl"
+                >
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                  Email Us
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>

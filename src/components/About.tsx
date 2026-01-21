@@ -32,17 +32,23 @@ export default function About() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-[var(--deep-blue)]/10 dark:bg-[var(--baby-blue)]/10 rounded-full mb-4">
+        <div className="mb-16">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-[var(--deep-blue)]/10 dark:bg-[var(--baby-blue)]/10 rounded-full mb-6">
             <Award className="w-4 h-4 text-[var(--deep-blue)] dark:text-[var(--baby-blue)]" />
-            <span className="text-sm font-medium text-[var(--deep-blue)] dark:text-[var(--baby-blue)]">About Us</span>
+            <span className="text-sm font-medium text-[var(--deep-blue)] dark:text-[var(--baby-blue)]">#Digitalmarketingagency</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-            <span className="text-[var(--deep-blue)] dark:text-[var(--baby-blue)]">The Minds Behind the Brand</span>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+            We Help Brands{" "}
+            <span className="text-[var(--deep-blue)] dark:text-[var(--baby-blue)] block">
+              Grow & Dominate
+            </span>{" "}
+            <span className="text-[var(--golden-yellow)]">Online</span>
           </h2>
-          <p className="text-lg text-secondary max-w-3xl mx-auto">
-            At Shivora Media, we are a team of creative thinkers, strategists, and performance-driven marketers. We combine strategy, design, and technology to help brands stand out, connect with their audience, and grow.
-          </p>
+          <div className="inline-block bg-[var(--baby-blue)]/20 dark:bg-[var(--baby-blue)]/10 px-6 py-3 rounded-lg mb-6">
+            <p className="text-xl font-semibold text-white">
+              Rank, Grow & Succeed Online
+            </p>
+          </div>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-20">

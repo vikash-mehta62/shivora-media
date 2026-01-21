@@ -46,8 +46,8 @@ export default function Navbar() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="relative h-12 sm:h-14 w-auto">
-              <Image src="/Logo_new.png" alt="Shivora Media" width={180} height={56} className="h-full w-auto object-contain" priority />
+            <div className="relative h-14 sm:h-16 w-auto">
+              <Image src="/Logo_new.png" alt="Shivora Media" width={200} height={64} className="h-full w-auto object-contain" priority />
             </div>
           </Link>
 

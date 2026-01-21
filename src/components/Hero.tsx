@@ -34,19 +34,11 @@ export default function Hero() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Content */}
           <div className={`${mounted ? "animate-slide-up" : "opacity-0"}`}>
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[var(--deep-blue)]/10 dark:bg-[var(--baby-blue)]/10 rounded-full mb-6">
-              <Zap className="w-4 h-4 text-[var(--golden-yellow)]" />
-              <span className="text-sm font-medium text-white dark:text-[var(--baby-blue)]">
-                #1 Digital Marketing Agency in India
-              </span>
-            </div>
-
             {/* Heading */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] mb-6">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.1] mb-6">
               We Help Brands{" "}
-              <span className="text-[var(--deep-blue)] dark:text-[var(--baby-blue)]">
-                Grow & Dominate
+              <span className="text-[var(--deep-blue)] dark:text-[var(--baby-blue)] block">
+                Grow &<br />Dominate
               </span>{" "}
               <span className="text-[var(--golden-yellow)]">Online</span>
             </h1>
@@ -59,16 +51,20 @@ export default function Hero() {
             </div>
 
             {/* Description */}
-            <p className="text-lg text-white mb-4 max-w-xl leading-relaxed">
+            <p className="text-lg text-white dark:text-gray-300 mb-2 max-w-xl leading-relaxed">
+              Smart marketing strategies that help businesses grow online. Combining creative media, digital advertising, and data-driven marketing techniques. Built to increase traffic, leads, and brand awareness.
+            </p>
+            
+            <p className="text-lg text-white dark:text-gray-300 mb-4 max-w-xl leading-relaxed">
               A results-driven digital marketing company offering{" "}
-              <span className="font-semibold">
+              <span className="font-semibold text-white dark:text-white">
                 search engine optimization (SEO), social media management, video production, 
                 video marketing, paid advertising, content creation, and web design services
               </span>.
             </p>
-            <p className="text-lg text-white mb-8 max-w-xl leading-relaxed">
+            <p className="text-lg text-white dark:text-gray-300 mb-8 max-w-xl leading-relaxed">
               Turning businesses into{" "}
-              <span className="font-semibold">
+              <span className="font-semibold text-white dark:text-white">
                 powerful digital brands
               </span>.
             </p>
