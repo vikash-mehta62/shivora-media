@@ -2,7 +2,6 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Image from "next/image";
 import { Target, Lightbulb, Users, BarChart3, Rocket, Award, TrendingUp, Clock, Shield, Headphones, CheckCircle, Star, ArrowRight } from "lucide-react";
-import About from "@/components/About";
 
 const values = [
   { icon: Target, title: "Results-Driven", desc: "Every strategy is designed with measurable outcomes and ROI in mind. We focus on what matters - your business growth." },
@@ -39,11 +38,30 @@ export default function AboutPage() {
   return (
     <main>
       <Navbar />
-      <About />
 
- 
+      {/* Hero Section */}
+      <section className="pt-32 pb-20 relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-20 right-0 w-[600px] h-[600px] blob-blue opacity-30"></div>
+        </div>
 
-      {/* Original Hero Section - Removed */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[var(--deep-blue)]/10 dark:bg-[var(--baby-blue)]/10 rounded-full mb-4">
+              <Award className="w-4 h-4 text-[var(--deep-blue)] dark:text-[var(--baby-blue)]" />
+              <span className="text-sm font-medium text-[var(--deep-blue)] dark:text-[var(--baby-blue)]">About Us</span>
+            </div>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
+              Your Trusted <span className="text-[var(--deep-blue)] dark:text-[var(--baby-blue)]">Growth Partner</span>
+              <span className="block text-[var(--golden-yellow)]">Since 2018</span>
+            </h1>
+            <p className="text-xl text-secondary max-w-3xl mx-auto">
+              We&apos;re not just another agency. We&apos;re a team of passionate digital marketers, 
+              designers, and developers dedicated to transforming businesses into successful brands.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* Stats Section */}
       <section className="py-12">
@@ -80,13 +98,10 @@ export default function AboutPage() {
                 don&apos;t just look good – they drive real business results. We believe in transparency, 
                 accountability, and most importantly, delivering ROI.
               </p>
-              <p className="text-muted mb-6">
+              <p className="text-muted mb-8">
                 What started as a small team with big dreams has grown into one of India&apos;s most 
                 trusted digital marketing agencies. Our journey has been defined by our commitment 
                 to client success and continuous innovation.
-              </p>
-              <p className="text-muted mb-8">
-                Every project starts with understanding your story. We don&apos;t do one-size-fits-all—we craft solutions that fit your brand, your goals, and your audience.
               </p>
               <a href="/contact" className="inline-flex items-center gap-2 px-6 py-3 btn-primary rounded-full font-semibold">
                 Work With Us <Rocket className="w-4 h-4" />
@@ -127,23 +142,24 @@ export default function AboutPage() {
         </div>
       </section>
 
-
-      {/* Why Choose Us */}
-      <section className="py-20">
+      {/* Timeline Section */}
+      <section className="py-20 section-alt">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="card rounded-3xl p-8 sm:p-12 shadow-xl">
-            <div className="text-center mb-10">
-              <h2 className="text-3xl sm:text-4xl font-bold mb-2 text-white dark:text-white">Why Choose Shivora Media?</h2>
-              <p className="text-gray-700 dark:text-gray-300">What sets us apart from other agencies</p>
-            </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {whyUs.map((item, i) => (
-                <div key={i} className="text-center">
-                  <div className="w-16 h-16 bg-[var(--golden-yellow)]/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <item.icon className="w-8 h-8 text-[var(--golden-yellow)]" />
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Our Journey</h2>
+            <p className="text-secondary">From humble beginnings to industry leaders</p>
+          </div>
+          <div className="relative">
+            <div className="hidden md:block absolute top-1/2 left-0 right-0 h-1 bg-[var(--deep-blue)]/20"></div>
+            <div className="grid grid-cols-2 md:grid-cols-7 gap-4">
+              {timeline.map((item, i) => (
+                <div key={i} className="text-center relative">
+                  <div className="card rounded-xl p-4 mb-4 hover:shadow-lg transition">
+                    <div className="text-2xl font-bold text-[var(--deep-blue)] dark:text-[var(--golden-yellow)]">{item.year}</div>
+                    <div className="font-semibold text-sm">{item.title}</div>
+                    <div className="text-xs text-muted mt-1">{item.desc}</div>
                   </div>
-                  <h3 className="font-semibold mb-1 text-white dark:text-white">{item.title}</h3>
-                  <p className="text-gray-700 dark:text-gray-300 text-sm">{item.desc}</p>
+                  <div className="hidden md:block w-4 h-4 bg-[var(--deep-blue)] rounded-full mx-auto"></div>
                 </div>
               ))}
             </div>
@@ -151,55 +167,57 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Why Choose Us */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="card rounded-3xl p-8 sm:p-12 shadow-xl bg-[var(--deep-blue)] text-white">
+            <div className="text-center mb-10">
+              <h2 className="text-3xl sm:text-4xl font-bold mb-2">Why Choose Shivora Media?</h2>
+              <p className="text-[var(--baby-blue)]">What sets us apart from other agencies</p>
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {whyUs.map((item, i) => (
+                <div key={i} className="text-center">
+                  <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <item.icon className="w-8 h-8 text-[var(--golden-yellow)]" />
+                  </div>
+                  <h3 className="font-semibold mb-1">{item.title}</h3>
+                  <p className="text-[var(--baby-blue)] text-sm">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
+      {/* Certifications */}
+      <section className="py-20 section-alt">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Our Certifications</h2>
+            <p className="text-secondary">Recognized by industry leaders</p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {["Google Partner", "Meta Business Partner", "HubSpot Certified", "Semrush Certified"].map((cert, i) => (
+              <div key={i} className="card rounded-xl p-6 text-center hover:shadow-lg transition">
+                <Award className="w-12 h-12 text-[var(--golden-yellow)] mx-auto mb-3" />
+                <div className="font-semibold">{cert}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* CTA */}
-     
-
-      {/* Let's Talk Section */}
-      <section className="py-20 bg-[#0f1419]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="border-t border-gray-800 pt-12">
-            <div className="mb-12">
-              <p className="text-xs font-bold tracking-[0.3em] text-gray-500 uppercase mb-8">LET&apos;S TALK</p>
-              <h3 className="text-5xl sm:text-6xl font-bold text-white mb-8">Join Us</h3>
-            </div>
-            
-            <div className="max-w-4xl space-y-6">
-              <p className="text-xl text-gray-300 leading-relaxed">
-                We&apos;re excited to connect with you! Whether you have a question or a project idea, we&apos;re here to listen.
-              </p>
-              
-              <p className="text-xl text-gray-300 leading-relaxed">
-                Send us a message using the contact form, or drop us an email we&apos;ll get back to you promptly.
-              </p>
-              
-              <div className="flex flex-wrap gap-4 items-center pt-8">
-                <a 
-                  href="https://wa.me/917067235788" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="inline-flex items-center gap-3 px-8 py-4 bg-[#25D366] text-white rounded-full font-semibold text-lg hover:bg-[#20ba5a] transition-all shadow-lg hover:shadow-xl"
-                >
-                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-                  </svg>
-                  Contact Us
-                </a>
-                
-                <span className="text-gray-600 text-lg font-medium">or</span>
-                
-                <a 
-                  href="mailto:shivoramedia@gmail.com" 
-                  className="inline-flex items-center gap-3 px-8 py-4 bg-[var(--deep-blue)] text-white rounded-full font-semibold text-lg hover:bg-[#1e3a8a] transition-all shadow-lg hover:shadow-xl"
-                >
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                  Email Us
-                </a>
-              </div>
-            </div>
+      <section className="py-20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="card rounded-3xl p-10 sm:p-16 text-center bg-[var(--deep-blue)] text-white">
+            <Star className="w-16 h-16 text-[var(--golden-yellow)] mx-auto mb-6" />
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Ready to Work Together?</h2>
+            <p className="text-[var(--baby-blue)] mb-8 text-lg">Let&apos;s discuss how we can help grow your business.</p>
+            <a href="/contact" className="inline-flex items-center gap-2 px-8 py-4 btn-gold rounded-full font-semibold text-lg">
+              Get in Touch <ArrowRight className="w-5 h-5" />
+            </a>
           </div>
         </div>
       </section>

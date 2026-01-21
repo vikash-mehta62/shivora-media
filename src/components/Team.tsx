@@ -17,7 +17,7 @@ const stats = [
 
 export default function Team() {
   return (
-    <section className="py-12 sm:py-16 relative overflow-hidden section-alt">
+    <section className="py-20 sm:py-28 relative overflow-hidden section-alt">
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] blob-blue opacity-20"></div>

@@ -118,7 +118,7 @@ export default function Portfolio() {
     : projects.filter(p => p.category === activeCategory);
 
   return (
-    <section id="portfolio" className="py-12 sm:py-16 relative overflow-hidden">
+    <section id="portfolio" className="py-20 sm:py-28 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] blob-blue opacity-20"></div>

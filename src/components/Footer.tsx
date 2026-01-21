@@ -41,23 +41,24 @@ export default function Footer() {
       {/* CTA Section */}
       <div className="border-t border-[var(--border-color)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
-          <div className="card rounded-3xl p-8 sm:p-12 lg:p-16 text-center relative overflow-hidden shadow-2xl">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-[var(--baby-blue)]/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
-            <div className="absolute bottom-0 left-0 w-48 h-48 bg-[var(--golden-yellow)]/10 rounded-full translate-y-1/2 -translate-x-1/2"></div>
+          <div className="card rounded-3xl p-8 sm:p-12 lg:p-16 text-center relative overflow-hidden shadow-2xl bg-[var(--deep-blue)] text-white">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[var(--baby-blue)]/20 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+            <div className="absolute bottom-0 left-0 w-48 h-48 bg-[var(--golden-yellow)]/20 rounded-full translate-y-1/2 -translate-x-1/2"></div>
             
             <div className="relative z-10">
               <div className="flex items-center justify-center gap-2 mb-4">
                 <Award className="w-6 h-6 text-[var(--golden-yellow)]" />
-                <span className="text-[var(--deep-blue)] font-medium">Take Your Brand Further</span>
+                <span className="text-[var(--baby-blue)] font-medium">Free Digital Marketing Audit</span>
               </div>
-              <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-[var(--deep-blue)]">
-                Book A Consultation <span className="text-[var(--golden-yellow)]">Today</span>
+              <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+                Ready to 10x Your <span className="text-[var(--golden-yellow)]">Growth?</span>
               </h3>
-              <p className="text-secondary mb-8 max-w-2xl mx-auto text-lg">
-                Let&apos;s discuss how we can help grow your business.
+              <p className="text-[var(--baby-blue)] mb-8 max-w-2xl mx-auto text-lg">
+                Get a comprehensive audit of your digital presence and discover untapped 
+                opportunities to grow your business.
               </p>
-              <a href="mailto:shivoramedia@gmail.com" className="inline-flex items-center gap-2 px-8 py-4 btn-gold rounded-full font-semibold text-lg">
-                Enquire Now <ArrowRight className="w-5 h-5" />
+              <a href="/contact" className="inline-flex items-center gap-2 px-8 py-4 btn-gold rounded-full font-semibold text-lg">
+                Get Free Audit <ArrowRight className="w-5 h-5" />
               </a>
             </div>
           </div>
@@ -70,8 +71,14 @@ export default function Footer() {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 lg:gap-12">
             {/* Brand */}
             <div className="col-span-2">
-              <div className="mb-6">
-                <Image src="/Logo_new.png" alt="Shivora Media" width={200} height={64} className="h-14 w-auto object-contain" />
+              <div className="flex items-center gap-3 mb-6">
+                <div className="relative w-14 h-14 rounded-xl overflow-hidden shadow-lg border-2 border-[var(--deep-blue)]/30">
+                  <Image src="/logo.jpeg" alt="Shivora Media" fill className="object-cover" />
+                </div>
+                <div>
+                  <span className="font-bold text-2xl text-[var(--deep-blue)] dark:text-[var(--baby-blue)]">Shivora</span>
+                  <span className="text-[var(--golden-yellow)] font-semibold text-sm block">Media</span>
+                </div>
               </div>
               <p className="text-secondary mb-6 max-w-sm">
                 Full-service digital marketing agency helping businesses grow online since 2018. 
@@ -80,15 +87,15 @@ export default function Footer() {
               
               {/* Contact Info */}
               <div className="space-y-3 mb-6">
-                <a href="mailto:shivoramedia@gmail.com" className="flex items-center gap-2 text-sm text-secondary hover:text-[var(--deep-blue)] transition">
-                  <Mail className="w-4 h-4" /> shivoramedia@gmail.com
+                <a href="mailto:hello@shivoramedia.com" className="flex items-center gap-2 text-sm text-secondary hover:text-[var(--deep-blue)] transition">
+                  <Mail className="w-4 h-4" /> hello@shivoramedia.com
                 </a>
-                <a href="tel:+917067235788" className="flex items-center gap-2 text-sm text-secondary hover:text-[var(--deep-blue)] transition">
-                  <Phone className="w-4 h-4" /> +91 7067235788
+                <a href="tel:+919876543210" className="flex items-center gap-2 text-sm text-secondary hover:text-[var(--deep-blue)] transition">
+                  <Phone className="w-4 h-4" /> +91 98765 43210
                 </a>
-                <a href="https://wa.me/917067235788" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-secondary hover:text-[var(--deep-blue)] transition">
-                  <Phone className="w-4 h-4" /> WhatsApp: +91 7067235788
-                </a>
+                <div className="flex items-center gap-2 text-sm text-secondary">
+                  <MapPin className="w-4 h-4" /> Connaught Place, New Delhi
+                </div>
               </div>
 
               {/* Social Links */}
@@ -144,20 +151,26 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* Quick Links */}
+            {/* Certifications */}
             <div>
-              <h4 className="font-bold mb-4 text-[var(--deep-blue)] dark:text-[var(--baby-blue)]">Quick Links</h4>
+              <h4 className="font-bold mb-4 text-[var(--deep-blue)] dark:text-[var(--baby-blue)]">Certifications</h4>
               <div className="space-y-3">
                 <div className="flex items-center gap-2">
+                  <Award className="w-5 h-5 text-[var(--golden-yellow)]" />
+                  <span className="text-sm text-secondary">Google Partner</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Award className="w-5 h-5 text-[var(--golden-yellow)]" />
+                  <span className="text-sm text-secondary">Meta Partner</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Award className="w-5 h-5 text-[var(--golden-yellow)]" />
+                  <span className="text-sm text-secondary">HubSpot Certified</span>
+                </div>
+                <div className="flex items-center gap-2 mt-4">
                   <Star className="w-5 h-5 text-[var(--golden-yellow)] fill-[var(--golden-yellow)]" />
                   <span className="text-sm font-semibold">5.0 Rating (150+ Reviews)</span>
                 </div>
-                <a href="https://wa.me/917067235788" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-secondary hover:text-[var(--deep-blue)] transition">
-                  <Phone className="w-4 h-4" /> Contact on WhatsApp
-                </a>
-                <a href="mailto:shivoramedia@gmail.com" className="flex items-center gap-2 text-sm text-secondary hover:text-[var(--deep-blue)] transition">
-                  <Mail className="w-4 h-4" /> Email Us
-                </a>
               </div>
             </div>
           </div>
