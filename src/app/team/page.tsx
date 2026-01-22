@@ -41,13 +41,13 @@ export default function TeamPage() {
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[var(--deep-blue)]/10 dark:bg-[var(--baby-blue)]/10 rounded-full mb-4">
-              <Users className="w-4 h-4 text-[var(--deep-blue)] dark:text-[var(--baby-blue)]" />
-              <span className="text-sm font-medium text-[var(--deep-blue)] dark:text-[var(--baby-blue)]">Our Team</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 badge-bg rounded-full mb-4">
+              <Users className="w-4 h-4 badge-text" />
+              <span className="text-sm font-medium badge-text">Our Team</span>
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-              Meet the <span className="text-[var(--deep-blue)] dark:text-[var(--baby-blue)]">Experts</span>
-              <span className="block text-[var(--golden-yellow)]">Behind Your Success</span>
+              Meet the <span className="badge-text">Experts</span>
+              <span className="block text-gold">Behind Your Success</span>
             </h1>
             <p className="text-xl text-secondary max-w-3xl mx-auto">
               A passionate team of 50+ digital marketing professionals, designers, and developers 
@@ -64,7 +64,7 @@ export default function TeamPage() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {stats.map((stat, i) => (
                 <div key={i} className="text-center">
-                  <div className="text-4xl font-bold text-[var(--deep-blue)] dark:text-[var(--golden-yellow)]">{stat.number}</div>
+                  <div className="text-4xl font-bold text-[var(--deep-blue)] dark:text-gold">{stat.number}</div>
                   <div className="text-muted">{stat.label}</div>
                 </div>
               ))}
@@ -82,22 +82,22 @@ export default function TeamPage() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {team.map((member, i) => (
-              <div key={i} className="group card rounded-2xl p-6 hover:shadow-xl hover:border-[var(--deep-blue)] transition-all text-center">
-                <div className="w-24 h-24 bg-[var(--deep-blue)] rounded-2xl flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4 group-hover:scale-110 transition-transform">
+              <div key={i} className="group card rounded-2xl p-6 hover:shadow-xl hover-primary transition-all text-center">
+                <div className="w-24 h-24 bg-brand rounded-2xl flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4 group-hover:scale-110 transition-transform">
                   {member.initials}
                 </div>
                 <h3 className="text-xl font-bold">{member.name}</h3>
-                <p className="text-[var(--deep-blue)] dark:text-[var(--baby-blue)] font-medium text-sm">{member.role}</p>
-                <p className="text-[var(--golden-yellow)] text-xs mb-3">{member.expertise}</p>
+                <p className="badge-text font-medium text-sm">{member.role}</p>
+                <p className="text-gold text-xs mb-3">{member.expertise}</p>
                 <p className="text-muted text-sm mb-4 line-clamp-3">{member.bio}</p>
                 <div className="flex justify-center gap-2">
-                  <a href={member.linkedin} className="w-10 h-10 card rounded-lg flex items-center justify-center hover:bg-[var(--deep-blue)] hover:text-white transition">
+                  <a href={member.linkedin} className="w-10 h-10 card rounded-lg flex items-center justify-center hover:bg-brand hover:text-white transition">
                     <Linkedin className="w-4 h-4" />
                   </a>
-                  <a href={member.twitter} className="w-10 h-10 card rounded-lg flex items-center justify-center hover:bg-[var(--deep-blue)] hover:text-white transition">
+                  <a href={member.twitter} className="w-10 h-10 card rounded-lg flex items-center justify-center hover:bg-brand hover:text-white transition">
                     <Twitter className="w-4 h-4" />
                   </a>
-                  <a href="#" className="w-10 h-10 card rounded-lg flex items-center justify-center hover:bg-[var(--deep-blue)] hover:text-white transition">
+                  <a href="#" className="w-10 h-10 card rounded-lg flex items-center justify-center hover:bg-brand hover:text-white transition">
                     <Mail className="w-4 h-4" />
                   </a>
                 </div>
@@ -118,8 +118,8 @@ export default function TeamPage() {
             {departments.map((dept, i) => (
               <div key={i} className="card rounded-2xl p-6 hover:shadow-lg transition">
                 <div className="flex items-center justify-between mb-4">
-                  <Briefcase className="w-8 h-8 text-[var(--deep-blue)] dark:text-[var(--baby-blue)]" />
-                  <span className="text-2xl font-bold text-[var(--golden-yellow)]">{dept.count}</span>
+                  <Briefcase className="w-8 h-8 badge-text" />
+                  <span className="text-2xl font-bold text-gold">{dept.count}</span>
                 </div>
                 <h3 className="text-xl font-bold mb-2">{dept.name}</h3>
                 <p className="text-muted text-sm">{dept.desc}</p>
@@ -139,7 +139,7 @@ export default function TeamPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {["Google Partner", "Meta Business Partner", "HubSpot Certified", "Semrush Certified", "Google Analytics", "Google Ads", "Facebook Blueprint", "LinkedIn Marketing"].map((cert, i) => (
               <div key={i} className="card rounded-xl p-6 text-center hover:shadow-lg transition">
-                <Award className="w-10 h-10 text-[var(--golden-yellow)] mx-auto mb-3" />
+                <Award className="w-10 h-10 text-gold mx-auto mb-3" />
                 <div className="font-semibold text-sm">{cert}</div>
               </div>
             ))}
@@ -150,10 +150,10 @@ export default function TeamPage() {
       {/* Join Team CTA */}
       <section className="py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="card rounded-3xl p-10 sm:p-16 text-center bg-[var(--deep-blue)] text-white">
-            <Star className="w-16 h-16 text-[var(--golden-yellow)] mx-auto mb-6" />
+          <div className="card rounded-3xl p-10 sm:p-16 text-center bg-brand-section text-white">
+            <Star className="w-16 h-16 text-gold mx-auto mb-6" />
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">Want to Join Our Team?</h2>
-            <p className="text-[var(--baby-blue)] mb-8 text-lg">
+            <p className="text-baby-blue mb-8 text-lg">
               We&apos;re always looking for talented individuals to join our growing team. 
               Check out our open positions and become part of something amazing.
             </p>

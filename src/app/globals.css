@@ -1,13 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  /* Brand Colors from palette */
-  --deep-blue: #0011C4;
-  --golden-yellow: #FDD835;
-  --baby-blue: #AAD2FF;
-  --charcoal: #353442;
+  /* ============================================
+     BRAND COLORS - Fixed across themes
+     ============================================ */
+  --brand-deep-blue: #0011C4;    /* Deep Blue - Primary */
+  --brand-golden: #FDD835;       /* Golden Yellow - Accent */
+  --brand-baby-blue: #AAD2FF;    /* Baby Blue - Secondary */
+  --brand-charcoal: #353442;     /* Charcoal Gray - Dark */
   
-  /* Light Mode */
+  /* ============================================
+     LIGHT MODE COLORS
+     ============================================ */
   --bg-primary: #ffffff;
   --bg-secondary: #f8fafc;
   --bg-tertiary: #f0f4f8;
@@ -18,10 +22,26 @@
   --card-bg: #ffffff;
   --glass-bg: rgba(255, 255, 255, 0.9);
   --glass-border: rgba(0, 17, 196, 0.1);
+  
+  /* Light Mode - Theme Colors */
+  --brand-primary: #0011C4;      /* Deep Blue for light mode */
+  --brand-secondary: #AAD2FF;    /* Baby Blue for light mode */
+  --brand-accent: #FDD835;       /* Golden Yellow */
+  --brand-dark: #353442;         /* Charcoal */
+  
+  /* Light Mode - Dynamic Colors */
+  --color-heading: #0011C4;      /* Deep Blue */
+  --color-icon: #0011C4;         /* Deep Blue */
+  --color-badge: #0011C4;        /* Deep Blue */
+  --color-badge-bg: rgba(0, 17, 196, 0.1);
+  --color-hover: #0011C4;        /* Deep Blue */
+  --color-link: #0011C4;         /* Deep Blue */
 }
 
 .dark {
-  /* Dark Mode */
+  /* ============================================
+     DARK MODE COLORS
+     ============================================ */
   --bg-primary: #0a0a14;
   --bg-secondary: #12121f;
   --bg-tertiary: #1a1a2e;
@@ -32,6 +52,20 @@
   --card-bg: #16162a;
   --glass-bg: rgba(22, 22, 42, 0.9);
   --glass-border: rgba(170, 210, 255, 0.1);
+  
+  /* Dark Mode - Theme Colors */
+  --brand-primary: #AAD2FF;      /* Baby Blue for dark mode */
+  --brand-secondary: #0011C4;    /* Deep Blue for dark mode */
+  --brand-accent: #FDD835;       /* Golden Yellow (same) */
+  --brand-dark: #353442;         /* Charcoal (same) */
+  
+  /* Dark Mode - Dynamic Colors */
+  --color-heading: #AAD2FF;      /* Baby Blue */
+  --color-icon: #AAD2FF;         /* Baby Blue */
+  --color-badge: #AAD2FF;        /* Baby Blue */
+  --color-badge-bg: rgba(170, 210, 255, 0.1);
+  --color-hover: #AAD2FF;        /* Baby Blue */
+  --color-link: #AAD2FF;         /* Baby Blue */
 }
 
 * {
@@ -44,31 +78,48 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Brand Gradients */
+/* ============================================
+   BRAND GRADIENTS
+   ============================================ */
 .gradient-text {
-  background: linear-gradient(135deg, var(--deep-blue), var(--baby-blue));
+  background: linear-gradient(135deg, #0011C4, #AAD2FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.dark .gradient-text {
+  background: linear-gradient(135deg, #AAD2FF, #0011C4);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .gradient-text-gold {
-  background: linear-gradient(135deg, var(--golden-yellow), #ffeb3b);
+  background: linear-gradient(135deg, #FDD835, #ffeb3b);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .gradient-bg {
-  background: linear-gradient(135deg, var(--deep-blue), #1a3bc4);
+  background: linear-gradient(135deg, #0011C4, #1a3bc4);
+}
+
+.dark .gradient-bg {
+  background: linear-gradient(135deg, #AAD2FF, #0011C4);
 }
 
 .gradient-bg-gold {
-  background: linear-gradient(135deg, var(--golden-yellow), #ffeb3b);
+  background: linear-gradient(135deg, #FDD835, #ffeb3b);
 }
 
 .gradient-bg-light {
-  background: linear-gradient(135deg, var(--baby-blue), #d4e8ff);
+  background: linear-gradient(135deg, #AAD2FF, #d4e8ff);
+}
+
+.dark .gradient-bg-light {
+  background: linear-gradient(135deg, #0011C4, #1a3bc4);
 }
 
 /* Glass Effect */
@@ -144,9 +195,11 @@ body {
 .animate-marquee { animation: marquee 25s linear infinite; }
 .animate-count { animation: count-up 0.6s ease-out forwards; }
 
-/* Button styles */
+/* ============================================
+   BUTTON STYLES
+   ============================================ */
 .btn-primary {
-  background: var(--deep-blue);
+  background: var(--brand-primary);
   color: white;
   transition: all 0.3s ease;
 }
@@ -157,9 +210,19 @@ body {
   box-shadow: 0 10px 30px rgba(0, 17, 196, 0.4);
 }
 
+.dark .btn-primary {
+  background: #AAD2FF;
+  color: #0a0a14;
+}
+
+.dark .btn-primary:hover {
+  background: #d4e8ff;
+  box-shadow: 0 10px 30px rgba(170, 210, 255, 0.4);
+}
+
 .btn-gold {
-  background: var(--golden-yellow);
-  color: var(--charcoal);
+  background: #FDD835;
+  color: #353442;
   transition: all 0.3s ease;
 }
 
@@ -170,22 +233,23 @@ body {
 }
 
 .btn-outline {
-  border: 2px solid var(--deep-blue);
-  color: var(--deep-blue);
+  border: 2px solid var(--color-badge);
+  color: var(--color-badge);
   transition: all 0.3s ease;
 }
 
-.dark .btn-outline {
-  border-color: var(--baby-blue);
-  color: var(--baby-blue);
-}
-
 .btn-outline:hover {
-  background: var(--deep-blue);
+  background: var(--color-badge);
   color: white;
 }
 
-/* Input styles */
+.dark .btn-outline:hover {
+  color: #0a0a14;
+}
+
+/* ============================================
+   INPUT STYLES
+   ============================================ */
 .input-field {
   background: var(--bg-tertiary);
   border: 2px solid var(--border-color);
@@ -194,68 +258,182 @@ body {
 }
 
 .input-field:focus {
-  border-color: var(--deep-blue);
+  border-color: var(--brand-primary);
   outline: none;
   box-shadow: 0 0 0 3px rgba(0, 17, 196, 0.1);
 }
 
-/* Text colors */
+/* ============================================
+   TEXT COLOR UTILITIES
+   ============================================ */
 .text-primary { color: var(--text-primary); }
 .text-secondary { color: var(--text-secondary); }
 .text-muted { color: var(--text-muted); }
-.text-blue { color: var(--deep-blue); }
-.text-gold { color: var(--golden-yellow); }
 
-/* Background colors */
-.bg-blue { background: var(--deep-blue); }
-.bg-gold { background: var(--golden-yellow); }
-.bg-baby-blue { background: var(--baby-blue); }
-.bg-charcoal { background: var(--charcoal); }
+/* Brand Colors */
+.text-brand { color: var(--brand-primary); }
+.text-gold { color: #FDD835; }
+.text-baby-blue { color: #AAD2FF; }
 
-/* Custom scrollbar */
+/* Theme-Aware Colors (auto-switch in dark mode) */
+.text-heading { color: var(--color-heading); }
+.text-link { color: var(--color-link); }
+
+/* ============================================
+   BACKGROUND COLOR UTILITIES
+   ============================================ */
+.bg-brand { 
+  background: #0011C4;
+}
+
+.dark .bg-brand { 
+  background: #AAD2FF;
+}
+
+/* Special background for sections that need dark bg in both themes */
+.bg-brand-section {
+  background: #0011C4;
+}
+
+.dark .bg-brand-section {
+  background: #1a1a2e;
+}
+
+.bg-gold { 
+  background: #FDD835;
+}
+
+.bg-secondary { 
+  background: #AAD2FF;
+}
+
+.dark .bg-secondary { 
+  background: #0011C4;
+}
+
+.bg-secondary-light {
+  background: var(--bg-secondary);
+}
+
+.bg-dark { 
+  background: #353442;
+}
+
+/* Background with opacity */
+.bg-brand-light {
+  background: rgba(0, 17, 196, 0.1);
+}
+
+.dark .bg-brand-light {
+  background: rgba(170, 210, 255, 0.1);
+}
+
+/* ============================================
+   CUSTOM SCROLLBAR
+   ============================================ */
 ::-webkit-scrollbar { width: 10px; }
 ::-webkit-scrollbar-track { background: var(--bg-secondary); }
 ::-webkit-scrollbar-thumb { 
-  background: var(--deep-blue); 
+  background: #0011C4;
   border-radius: 5px;
 }
 
-/* Selection */
+.dark ::-webkit-scrollbar-thumb { 
+  background: #AAD2FF;
+  border-radius: 5px;
+}
+
+/* ============================================
+   TEXT SELECTION
+   ============================================ */
 ::selection {
   background: rgba(0, 17, 196, 0.2);
-  color: var(--deep-blue);
+  color: #0011C4;
 }
 
 .dark ::selection {
   background: rgba(170, 210, 255, 0.3);
-  color: white;
+  color: #AAD2FF;
 }
 
-/* Decorative elements */
+/* ============================================
+   DECORATIVE ELEMENTS
+   ============================================ */
 .blob-blue {
-  background: radial-gradient(circle, var(--baby-blue) 0%, transparent 70%);
+  background: radial-gradient(circle, #AAD2FF 0%, transparent 70%);
+}
+
+.dark .blob-blue {
+  background: radial-gradient(circle, rgba(0, 17, 196, 0.4) 0%, transparent 70%);
 }
 
 .blob-gold {
   background: radial-gradient(circle, rgba(253, 216, 53, 0.3) 0%, transparent 70%);
 }
 
-/* Number highlight */
-.number-highlight {
-  font-family: 'Inter', sans-serif;
-  font-weight: 800;
-  color: var(--deep-blue);
-}
-
-.dark .number-highlight {
-  color: var(--golden-yellow);
-}
-
-/* Service card icon bg */
+/* ============================================
+   ICON & BADGE STYLES
+   ============================================ */
 .icon-bg {
-  background: linear-gradient(135deg, var(--baby-blue), rgba(170, 210, 255, 0.5));
+  background: linear-gradient(135deg, rgba(0, 17, 196, 0.15), rgba(170, 210, 255, 0.25));
 }
 
 .dark .icon-bg {
-  background: linear-gradient(135deg, rgba(0, 17, 196, 0.3), rgba(170, 210, 255, 0.2));
+  background: linear-gradient(135deg, rgba(170, 210, 255, 0.2), rgba(0, 17, 196, 0.15));
+}
+
+.badge-bg {
+  background: var(--color-badge-bg);
+}
+
+/* ============================================
+   THEME-AWARE UTILITIES
+   ============================================ */
+.icon-primary {
+  color: var(--color-icon);
+}
+
+.icon-gold {
+  color: var(--brand-accent);
+}
+
+.heading-primary {
+  color: var(--color-heading);
+}
+
+.badge-text {
+  color: var(--color-badge);
+}
+
+/* Hover States */
+.hover-primary:hover {
+  color: var(--color-hover);
+  border-color: var(--color-hover);
+}
+
+/* Border utilities */
+.border-brand {
+  border-color: #0011C4;
+}
+
+.dark .border-brand {
+  border-color: #AAD2FF;
+}
+
+.border-brand-light {
+  border-color: rgba(0, 17, 196, 0.2);
+}
+
+.dark .border-brand-light {
+  border-color: rgba(170, 210, 255, 0.2);
+}
+
+/* Active/Selected state */
+.active-border {
+  border-color: var(--color-badge);
+}
+
+/* Number/Stats highlighting */
+.stat-number {
+  color: #FDD835;
 }

@@ -26,13 +26,13 @@ export default function Team() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-[var(--deep-blue)]/10 dark:bg-[var(--baby-blue)]/10 rounded-full mb-4">
-            <Users className="w-4 h-4 text-[var(--deep-blue)] dark:text-[var(--baby-blue)]" />
-            <span className="text-sm font-medium text-[var(--deep-blue)] dark:text-[var(--baby-blue)]">Our Team</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 badge-bg rounded-full mb-4">
+            <Users className="w-4 h-4 icon-primary" />
+            <span className="text-sm font-medium badge-text">Our Team</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-            Meet the <span className="text-[var(--deep-blue)] dark:text-[var(--baby-blue)]">Experts</span>
-            <span className="text-[var(--golden-yellow)]"> Behind Your Success</span>
+            Meet the <span className="heading-primary">Experts</span>
+            <span className="text-gold"> Behind Your Success</span>
           </h2>
           <p className="text-lg text-secondary max-w-3xl mx-auto">
             A passionate team of 50+ digital marketing professionals, designers, and developers 
@@ -44,7 +44,7 @@ export default function Team() {
         <div className="grid grid-cols-3 gap-4 sm:gap-8 mb-16 max-w-2xl mx-auto">
           {stats.map((stat, i) => (
             <div key={i} className="text-center">
-              <div className="text-3xl sm:text-4xl font-bold text-[var(--deep-blue)] dark:text-[var(--golden-yellow)]">{stat.number}</div>
+              <div className="text-3xl sm:text-4xl font-bold icon-gold">{stat.number}</div>
               <div className="text-sm text-muted">{stat.label}</div>
             </div>
           ))}
@@ -53,15 +53,15 @@ export default function Team() {
         {/* Team Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {team.map((member, i) => (
-            <div key={i} className="group card rounded-2xl p-6 hover:shadow-xl hover:border-[var(--deep-blue)] transition-all">
+            <div key={i} className="group card rounded-2xl p-6 hover:shadow-xl hover-primary transition-all">
               <div className="flex items-start gap-4 mb-4">
-                <div className="w-16 h-16 bg-[var(--deep-blue)] rounded-2xl flex items-center justify-center text-white text-xl font-bold group-hover:scale-110 transition-transform">
+                <div className="w-16 h-16 bg-brand rounded-2xl flex items-center justify-center text-white text-xl font-bold group-hover:scale-110 transition-transform">
                   {member.initials}
                 </div>
                 <div className="flex-1 min-w-0">
                   <h3 className="text-lg font-bold truncate">{member.name}</h3>
-                  <p className="text-[var(--deep-blue)] dark:text-[var(--baby-blue)] text-sm font-medium">{member.role}</p>
-                  <p className="text-[var(--golden-yellow)] text-xs">{member.expertise}</p>
+                  <p className="badge-text text-sm font-medium">{member.role}</p>
+                  <p className="text-gold text-xs">{member.expertise}</p>
                 </div>
               </div>
               
@@ -69,15 +69,15 @@ export default function Team() {
               
               <div className="flex items-center justify-between">
                 <div className="flex gap-2">
-                  <a href="#" className="w-8 h-8 card rounded-lg flex items-center justify-center hover:bg-[var(--deep-blue)] hover:text-white transition">
+                  <a href="#" className="w-8 h-8 card rounded-lg flex items-center justify-center hover:bg-brand hover:text-white transition">
                     <Linkedin className="w-4 h-4" />
                   </a>
-                  <a href="#" className="w-8 h-8 card rounded-lg flex items-center justify-center hover:bg-[var(--deep-blue)] hover:text-white transition">
+                  <a href="#" className="w-8 h-8 card rounded-lg flex items-center justify-center hover:bg-brand hover:text-white transition">
                     <Twitter className="w-4 h-4" />
                   </a>
                 </div>
                 <div className="flex items-center gap-1">
-                  <Award className="w-4 h-4 text-[var(--golden-yellow)]" />
+                  <Award className="w-4 h-4 icon-gold" />
                   <span className="text-xs text-muted">Certified</span>
                 </div>
               </div>
@@ -88,7 +88,7 @@ export default function Team() {
         {/* Join Team CTA */}
         <div className="text-center">
           <div className="card rounded-2xl p-8 max-w-2xl mx-auto">
-            <Star className="w-12 h-12 text-[var(--golden-yellow)] mx-auto mb-4" />
+            <Star className="w-12 h-12 icon-gold mx-auto mb-4" />
             <h3 className="text-xl font-bold mb-2">Want to Join Our Team?</h3>
             <p className="text-muted mb-6">We&apos;re always looking for talented individuals to join our growing team.</p>
             <a href="#" className="inline-flex items-center gap-2 px-6 py-3 btn-outline rounded-full font-semibold">

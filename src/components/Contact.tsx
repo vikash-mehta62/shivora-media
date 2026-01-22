@@ -3,8 +3,8 @@ import { useState } from "react";
 import { Mail, Phone, MapPin, Clock, ArrowRight, Loader2, CheckCircle, MessageCircle, Send } from "lucide-react";
 
 const contactInfo = [
-  { icon: Mail, label: "Email Us", value: "hello@shivoramedia.com", link: "mailto:hello@shivoramedia.com", desc: "We reply within 24 hours" },
-  { icon: Phone, label: "Call Us", value: "+91 98765 43210", link: "tel:+919876543210", desc: "Mon-Sat, 10AM-7PM" },
+  { icon: Mail, label: "Email Us", value: "shivoramedia@gmail.com", link: "mailto:shivoramedia@gmail.com", desc: "We reply within 24 hours" },
+  { icon: Phone, label: "Call Us", value: "+91 70672 35788", link: "tel:+917067235788", desc: "Mon-Sat, 10AM-7PM" },
   { icon: MapPin, label: "Visit Us", value: "Connaught Place, New Delhi", link: "#", desc: "By appointment only" },
   { icon: Clock, label: "Working Hours", value: "Mon - Sat: 10AM - 7PM", link: "#", desc: "Sunday closed" }
 ];
@@ -45,13 +45,13 @@ export default function Contact() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-[var(--deep-blue)]/10 dark:bg-[var(--baby-blue)]/10 rounded-full mb-4">
-            <MessageCircle className="w-4 h-4 text-[var(--deep-blue)] dark:text-[var(--baby-blue)]" />
-            <span className="text-sm font-medium text-[var(--deep-blue)] dark:text-[var(--baby-blue)]">Contact Us</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 badge-bg rounded-full mb-4">
+            <MessageCircle className="w-4 h-4 icon-primary" />
+            <span className="text-sm font-medium badge-text">Contact Us</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
             Let&apos;s Start Your
-            <span className="text-[var(--deep-blue)] dark:text-[var(--baby-blue)]"> Growth Journey</span>
+            <span className="heading-primary"> Growth Journey</span>
           </h2>
           <p className="text-lg text-secondary max-w-3xl mx-auto">
             Ready to transform your digital presence? Get a free consultation and custom 
@@ -69,7 +69,7 @@ export default function Contact() {
                 {contactInfo.map((info, i) => (
                   <a key={i} href={info.link} className="flex items-start gap-4 p-3 rounded-xl hover:bg-[var(--bg-secondary)] transition group">
                     <div className="w-12 h-12 icon-bg rounded-xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
-                      <info.icon className="w-5 h-5 text-[var(--deep-blue)] dark:text-[var(--baby-blue)]" />
+                      <info.icon className="w-5 h-5 icon-primary" />
                     </div>
                     <div>
                       <div className="text-muted text-sm">{info.label}</div>
@@ -82,24 +82,24 @@ export default function Contact() {
             </div>
 
             {/* Quick Stats */}
-            <div className="card rounded-2xl p-6 shadow-lg bg-[var(--deep-blue)] text-white">
-              <h4 className="font-semibold mb-4 text-[var(--baby-blue)]">Why Contact Us?</h4>
+            <div className="card rounded-2xl p-6 shadow-lg bg-brand-section text-white">
+              <h4 className="font-semibold mb-4 text-baby-blue">Why Contact Us?</h4>
               <div className="grid grid-cols-2 gap-4">
                 <div className="text-center p-4 bg-white/10 rounded-xl">
-                  <div className="text-3xl font-bold text-[var(--golden-yellow)]">24hr</div>
-                  <div className="text-sm text-[var(--baby-blue)]">Response Time</div>
+                  <div className="text-3xl font-bold icon-gold">24hr</div>
+                  <div className="text-sm text-baby-blue">Response Time</div>
                 </div>
                 <div className="text-center p-4 bg-white/10 rounded-xl">
-                  <div className="text-3xl font-bold text-[var(--golden-yellow)]">Free</div>
-                  <div className="text-sm text-[var(--baby-blue)]">Consultation</div>
+                  <div className="text-3xl font-bold icon-gold">Free</div>
+                  <div className="text-sm text-baby-blue">Consultation</div>
                 </div>
                 <div className="text-center p-4 bg-white/10 rounded-xl">
-                  <div className="text-3xl font-bold text-[var(--golden-yellow)]">150+</div>
-                  <div className="text-sm text-[var(--baby-blue)]">Happy Clients</div>
+                  <div className="text-3xl font-bold icon-gold">150+</div>
+                  <div className="text-sm text-baby-blue">Happy Clients</div>
                 </div>
                 <div className="text-center p-4 bg-white/10 rounded-xl">
-                  <div className="text-3xl font-bold text-[var(--golden-yellow)]">5.0</div>
-                  <div className="text-sm text-[var(--baby-blue)]">Client Rating</div>
+                  <div className="text-3xl font-bold icon-gold">5.0</div>
+                  <div className="text-sm text-baby-blue">Client Rating</div>
                 </div>
               </div>
             </div>
@@ -115,12 +115,12 @@ export default function Contact() {
                   </div>
                   <h3 className="text-2xl font-bold mb-2">Thank You!</h3>
                   <p className="text-muted mb-4">We&apos;ve received your message and will get back to you within 24 hours.</p>
-                  <p className="text-sm text-[var(--deep-blue)] dark:text-[var(--baby-blue)]">Check your email for confirmation.</p>
+                  <p className="text-sm badge-text">Check your email for confirmation.</p>
                 </div>
               ) : (
                 <>
                   <div className="flex items-center gap-3 mb-6">
-                    <Send className="w-6 h-6 text-[var(--deep-blue)] dark:text-[var(--baby-blue)]" />
+                    <Send className="w-6 h-6 icon-primary" />
                     <h3 className="text-xl font-bold">Get Your Free Quote</h3>
                   </div>
 
@@ -141,7 +141,7 @@ export default function Contact() {
                     <div>
                       <label className="block text-sm font-medium mb-2">Phone Number</label>
                       <input type="tel" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                        className="w-full px-4 py-3 input-field rounded-xl" placeholder="+91 98765 43210" />
+                        className="w-full px-4 py-3 input-field rounded-xl" placeholder="+91 70672 35788" />
                     </div>
                     <div>
                       <label className="block text-sm font-medium mb-2">Company Name</label>

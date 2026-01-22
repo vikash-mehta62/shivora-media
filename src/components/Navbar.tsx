@@ -11,12 +11,12 @@ const navLinks = [
     name: "Services", 
     href: "/services",
     dropdown: [
-      { name: "SEO Services", href: "/services#seo" },
-      { name: "Social Media Marketing", href: "/services#smm" },
-      { name: "PPC Advertising", href: "/services#ppc" },
-      { name: "Content Marketing", href: "/services#content" },
-      { name: "Web Development", href: "/services#web" },
-      { name: "Brand Identity", href: "/services#branding" },
+      { name: "SEO Services", href: "/services/seo" },
+      { name: "Social Media Marketing", href: "/services/social-media" },
+      { name: "PPC Advertising", href: "/services/ppc" },
+      { name: "Content Marketing", href: "/services/content-marketing" },
+      { name: "Web Development", href: "/services/web-development" },
+      { name: "Brand Identity", href: "/services/brand-identity" },
     ]
   },
   { name: "About", href: "/about" },
@@ -46,12 +46,12 @@ export default function Navbar() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative w-12 h-12 sm:w-14 sm:h-14 rounded-xl overflow-hidden shadow-lg border-2 border-[var(--deep-blue)]/30 group-hover:border-[var(--deep-blue)] transition-all">
+            <div className="relative w-12 h-12 sm:w-14 sm:h-14 rounded-xl overflow-hidden shadow-lg border-2 border-brand-light group-hover:border-brand transition-all">
               <Image src="/logo.jpeg" alt="Shivora Media" fill className="object-cover" priority />
             </div>
             <div className="hidden sm:block">
-              <span className="font-bold text-xl text-[var(--deep-blue)] dark:text-[var(--baby-blue)]">Shivora</span>
-              <span className="text-[var(--golden-yellow)] font-semibold text-sm block -mt-0.5">Media</span>
+              <span className="font-bold text-xl heading-primary">Shivora</span>
+              <span className="text-gold font-semibold text-sm block -mt-0.5">Media</span>
             </div>
           </Link>
 
@@ -62,7 +62,7 @@ export default function Navbar() {
                 onMouseEnter={() => link.dropdown && setActiveDropdown(link.name)}
                 onMouseLeave={() => setActiveDropdown(null)}>
                 <Link href={link.href}
-                  className="px-4 py-2 text-secondary hover:text-[var(--deep-blue)] dark:hover:text-[var(--baby-blue)] rounded-lg hover:bg-[var(--deep-blue)]/5 transition-all text-sm font-medium flex items-center gap-1">
+                  className="px-4 py-2 text-secondary hover-primary rounded-lg hover:bg-[var(--accent-bg)] transition-all text-sm font-medium flex items-center gap-1">
                   {link.name}
                   {link.dropdown && <ChevronDown className="w-4 h-4" />}
                 </Link>
@@ -72,7 +72,7 @@ export default function Navbar() {
                   <div className="absolute top-full left-0 mt-2 w-56 card rounded-xl shadow-xl p-2 animate-fade-in">
                     {link.dropdown.map((item) => (
                       <Link key={item.name} href={item.href}
-                        className="block px-4 py-2.5 text-sm text-secondary hover:text-[var(--deep-blue)] hover:bg-[var(--deep-blue)]/5 rounded-lg transition">
+                        className="block px-4 py-2.5 text-sm text-secondary hover-primary hover:bg-[var(--accent-bg)] rounded-lg transition">
                         {item.name}
                       </Link>
                     ))}
@@ -85,14 +85,14 @@ export default function Navbar() {
           {/* Right Side */}
           <div className="hidden lg:flex items-center gap-3">
             <button onClick={toggleTheme}
-              className="w-10 h-10 rounded-xl card flex items-center justify-center hover:border-[var(--deep-blue)] transition shadow-sm">
-              {theme === "dark" ? <Sun className="w-5 h-5 text-[var(--golden-yellow)]" /> : <Moon className="w-5 h-5 text-[var(--deep-blue)]" />}
+              className="w-10 h-10 rounded-xl card flex items-center justify-center hover-primary transition shadow-sm">
+              {theme === "dark" ? <Sun className="w-5 h-5 icon-gold" /> : <Moon className="w-5 h-5 icon-primary" />}
             </button>
-            <a href="tel:+919876543210" className="hidden xl:flex items-center gap-2 text-secondary hover:text-[var(--deep-blue)] transition text-sm font-medium">
-              <div className="w-8 h-8 bg-[var(--deep-blue)]/10 rounded-lg flex items-center justify-center">
-                <Phone className="w-4 h-4 text-[var(--deep-blue)]" />
+            <a href="tel:+917067235788" className="hidden xl:flex items-center gap-2 text-secondary hover-primary transition text-sm font-medium">
+              <div className="w-8 h-8 badge-bg rounded-lg flex items-center justify-center">
+                <Phone className="w-4 h-4 icon-primary" />
               </div>
-              +91 98765 43210
+              +91 70672 35788
             </a>
             <Link href="/contact" className="px-6 py-2.5 btn-gold rounded-full font-semibold text-sm">
               Get Free Quote
@@ -102,7 +102,7 @@ export default function Navbar() {
           {/* Mobile Buttons */}
           <div className="flex lg:hidden items-center gap-2">
             <button onClick={toggleTheme} className="w-10 h-10 rounded-xl card flex items-center justify-center shadow-sm">
-              {theme === "dark" ? <Sun className="w-5 h-5 text-[var(--golden-yellow)]" /> : <Moon className="w-5 h-5 text-[var(--deep-blue)]" />}
+              {theme === "dark" ? <Sun className="w-5 h-5 icon-gold" /> : <Moon className="w-5 h-5 icon-primary" />}
             </button>
             <button onClick={() => setIsOpen(!isOpen)} className="w-10 h-10 rounded-xl card flex items-center justify-center shadow-sm">
               {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -116,14 +116,14 @@ export default function Navbar() {
             {navLinks.map((link) => (
               <div key={link.name}>
                 <Link href={link.href} onClick={() => !link.dropdown && setIsOpen(false)}
-                  className="block px-4 py-3 text-secondary hover:text-[var(--deep-blue)] hover:bg-[var(--deep-blue)]/5 rounded-xl transition font-medium">
+                  className="block px-4 py-3 text-secondary hover-primary hover:bg-[var(--accent-bg)] rounded-xl transition font-medium">
                   {link.name}
                 </Link>
                 {link.dropdown && (
                   <div className="pl-4 space-y-1">
                     {link.dropdown.map((item) => (
                       <Link key={item.name} href={item.href} onClick={() => setIsOpen(false)}
-                        className="block px-4 py-2 text-sm text-muted hover:text-[var(--deep-blue)] rounded-lg transition">
+                        className="block px-4 py-2 text-sm text-muted hover-primary rounded-lg transition">
                         {item.name}
                       </Link>
                     ))}

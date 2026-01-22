@@ -19,7 +19,8 @@ const services = [
       "Monthly Ranking Reports"
     ],
     benefits: ["300% Average Traffic Increase", "Top 10 Rankings Guaranteed", "Long-term Sustainable Growth"],
-    stats: { metric: "300%", label: "Avg. Traffic Growth" }
+    stats: { metric: "300%", label: "Avg. Traffic Growth" },
+    link: "/services/seo"
   },
   {
     id: "smm",
@@ -37,7 +38,8 @@ const services = [
       "Analytics & Performance Reports"
     ],
     benefits: ["10M+ Reach Generated", "500K+ Followers Grown", "Viral Campaign Expertise"],
-    stats: { metric: "10M+", label: "Reach Generated" }
+    stats: { metric: "10M+", label: "Reach Generated" },
+    link: "/services/social-media"
   },
   {
     id: "ppc",
@@ -55,7 +57,8 @@ const services = [
       "Conversion Tracking & Analytics"
     ],
     benefits: ["5x Average ROAS", "Lower Cost Per Lead", "Instant Traffic & Results"],
-    stats: { metric: "5x", label: "Average ROAS" }
+    stats: { metric: "5x", label: "Average ROAS" },
+    link: "/services/ppc"
   },
   {
     id: "content",
@@ -73,7 +76,8 @@ const services = [
       "Content Distribution"
     ],
     benefits: ["200% Engagement Boost", "Thought Leadership", "Lead Generation"],
-    stats: { metric: "200%", label: "Engagement Increase" }
+    stats: { metric: "200%", label: "Engagement Increase" },
+    link: "/services/content-marketing"
   },
   {
     id: "web",
@@ -91,7 +95,8 @@ const services = [
       "Ongoing Maintenance"
     ],
     benefits: ["99% Client Satisfaction", "Mobile-First Design", "SEO Optimized"],
-    stats: { metric: "99%", label: "Client Satisfaction" }
+    stats: { metric: "99%", label: "Client Satisfaction" },
+    link: "/services/web-development"
   },
   {
     id: "branding",
@@ -109,7 +114,8 @@ const services = [
       "Brand Voice & Messaging"
     ],
     benefits: ["100+ Brands Created", "Unique Identity", "Consistent Branding"],
-    stats: { metric: "100+", label: "Brands Created" }
+    stats: { metric: "100+", label: "Brands Created" },
+    link: "/services/brand-identity"
   }
 ];
 
@@ -127,13 +133,13 @@ export default function Services() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-[var(--deep-blue)]/10 dark:bg-[var(--baby-blue)]/10 rounded-full mb-4">
-            <Target className="w-4 h-4 text-[var(--deep-blue)] dark:text-[var(--baby-blue)]" />
-            <span className="text-sm font-medium text-[var(--deep-blue)] dark:text-[var(--baby-blue)]">Our Services</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 badge-bg rounded-full mb-4">
+            <Target className="w-4 h-4 icon-primary" />
+            <span className="text-sm font-medium badge-text">Our Services</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-            Full-Service <span className="text-[var(--deep-blue)] dark:text-[var(--baby-blue)]">Digital Marketing</span>
-            <span className="block text-[var(--golden-yellow)]">Solutions</span>
+            Full-Service <span className="heading-primary">Digital Marketing</span>
+            <span className="block text-gold">Solutions</span>
           </h2>
           <p className="text-lg text-secondary max-w-3xl mx-auto">
             Everything you need to dominate online. From SEO to Social Media, PPC to Content Marketing - 
@@ -149,8 +155,8 @@ export default function Services() {
               onClick={() => setActiveService(service)}
               className={`px-4 sm:px-6 py-2.5 sm:py-3 rounded-full text-sm font-semibold transition-all flex items-center gap-2 ${
                 activeService.id === service.id
-                  ? "bg-[var(--deep-blue)] text-white shadow-lg shadow-[var(--deep-blue)]/30"
-                  : "card hover:border-[var(--deep-blue)] text-secondary"
+                  ? "bg-brand text-white shadow-lg"
+                  : "card hover-primary text-secondary"
               }`}
             >
               <service.icon className="w-4 h-4" />
@@ -166,11 +172,11 @@ export default function Services() {
           <div className="card rounded-3xl p-6 sm:p-8 lg:p-10 shadow-xl">
             <div className="flex items-center gap-4 mb-6">
               <div className="w-16 h-16 icon-bg rounded-2xl flex items-center justify-center">
-                <activeService.icon className="w-8 h-8 text-[var(--deep-blue)] dark:text-[var(--baby-blue)]" />
+                <activeService.icon className="w-8 h-8 icon-primary" />
               </div>
               <div>
                 <h3 className="text-2xl sm:text-3xl font-bold">{activeService.title}</h3>
-                <p className="text-[var(--golden-yellow)] font-medium">{activeService.tagline}</p>
+                <p className="text-gold font-medium">{activeService.tagline}</p>
               </div>
             </div>
 
@@ -184,8 +190,8 @@ export default function Services() {
               <div className="grid sm:grid-cols-2 gap-3">
                 {activeService.features.map((feature, i) => (
                   <div key={i} className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full bg-[var(--deep-blue)]/10 dark:bg-[var(--baby-blue)]/20 flex items-center justify-center shrink-0 mt-0.5">
-                      <Check className="w-3 h-3 text-[var(--deep-blue)] dark:text-[var(--baby-blue)]" />
+                    <div className="w-5 h-5 rounded-full badge-bg flex items-center justify-center shrink-0 mt-0.5">
+                      <Check className="w-3 h-3 icon-primary" />
                     </div>
                     <span className="text-sm text-secondary">{feature}</span>
                   </div>
@@ -196,26 +202,31 @@ export default function Services() {
             {/* Benefits */}
             <div className="flex flex-wrap gap-2 mb-8">
               {activeService.benefits.map((benefit, i) => (
-                <span key={i} className="px-4 py-2 bg-[var(--golden-yellow)]/10 text-[var(--charcoal)] dark:text-[var(--golden-yellow)] rounded-full text-sm font-medium">
+                <span key={i} className="px-4 py-2 bg-gold/10 text-gold rounded-full text-sm font-medium">
                   {benefit}
                 </span>
               ))}
             </div>
 
-            <a href="#contact" className="inline-flex items-center gap-2 px-6 py-3 btn-primary rounded-full font-semibold">
-              Get Started <ArrowRight className="w-4 h-4" />
-            </a>
+            <div className="flex gap-4">
+              <a href={activeService.link} className="inline-flex items-center gap-2 px-6 py-3 btn-primary rounded-full font-semibold">
+                Learn More <ArrowRight className="w-4 h-4" />
+              </a>
+              <a href="#contact" className="inline-flex items-center gap-2 px-6 py-3 btn-outline rounded-full font-semibold">
+                Get Started
+              </a>
+            </div>
           </div>
 
           {/* Right - Stats & Visual */}
           <div className="space-y-6">
             {/* Main Stat Card */}
-            <div className="card rounded-3xl p-8 sm:p-10 shadow-xl text-center bg-[var(--deep-blue)] text-white">
-              <activeService.icon className="w-16 h-16 mx-auto mb-6 text-[var(--baby-blue)]" />
-              <div className="text-6xl sm:text-7xl font-bold text-[var(--golden-yellow)] mb-2">
+            <div className="card rounded-3xl p-8 sm:p-10 shadow-xl text-center bg-brand-section text-white">
+              <activeService.icon className="w-16 h-16 mx-auto mb-6 text-baby-blue" />
+              <div className="text-6xl sm:text-7xl font-bold icon-gold mb-2">
                 {activeService.stats.metric}
               </div>
-              <div className="text-lg text-[var(--baby-blue)]">{activeService.stats.label}</div>
+              <div className="text-lg text-baby-blue">{activeService.stats.label}</div>
             </div>
 
             {/* Why Choose Us */}
@@ -224,8 +235,8 @@ export default function Services() {
               <div className="space-y-3">
                 {["Proven Track Record", "Dedicated Team", "Transparent Reporting", "ROI Focused"].map((item, i) => (
                   <div key={i} className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-[var(--golden-yellow)]/20 rounded-lg flex items-center justify-center">
-                      <Check className="w-4 h-4 text-[var(--golden-yellow)]" />
+                    <div className="w-8 h-8 bg-gold/20 rounded-lg flex items-center justify-center">
+                      <Check className="w-4 h-4 icon-gold" />
                     </div>
                     <span className="text-secondary">{item}</span>
                   </div>
@@ -240,22 +251,22 @@ export default function Services() {
           <h3 className="text-2xl font-bold text-center mb-10">All Services Overview</h3>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service) => (
-              <div
+              <a
                 key={service.id}
-                onClick={() => setActiveService(service)}
-                className={`card rounded-2xl p-6 cursor-pointer transition-all hover:shadow-xl ${
-                  activeService.id === service.id ? "border-[var(--deep-blue)] shadow-lg" : ""
+                href={service.link}
+                className={`card rounded-2xl p-6 cursor-pointer transition-all hover:shadow-xl hover-primary block ${
+                  activeService.id === service.id ? "active-border shadow-lg" : ""
                 }`}
               >
                 <div className="w-14 h-14 icon-bg rounded-xl flex items-center justify-center mb-4">
-                  <service.icon className="w-7 h-7 text-[var(--deep-blue)] dark:text-[var(--baby-blue)]" />
+                  <service.icon className="w-7 h-7 icon-primary" />
                 </div>
                 <h4 className="text-lg font-bold mb-2">{service.title}</h4>
                 <p className="text-sm text-muted mb-4 line-clamp-2">{service.description}</p>
-                <div className="flex items-center gap-2 text-[var(--deep-blue)] dark:text-[var(--baby-blue)] font-medium text-sm">
+                <div className="flex items-center gap-2 badge-text font-medium text-sm">
                   Learn More <ArrowRight className="w-4 h-4" />
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         </div>

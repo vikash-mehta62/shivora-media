@@ -54,12 +54,12 @@ export default function ContactPage() {
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[var(--deep-blue)]/10 dark:bg-[var(--baby-blue)]/10 rounded-full mb-4">
-              <MessageCircle className="w-4 h-4 text-[var(--deep-blue)] dark:text-[var(--baby-blue)]" />
-              <span className="text-sm font-medium text-[var(--deep-blue)] dark:text-[var(--baby-blue)]">Contact Us</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 badge-bg rounded-full mb-4">
+              <MessageCircle className="w-4 h-4 badge-text" />
+              <span className="text-sm font-medium badge-text">Contact Us</span>
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-              Let&apos;s Start Your <span className="text-[var(--deep-blue)] dark:text-[var(--baby-blue)]">Growth Journey</span>
+              Let&apos;s Start Your <span className="badge-text">Growth Journey</span>
             </h1>
             <p className="text-xl text-secondary max-w-3xl mx-auto">
               Ready to transform your digital presence? Get a free consultation and custom 
@@ -74,9 +74,9 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {contactInfo.map((info, i) => (
-              <a key={i} href={info.link} className="card rounded-2xl p-6 hover:shadow-xl hover:border-[var(--deep-blue)] transition-all group">
+              <a key={i} href={info.link} className="card rounded-2xl p-6 hover:shadow-xl hover-primary transition-all group">
                 <div className="w-14 h-14 icon-bg rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                  <info.icon className="w-7 h-7 text-[var(--deep-blue)] dark:text-[var(--baby-blue)]" />
+                  <info.icon className="w-7 h-7 badge-text" />
                 </div>
                 <div className="text-muted text-sm mb-1">{info.label}</div>
                 <div className="font-semibold text-lg mb-1">{info.value}</div>
@@ -99,13 +99,13 @@ export default function ContactPage() {
               </div>
 
               {/* Quick Stats */}
-              <div className="card rounded-2xl p-6 shadow-lg bg-[var(--deep-blue)] text-white">
-                <h4 className="font-semibold mb-4 text-[var(--baby-blue)]">Why Contact Us?</h4>
+              <div className="card rounded-2xl p-6 shadow-lg bg-brand-section text-white">
+                <h4 className="font-semibold mb-4 text-baby-blue">Why Contact Us?</h4>
                 <div className="grid grid-cols-2 gap-4">
                   {[{ num: "24hr", label: "Response Time" }, { num: "Free", label: "Consultation" }, { num: "150+", label: "Happy Clients" }, { num: "5.0", label: "Client Rating" }].map((s, i) => (
                     <div key={i} className="text-center p-4 bg-white/10 rounded-xl">
-                      <div className="text-2xl font-bold text-[var(--golden-yellow)]">{s.num}</div>
-                      <div className="text-sm text-[var(--baby-blue)]">{s.label}</div>
+                      <div className="text-2xl font-bold text-gold">{s.num}</div>
+                      <div className="text-sm text-baby-blue">{s.label}</div>
                     </div>
                   ))}
                 </div>
@@ -116,7 +116,7 @@ export default function ContactPage() {
                 <h4 className="font-semibold mb-4">Follow Us</h4>
                 <div className="flex gap-3">
                   {[Facebook, Instagram, Twitter, Linkedin].map((Icon, i) => (
-                    <a key={i} href="#" className="w-12 h-12 card rounded-xl flex items-center justify-center hover:bg-[var(--deep-blue)] hover:text-white transition">
+                    <a key={i} href="#" className="w-12 h-12 card rounded-xl flex items-center justify-center hover:bg-brand hover:text-white transition">
                       <Icon className="w-5 h-5" />
                     </a>
                   ))}
@@ -139,7 +139,7 @@ export default function ContactPage() {
                 ) : (
                   <form onSubmit={submit}>
                     <div className="flex items-center gap-3 mb-6">
-                      <Send className="w-6 h-6 text-[var(--deep-blue)] dark:text-[var(--baby-blue)]" />
+                      <Send className="w-6 h-6 badge-text" />
                       <h3 className="text-xl font-bold">Get Your Free Quote</h3>
                     </div>
                     <div className="grid sm:grid-cols-2 gap-4 mb-4">
@@ -239,7 +239,7 @@ export default function ContactPage() {
           </div>
           <div className="card rounded-2xl overflow-hidden shadow-xl h-[400px] flex items-center justify-center bg-[var(--bg-secondary)]">
             <div className="text-center">
-              <MapPin className="w-16 h-16 text-[var(--deep-blue)] dark:text-[var(--baby-blue)] mx-auto mb-4" />
+              <MapPin className="w-16 h-16 badge-text mx-auto mb-4" />
               <h3 className="text-xl font-bold mb-2">Shivora Media</h3>
               <p className="text-secondary">Connaught Place, New Delhi - 110001</p>
               <p className="text-muted text-sm mt-2">By appointment only</p>

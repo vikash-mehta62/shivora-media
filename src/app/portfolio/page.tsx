@@ -99,12 +99,12 @@ export default function PortfolioPage() {
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[var(--deep-blue)]/10 dark:bg-[var(--baby-blue)]/10 rounded-full mb-4">
-              <Briefcase className="w-4 h-4 text-[var(--deep-blue)] dark:text-[var(--baby-blue)]" />
-              <span className="text-sm font-medium text-[var(--deep-blue)] dark:text-[var(--baby-blue)]">Our Portfolio</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 badge-bg rounded-full mb-4">
+              <Briefcase className="w-4 h-4 badge-text" />
+              <span className="text-sm font-medium badge-text">Our Portfolio</span>
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-              Success Stories That <span className="text-[var(--deep-blue)] dark:text-[var(--baby-blue)]">Inspire</span>
+              Success Stories That <span className="badge-text">Inspire</span>
             </h1>
             <p className="text-xl text-secondary max-w-3xl mx-auto">
               Real results from real clients. See how we&apos;ve helped businesses like yours 
@@ -115,7 +115,7 @@ export default function PortfolioPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[{ num: "500+", label: "Projects Completed" }, { num: "₹50Cr+", label: "Revenue Generated" }, { num: "150+", label: "Happy Clients" }, { num: "5x", label: "Avg. ROI" }].map((s, i) => (
               <div key={i} className="card rounded-2xl p-6 text-center">
-                <div className="text-3xl font-bold text-[var(--deep-blue)] dark:text-[var(--golden-yellow)]">{s.num}</div>
+                <div className="text-3xl font-bold text-[var(--deep-blue)] dark:text-gold">{s.num}</div>
                 <div className="text-sm text-muted">{s.label}</div>
               </div>
             ))}
@@ -130,7 +130,7 @@ export default function PortfolioPage() {
             {categories.map((cat) => (
               <button key={cat} onClick={() => setActiveCategory(cat)}
                 className={`px-6 py-3 rounded-full font-semibold transition-all ${
-                  activeCategory === cat ? "bg-[var(--deep-blue)] text-white shadow-lg" : "card hover:border-[var(--deep-blue)] text-secondary"
+                  activeCategory === cat ? "bg-brand-section text-white shadow-lg" : "card hover-primary text-secondary"
                 }`}>{cat}</button>
             ))}
           </div>
@@ -154,18 +154,18 @@ export default function PortfolioPage() {
                 </div>
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-4">
-                    <span className="text-sm font-medium text-[var(--deep-blue)] dark:text-[var(--baby-blue)]">{project.category}</span>
+                    <span className="text-sm font-medium badge-text">{project.category}</span>
                     <span className="text-sm text-muted">{project.client}</span>
                   </div>
                   <div className="grid grid-cols-3 gap-2 mb-4">
                     {project.results.map((r, i) => (
                       <div key={i} className="text-center p-2 bg-[var(--bg-secondary)] rounded-lg">
-                        <div className="text-lg font-bold text-[var(--deep-blue)] dark:text-[var(--golden-yellow)]">{r.metric}</div>
+                        <div className="text-lg font-bold text-[var(--deep-blue)] dark:text-gold">{r.metric}</div>
                         <div className="text-[10px] text-muted">{r.label}</div>
                       </div>
                     ))}
                   </div>
-                  <div className="flex items-center gap-2 text-[var(--deep-blue)] dark:text-[var(--baby-blue)] font-medium text-sm">
+                  <div className="flex items-center gap-2 badge-text font-medium text-sm">
                     View Case Study <ArrowRight className="w-4 h-4" />
                   </div>
                 </div>
@@ -178,9 +178,9 @@ export default function PortfolioPage() {
       {/* CTA */}
       <section className="py-20 section-alt">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="card rounded-3xl p-10 sm:p-16 text-center bg-[var(--deep-blue)] text-white">
+          <div className="card rounded-3xl p-10 sm:p-16 text-center bg-brand-section text-white">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">Ready to Be Our Next Success Story?</h2>
-            <p className="text-[var(--baby-blue)] mb-8 text-lg">Let&apos;s discuss how we can help achieve similar results for your business.</p>
+            <p className="text-baby-blue mb-8 text-lg">Let&apos;s discuss how we can help achieve similar results for your business.</p>
             <a href="/contact" className="inline-flex items-center gap-2 px-8 py-4 btn-gold rounded-full font-semibold text-lg">
               Start Your Project <ArrowRight className="w-5 h-5" />
             </a>
@@ -215,11 +215,11 @@ export default function PortfolioPage() {
               </div>
               <div className="space-y-6 mb-8">
                 <div>
-                  <h4 className="font-semibold mb-2 text-[var(--deep-blue)] dark:text-[var(--baby-blue)]">Challenge</h4>
+                  <h4 className="font-semibold mb-2 badge-text">Challenge</h4>
                   <p className="text-secondary">{selectedProject.challenge}</p>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-2 text-[var(--deep-blue)] dark:text-[var(--baby-blue)]">Solution</h4>
+                  <h4 className="font-semibold mb-2 badge-text">Solution</h4>
                   <p className="text-secondary">{selectedProject.solution}</p>
                 </div>
               </div>
@@ -227,7 +227,7 @@ export default function PortfolioPage() {
               <div className="grid grid-cols-3 gap-4 mb-6">
                 {selectedProject.results.map((r, i) => (
                   <div key={i} className="text-center p-4 bg-[var(--bg-secondary)] rounded-xl">
-                    <div className="text-2xl font-bold text-[var(--deep-blue)] dark:text-[var(--golden-yellow)]">{r.metric}</div>
+                    <div className="text-2xl font-bold text-[var(--deep-blue)] dark:text-gold">{r.metric}</div>
                     <div className="text-sm text-muted">{r.label}</div>
                   </div>
                 ))}

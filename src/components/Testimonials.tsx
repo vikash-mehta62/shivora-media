@@ -88,12 +88,12 @@ export default function Testimonials() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-[var(--deep-blue)]/10 dark:bg-[var(--baby-blue)]/10 rounded-full mb-4">
-            <MessageSquare className="w-4 h-4 text-[var(--deep-blue)] dark:text-[var(--baby-blue)]" />
-            <span className="text-sm font-medium text-[var(--deep-blue)] dark:text-[var(--baby-blue)]">Client Testimonials</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 badge-bg rounded-full mb-4">
+            <MessageSquare className="w-4 h-4 icon-primary" />
+            <span className="text-sm font-medium badge-text">Client Testimonials</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-            What Our <span className="text-[var(--deep-blue)] dark:text-[var(--baby-blue)]">Clients Say</span>
+            What Our <span className="heading-primary">Clients Say</span>
           </h2>
           <p className="text-lg text-secondary max-w-3xl mx-auto">
             Don&apos;t just take our word for it. Here&apos;s what business owners and marketing 
@@ -105,17 +105,17 @@ export default function Testimonials() {
         <div className="max-w-5xl mx-auto mb-12" onMouseEnter={() => setAutoPlay(false)} onMouseLeave={() => setAutoPlay(true)}>
           <div className="card rounded-3xl p-8 sm:p-12 shadow-2xl relative">
             {/* Quote Icon */}
-            <Quote className="absolute top-6 right-6 w-16 h-16 text-[var(--deep-blue)]/10 dark:text-[var(--baby-blue)]/10" />
+            <Quote className="absolute top-6 right-6 w-16 h-16 badge-bg opacity-50" />
 
             {/* Service Badge */}
-            <div className="inline-block px-4 py-1.5 bg-[var(--golden-yellow)]/20 text-[var(--charcoal)] dark:text-[var(--golden-yellow)] rounded-full text-sm font-medium mb-6">
+            <div className="inline-block px-4 py-1.5 bg-[var(--golden-yellow)]/20 text-gold rounded-full text-sm font-medium mb-6">
               {testimonials[active].service}
             </div>
 
             {/* Stars */}
             <div className="flex gap-1 mb-6">
               {[...Array(testimonials[active].rating)].map((_, i) => (
-                <Star key={i} className="w-6 h-6 text-[var(--golden-yellow)] fill-[var(--golden-yellow)]" />
+                <Star key={i} className="w-6 h-6 icon-gold fill-current" />
               ))}
             </div>
 
@@ -127,13 +127,13 @@ export default function Testimonials() {
             {/* Author Info */}
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
               <div className="flex items-center gap-4">
-                <div className="w-16 h-16 bg-[var(--deep-blue)] rounded-2xl flex items-center justify-center text-white text-xl font-bold">
+                <div className="w-16 h-16 bg-brand rounded-2xl flex items-center justify-center text-white text-xl font-bold">
                   {testimonials[active].image}
                 </div>
                 <div>
                   <div className="font-bold text-lg">{testimonials[active].name}</div>
                   <div className="text-muted">{testimonials[active].role}</div>
-                  <div className="flex items-center gap-2 text-sm text-[var(--deep-blue)] dark:text-[var(--baby-blue)]">
+                  <div className="flex items-center gap-2 text-sm badge-text">
                     <Building2 className="w-4 h-4" />
                     {testimonials[active].company}
                   </div>
@@ -141,7 +141,7 @@ export default function Testimonials() {
               </div>
               <div className="card rounded-xl px-6 py-3 shadow-md">
                 <div className="text-sm text-muted">Result Achieved</div>
-                <div className="text-xl font-bold text-[var(--deep-blue)] dark:text-[var(--golden-yellow)]">
+                <div className="text-xl font-bold icon-gold">
                   {testimonials[active].result}
                 </div>
               </div>
@@ -149,12 +149,12 @@ export default function Testimonials() {
 
             {/* Navigation */}
             <div className="absolute top-1/2 -translate-y-1/2 left-2 sm:-left-6">
-              <button onClick={prev} className="w-12 h-12 card rounded-full flex items-center justify-center shadow-lg hover:bg-[var(--deep-blue)] hover:text-white transition">
+              <button onClick={prev} className="w-12 h-12 card rounded-full flex items-center justify-center shadow-lg hover:bg-brand hover:text-white transition">
                 <ChevronLeft className="w-6 h-6" />
               </button>
             </div>
             <div className="absolute top-1/2 -translate-y-1/2 right-2 sm:-right-6">
-              <button onClick={next} className="w-12 h-12 card rounded-full flex items-center justify-center shadow-lg hover:bg-[var(--deep-blue)] hover:text-white transition">
+              <button onClick={next} className="w-12 h-12 card rounded-full flex items-center justify-center shadow-lg hover:bg-brand hover:text-white transition">
                 <ChevronRight className="w-6 h-6" />
               </button>
             </div>
@@ -169,8 +169,8 @@ export default function Testimonials() {
               onClick={() => setActive(i)}
               className={`transition-all ${
                 active === i
-                  ? "w-10 h-3 bg-[var(--deep-blue)] dark:bg-[var(--golden-yellow)] rounded-full"
-                  : "w-3 h-3 bg-[var(--border-color)] rounded-full hover:bg-[var(--deep-blue)]/50"
+                  ? "w-10 h-3 bg-brand rounded-full"
+                  : "w-3 h-3 bg-[var(--border-color)] rounded-full hover:bg-brand/50"
               }`}
             />
           ))}
@@ -182,12 +182,12 @@ export default function Testimonials() {
             <button
               key={t.id}
               onClick={() => setActive(i)}
-              className={`card rounded-xl p-4 text-left transition-all ${
-                active === i ? "border-[var(--deep-blue)] shadow-lg" : "hover:border-[var(--deep-blue)]/50"
+              className={`card rounded-xl p-4 text-left transition-all hover-primary ${
+                active === i ? "active-border shadow-lg" : ""
               }`}
             >
               <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 bg-[var(--deep-blue)] rounded-xl flex items-center justify-center text-white text-sm font-bold">
+                <div className="w-10 h-10 bg-brand rounded-xl flex items-center justify-center text-white text-sm font-bold">
                   {t.image}
                 </div>
                 <div className="min-w-0">
@@ -197,10 +197,10 @@ export default function Testimonials() {
               </div>
               <div className="flex gap-0.5 mb-2">
                 {[...Array(t.rating)].map((_, j) => (
-                  <Star key={j} className="w-3 h-3 text-[var(--golden-yellow)] fill-[var(--golden-yellow)]" />
+                  <Star key={j} className="w-3 h-3 icon-gold fill-current" />
                 ))}
               </div>
-              <div className="text-xs text-[var(--deep-blue)] dark:text-[var(--baby-blue)] font-medium">{t.result}</div>
+              <div className="text-xs badge-text font-medium">{t.result}</div>
             </button>
           ))}
         </div>
