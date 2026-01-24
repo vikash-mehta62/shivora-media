@@ -40,7 +40,7 @@ export default function Footer() {
     <footer className="relative overflow-hidden section-alt">
       {/* CTA Section - Enquire Now */}
       <div className="border-t border-brand-light">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+        <div className="max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <div className="card rounded-3xl p-8 sm:p-12 lg:p-16 text-center relative overflow-hidden shadow-2xl bg-brand-section text-white">
             <div className="absolute top-0 right-0 w-64 h-64 bg-baby-blue/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
             <div className="absolute bottom-0 left-0 w-48 h-48 bg-gold/10 rounded-full translate-y-1/2 -translate-x-1/2"></div>
@@ -69,20 +69,16 @@ export default function Footer() {
 
       {/* Main Footer */}
       <div className="border-t border-brand-light">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 lg:gap-12">
             {/* Brand */}
             <div className="col-span-2">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="relative w-14 h-14 rounded-xl overflow-hidden shadow-lg border-2 border-brand-light">
-                  <Image src="/logo.jpeg" alt="Shivora Media" fill className="object-cover" />
-                </div>
-                <div>
-                  <span className="font-bold text-2xl heading-primary">Shivora</span>
-                  <span className="text-gold font-semibold text-sm block">Media</span>
+              <div className="mb-4">
+                <div className="relative w-40 h-12">
+                  <Image src="/Logo_new.png" alt="Shivora Media" fill className="object-contain" />
                 </div>
               </div>
-              <p className="text-secondary mb-6 max-w-sm">
+              <p className="text-secondary mb-4 max-w-sm text-sm">
                 Full-service digital marketing agency helping businesses grow online since 2018. 
                 Your trusted partner for SEO, Social Media, PPC & more.
               </p>
@@ -181,7 +177,7 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t border-brand-light">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-muted text-sm">
               © 2026 Shivora Media. All rights reserved.

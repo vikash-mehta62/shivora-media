@@ -153,7 +153,7 @@ export default function ServicesPage() {
           <div className="absolute bottom-0 left-0 w-[400px] h-[400px] blob-gold opacity-20"></div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-2 badge-bg rounded-full mb-4">
               <Target className="w-4 h-4 icon-primary" />
@@ -189,7 +189,7 @@ export default function ServicesPage() {
 
       {/* Service Tabs */}
       <section className="py-12 section-alt">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap justify-center gap-3 mb-12">
             {services.map((service) => (
               <button
@@ -211,7 +211,7 @@ export default function ServicesPage() {
 
       {/* Active Service Detail */}
       <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Left - Info */}
             <div>
@@ -291,7 +291,7 @@ export default function ServicesPage() {
 
       {/* All Services Grid */}
       <section className="py-20 section-alt">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center mb-12">All Services</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service) => (

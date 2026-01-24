@@ -47,7 +47,7 @@ export default function BlogPage() {
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-20 right-0 w-[600px] h-[600px] blob-blue opacity-30"></div>
         </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-2 badge-bg rounded-full mb-4">
               <BookOpen className="w-4 h-4 badge-text" />
@@ -75,7 +75,7 @@ export default function BlogPage() {
 
       {/* Categories */}
       <section className="py-8 section-alt sticky top-20 z-30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap justify-center gap-3">
             {categories.map((cat, i) => (
               <button key={i} className={`px-6 py-3 rounded-full font-semibold transition-all ${
@@ -88,7 +88,7 @@ export default function BlogPage() {
 
       {/* Blog Grid */}
       <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogs.map((blog) => (
               <article key={blog.id} className="group card rounded-2xl overflow-hidden hover:shadow-2xl transition-all hover:-translate-y-2">

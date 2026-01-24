@@ -39,7 +39,7 @@ export default function TeamPage() {
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-20 right-0 w-[600px] h-[600px] blob-blue opacity-30"></div>
         </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-2 badge-bg rounded-full mb-4">
               <Users className="w-4 h-4 badge-text" />
@@ -59,7 +59,7 @@ export default function TeamPage() {
 
       {/* Stats */}
       <section className="py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8">
           <div className="card rounded-3xl p-8 shadow-xl">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {stats.map((stat, i) => (
@@ -75,7 +75,7 @@ export default function TeamPage() {
 
       {/* Leadership Team */}
       <section className="py-20 section-alt">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">Leadership Team</h2>
             <p className="text-secondary">The experts driving your success</p>
@@ -109,7 +109,7 @@ export default function TeamPage() {
 
       {/* Departments */}
       <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">Our Departments</h2>
             <p className="text-secondary">Specialized teams for every aspect of digital marketing</p>
@@ -131,7 +131,7 @@ export default function TeamPage() {
 
       {/* Certifications */}
       <section className="py-20 section-alt">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">Our Certifications</h2>
             <p className="text-secondary">Industry-recognized expertise</p>

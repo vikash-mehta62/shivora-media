@@ -123,25 +123,25 @@ export default function Services() {
   const [activeService, setActiveService] = useState(services[0]);
 
   return (
-    <section id="services" className="py-20 sm:py-28 relative overflow-hidden">
+    <section id="services" className="py-12 sm:py-16 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-0 w-[500px] h-[500px] blob-blue opacity-20"></div>
         <div className="absolute bottom-0 right-0 w-[400px] h-[400px] blob-gold opacity-20"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 badge-bg rounded-full mb-4">
-            <Target className="w-4 h-4 icon-primary" />
-            <span className="text-sm font-medium badge-text">Our Services</span>
+        <div className="text-center mb-8">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 badge-bg rounded-full mb-2">
+            <Target className="w-3.5 h-3.5 icon-primary" />
+            <span className="text-xs font-medium badge-text">Our Services</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-2">
             Full-Service <span className="heading-primary">Digital Marketing</span>
             <span className="block text-gold">Solutions</span>
           </h2>
-          <p className="text-lg text-secondary max-w-3xl mx-auto">
+          <p className="text-sm text-secondary max-w-3xl mx-auto">
             Everything you need to dominate online. From SEO to Social Media, PPC to Content Marketing - 
             we provide comprehensive digital solutions tailored to your business goals.
           </p>
@@ -167,52 +167,52 @@ export default function Services() {
         </div>
 
         {/* Active Service Detail */}
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start mb-20">
+        <div className="grid lg:grid-cols-2 gap-4 lg:gap-6 items-start mb-10">
           {/* Left - Info */}
-          <div className="card rounded-3xl p-6 sm:p-8 lg:p-10 shadow-xl">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-16 h-16 icon-bg rounded-2xl flex items-center justify-center">
-                <activeService.icon className="w-8 h-8 icon-primary" />
+          <div className="card rounded-2xl p-4 sm:p-5 shadow-xl">
+            <div className="flex items-center gap-2.5 mb-3">
+              <div className="w-10 h-10 icon-bg rounded-xl flex items-center justify-center">
+                <activeService.icon className="w-5 h-5 icon-primary" />
               </div>
               <div>
-                <h3 className="text-2xl sm:text-3xl font-bold">{activeService.title}</h3>
-                <p className="text-gold font-medium">{activeService.tagline}</p>
+                <h3 className="text-lg sm:text-xl font-bold">{activeService.title}</h3>
+                <p className="text-gold font-medium text-xs">{activeService.tagline}</p>
               </div>
             </div>
 
-            <p className="text-secondary text-lg mb-8 leading-relaxed">
+            <p className="text-secondary text-sm mb-4 leading-relaxed">
               {activeService.description}
             </p>
 
             {/* Features */}
-            <div className="mb-8">
-              <h4 className="font-semibold mb-4 text-lg">What&apos;s Included:</h4>
-              <div className="grid sm:grid-cols-2 gap-3">
+            <div className="mb-4">
+              <h4 className="font-semibold mb-2 text-sm">What&apos;s Included:</h4>
+              <div className="grid sm:grid-cols-2 gap-1.5">
                 {activeService.features.map((feature, i) => (
-                  <div key={i} className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full badge-bg flex items-center justify-center shrink-0 mt-0.5">
-                      <Check className="w-3 h-3 icon-primary" />
+                  <div key={i} className="flex items-start gap-2">
+                    <div className="w-4 h-4 rounded-full badge-bg flex items-center justify-center shrink-0 mt-0.5">
+                      <Check className="w-2.5 h-2.5 icon-primary" />
                     </div>
-                    <span className="text-sm text-secondary">{feature}</span>
+                    <span className="text-xs text-secondary">{feature}</span>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Benefits */}
-            <div className="flex flex-wrap gap-2 mb-8">
+            <div className="flex flex-wrap gap-1.5 mb-4">
               {activeService.benefits.map((benefit, i) => (
-                <span key={i} className="px-4 py-2 bg-gold/10 text-gold rounded-full text-sm font-medium">
+                <span key={i} className="px-3 py-1.5 bg-gold/10 text-gold rounded-full text-xs font-medium">
                   {benefit}
                 </span>
               ))}
             </div>
 
-            <div className="flex gap-4">
-              <a href={activeService.link} className="inline-flex items-center gap-2 px-6 py-3 btn-primary rounded-full font-semibold">
-                Learn More <ArrowRight className="w-4 h-4" />
+            <div className="flex gap-2">
+              <a href={activeService.link} className="inline-flex items-center gap-1.5 px-5 py-2.5 btn-primary rounded-full font-semibold text-sm">
+                Learn More <ArrowRight className="w-3.5 h-3.5" />
               </a>
-              <a href="#contact" className="inline-flex items-center gap-2 px-6 py-3 btn-outline rounded-full font-semibold">
+              <a href="#contact" className="inline-flex items-center gap-1.5 px-5 py-2.5 btn-outline rounded-full font-semibold text-sm">
                 Get Started
               </a>
             </div>
@@ -221,24 +221,24 @@ export default function Services() {
           {/* Right - Stats & Visual */}
           <div className="space-y-6">
             {/* Main Stat Card */}
-            <div className="card rounded-3xl p-8 sm:p-10 shadow-xl text-center bg-brand-section text-white">
-              <activeService.icon className="w-16 h-16 mx-auto mb-6 text-baby-blue" />
-              <div className="text-6xl sm:text-7xl font-bold icon-gold mb-2">
+            <div className="card rounded-2xl p-6 sm:p-8 shadow-xl text-center bg-brand-section text-white">
+              <activeService.icon className="w-12 h-12 mx-auto mb-4 text-baby-blue" />
+              <div className="text-4xl sm:text-5xl font-bold icon-gold mb-1.5">
                 {activeService.stats.metric}
               </div>
-              <div className="text-lg text-baby-blue">{activeService.stats.label}</div>
+              <div className="text-sm text-baby-blue">{activeService.stats.label}</div>
             </div>
 
             {/* Why Choose Us */}
-            <div className="card rounded-2xl p-6 shadow-lg">
-              <h4 className="font-semibold mb-4">Why Choose Shivora Media?</h4>
-              <div className="space-y-3">
+            <div className="card rounded-xl p-4 shadow-lg">
+              <h4 className="font-semibold mb-3 text-sm">Why Choose Shivora Media?</h4>
+              <div className="space-y-2">
                 {["Proven Track Record", "Dedicated Team", "Transparent Reporting", "ROI Focused"].map((item, i) => (
-                  <div key={i} className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-gold/20 rounded-lg flex items-center justify-center">
-                      <Check className="w-4 h-4 icon-gold" />
+                  <div key={i} className="flex items-center gap-2">
+                    <div className="w-6 h-6 bg-gold/20 rounded-lg flex items-center justify-center">
+                      <Check className="w-3.5 h-3.5 icon-gold" />
                     </div>
-                    <span className="text-secondary">{item}</span>
+                    <span className="text-secondary text-xs">{item}</span>
                   </div>
                 ))}
               </div>
@@ -248,8 +248,8 @@ export default function Services() {
 
         {/* All Services Grid */}
         <div>
-          <h3 className="text-2xl font-bold text-center mb-10">All Services Overview</h3>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <h3 className="text-lg font-bold text-center mb-6">All Services Overview</h3>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {services.map((service) => (
               <a
                 key={service.id}

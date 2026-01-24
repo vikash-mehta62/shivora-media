@@ -52,7 +52,7 @@ export default function ContactPage() {
           <div className="absolute top-20 right-0 w-[600px] h-[600px] blob-blue opacity-30"></div>
           <div className="absolute bottom-0 left-0 w-[400px] h-[400px] blob-gold opacity-20"></div>
         </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-2 badge-bg rounded-full mb-4">
               <MessageCircle className="w-4 h-4 badge-text" />
@@ -71,7 +71,7 @@ export default function ContactPage() {
 
       {/* Contact Info Cards */}
       <section className="py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {contactInfo.map((info, i) => (
               <a key={i} href={info.link} className="card rounded-2xl p-6 hover:shadow-xl hover-primary transition-all group">
@@ -89,7 +89,7 @@ export default function ContactPage() {
 
       {/* Main Contact Section */}
       <section className="py-20 section-alt">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-5 gap-12">
             {/* Left - Info */}
             <div className="lg:col-span-2 space-y-8">
@@ -232,7 +232,7 @@ export default function ContactPage() {
 
       {/* Map Section */}
       <section id="map" className="py-20 section-alt">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">Visit Our Office</h2>
             <p className="text-secondary">Connaught Place, New Delhi, India</p>

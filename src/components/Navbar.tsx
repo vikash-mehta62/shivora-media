@@ -39,19 +39,15 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-500 ${
-      scrolled ? "glass py-2 shadow-xl" : "py-4 bg-transparent"
+    <nav className={`fixed w-full z-50 h-[80px] flex items-center transition-all duration-500 ${
+      scrolled ? "glass shadow-xl" : "bg-transparent"
     }`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-[92%] px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative w-12 h-12 sm:w-14 sm:h-14 rounded-xl overflow-hidden shadow-lg border-2 border-brand-light group-hover:border-brand transition-all">
-              <Image src="/logo.jpeg" alt="Shivora Media" fill className="object-cover" priority />
-            </div>
-            <div className="hidden sm:block">
-              <span className="font-bold text-xl heading-primary">Shivora</span>
-              <span className="text-gold font-semibold text-sm block -mt-0.5">Media</span>
+            <div className="relative w-32 h-11 group-hover:opacity-90 transition-all">
+              <Image src="/Logo_new.png" alt="Shivora Media" fill className="object-contain" priority />
             </div>
           </Link>
 

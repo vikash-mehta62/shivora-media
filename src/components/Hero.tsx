@@ -22,7 +22,7 @@ export default function Hero() {
   useEffect(() => setMounted(true), []);
 
   return (
-    <section id="home" className="min-h-screen relative overflow-hidden pt-20">
+    <section id="home" className="relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 right-0 w-[600px] h-[600px] blob-blue opacity-40 animate-pulse-glow"></div>
@@ -30,75 +30,74 @@ export default function Hero() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] blob-blue opacity-20"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div className="mx-auto max-w-[92%] px-4 sm:px-6 lg:px-8 py-8 sm:py-12 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 items-center">
           {/* Left Content */}
           <div className={`${mounted ? "animate-slide-up" : "opacity-0"}`}>
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 badge-bg rounded-full mb-6">
-              <Zap className="w-4 h-4 icon-gold" />
-              <span className="text-sm font-medium badge-text">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 badge-bg rounded-full mb-3">
+              <Zap className="w-3.5 h-3.5 icon-gold" />
+              <span className="text-xs font-medium badge-text">
                 #1 Digital Marketing Agency in India
               </span>
             </div>
 
             {/* Heading */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] mb-6">
-              <span className="block">Rank, Grow &</span>
-              <span className="block">Succeed</span>
-              <span className="block text-gold">Online</span>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-3">
+              <span className="">Rank, Grow & Succeed</span>
+              <span className=" text-gold">{" "}Online</span>
             </h1>
 
             {/* Description */}
-            <p className="text-lg sm:text-xl text-secondary mb-8 max-w-xl leading-relaxed">
+            <p className="text-base text-secondary mb-5 max-w-xl leading-relaxed">
               A results-driven digital marketing company offering search engine optimization (SEO), 
               social media management, video production, video marketing, paid advertising, content 
               creation, and web design services. Turning businesses into powerful digital brands.
             </p>
 
             {/* Features */}
-            <div className="grid grid-cols-2 gap-3 mb-8">
+            <div className="grid grid-cols-2 gap-2 mb-5">
               {features.map((feature, i) => (
-                <div key={i} className="flex items-center gap-2">
-                  <CheckCircle className="w-5 h-5 icon-primary shrink-0" />
+                <div key={i} className="flex items-center gap-1.5">
+                  <CheckCircle className="w-4 h-4 icon-primary shrink-0" />
                   <span className="text-sm text-secondary">{feature}</span>
                 </div>
               ))}
             </div>
 
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-4 mb-10">
-              <a href="#contact" className="px-8 py-4 btn-primary rounded-full font-semibold text-lg inline-flex items-center justify-center gap-2 group">
+            <div className="flex flex-col sm:flex-row gap-3 mb-6">
+              <a href="#contact" className="px-6 py-3 btn-primary rounded-full font-semibold text-sm inline-flex items-center justify-center gap-2 group">
                 Start Your Project
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
-              <a href="#portfolio" className="px-8 py-4 btn-outline rounded-full font-semibold text-lg inline-flex items-center justify-center gap-2">
-                <Play className="w-5 h-5" /> View Our Work
+              <a href="#portfolio" className="px-6 py-3 btn-outline rounded-full font-semibold text-sm inline-flex items-center justify-center gap-2">
+                <Play className="w-4 h-4" /> View Our Work
               </a>
             </div>
 
             {/* Trust Indicators */}
-            <div className="flex items-center gap-6 flex-wrap">
+            <div className="flex items-center gap-4 flex-wrap">
               <div className="flex items-center gap-2">
                 <div className="flex -space-x-2">
                   {[1,2,3,4].map((i) => (
-                    <div key={i} className="w-10 h-10 rounded-full bg-brand border-2 border-white dark:border-bg-primary flex items-center justify-center text-white text-xs font-bold">
+                    <div key={i} className="w-8 h-8 rounded-full bg-brand border-2 border-white dark:border-bg-primary flex items-center justify-center text-white text-xs font-bold">
                       {String.fromCharCode(64 + i)}
                     </div>
                   ))}
                 </div>
-                <div className="text-sm">
+                <div className="text-xs">
                   <div className="font-semibold">150+ Happy Clients</div>
                   <div className="flex items-center gap-1 icon-gold">
-                    {[1,2,3,4,5].map((i) => <Star key={i} className="w-3 h-3 fill-current" />)}
+                    {[1,2,3,4,5].map((i) => <Star key={i} className="w-2.5 h-2.5 fill-current" />)}
                     <span className="text-muted ml-1">5.0</span>
                   </div>
                 </div>
               </div>
-              <div className="h-10 w-px bg-secondary-light hidden sm:block"></div>
+              <div className="h-8 w-px bg-secondary-light hidden sm:block"></div>
               <div className="flex items-center gap-2">
-                <Award className="w-8 h-8 icon-gold" />
-                <div className="text-sm">
+                <Award className="w-6 h-6 icon-gold" />
+                <div className="text-xs">
                   <div className="font-semibold">Google Partner</div>
                   <div className="text-muted">Certified Agency</div>
                 </div>
@@ -157,14 +156,14 @@ export default function Hero() {
         </div>
 
         {/* Bottom Stats Bar */}
-        <div className="mt-16 sm:mt-24">
-          <div className="card rounded-2xl p-6 sm:p-8 shadow-xl">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
+        <div className="mt-6 sm:mt-8">
+          <div className="card rounded-xl p-3 sm:p-4 shadow-xl">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
               {stats.map((stat, i) => (
                 <div key={i} className="text-center">
-                  <stat.icon className="w-8 h-8 icon-gold mx-auto mb-3" />
-                  <div className="text-3xl sm:text-4xl lg:text-5xl font-bold heading-primary">{stat.number}</div>
-                  <div className="text-sm text-muted mt-1">{stat.label}</div>
+                  <stat.icon className="w-5 h-5 icon-gold mx-auto mb-1.5" />
+                  <div className="text-xl sm:text-2xl font-bold heading-primary">{stat.number}</div>
+                  <div className="text-xs text-muted mt-0.5">{stat.label}</div>
                 </div>
               ))}
             </div>

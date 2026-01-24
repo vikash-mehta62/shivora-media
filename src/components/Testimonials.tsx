@@ -79,13 +79,13 @@ export default function Testimonials() {
   const prev = () => setActive((p) => (p - 1 + testimonials.length) % testimonials.length);
 
   return (
-    <section id="testimonials" className="py-20 sm:py-28 relative overflow-hidden section-alt">
+    <section id="testimonials" className="py-12 sm:py-16 relative overflow-hidden section-alt">
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] blob-blue opacity-20"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 badge-bg rounded-full mb-4">
