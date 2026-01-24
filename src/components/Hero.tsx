@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { ArrowRight, Play, CheckCircle, Star, TrendingUp, Users, Award, Zap } from "lucide-react";
+import { ArrowRight, Play, CheckCircle, Star, TrendingUp, Users, Award, Zap, ChevronLeft, ChevronRight } from "lucide-react";
 
 const stats = [
   { number: "500+", label: "Projects Delivered", icon: TrendingUp },
@@ -17,9 +17,33 @@ const features = [
   "24/7 Support Available"
 ];
 
+const sliderImages = [
+  { src: "/slider/1.jpeg", alt: "Project 1" },
+  { src: "/slider/2.PNG", alt: "Project 2" },
+  { src: "/slider/7.jpeg", alt: "Project 3" },
+  { src: "/slider/9.jpeg", alt: "Project 4" },
+];
+
 export default function Hero() {
   const [mounted, setMounted] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  
   useEffect(() => setMounted(true), []);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % sliderImages.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % sliderImages.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + sliderImages.length) % sliderImages.length);
+  };
 
   return (
     <section id="home" className="relative overflow-hidden">
@@ -165,6 +189,74 @@ export default function Hero() {
                   <div className="text-xl sm:text-2xl font-bold heading-primary">{stat.number}</div>
                   <div className="text-xs text-muted mt-0.5">{stat.label}</div>
                 </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Image Slider - 2 Images Per Slide */}
+        <div className="mt-8 sm:mt-12">
+          <div className="relative">
+            {/* Slider Container */}
+            <div className="overflow-hidden rounded-2xl">
+              <div 
+                className="flex transition-transform duration-500 ease-out gap-4"
+                style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+              >
+                {sliderImages.map((image, index) => (
+                  <div
+                    key={index}
+                    className="min-w-full flex gap-4"
+                  >
+                    {/* Show 2 images per slide */}
+                    {sliderImages.slice(index, index + 2).map((img, i) => {
+                      const actualIndex = (index + i) % sliderImages.length;
+                      return (
+                        <div key={i} className="flex-1 relative h-[250px] sm:h-[350px] rounded-xl overflow-hidden shadow-lg bg-gray-100 dark:bg-gray-800">
+                          <Image
+                            src={sliderImages[actualIndex].src}
+                            alt={sliderImages[actualIndex].alt}
+                            fill
+                            className="object-contain p-2"
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                          />
+                        </div>
+                      );
+                    })}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Navigation Arrows */}
+            <button
+              onClick={prevSlide}
+              className="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm flex items-center justify-center hover:bg-white dark:hover:bg-gray-700 transition shadow-lg z-10"
+              aria-label="Previous slide"
+            >
+              <ChevronLeft className="w-6 h-6 icon-primary" />
+            </button>
+            <button
+              onClick={nextSlide}
+              className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm flex items-center justify-center hover:bg-white dark:hover:bg-gray-700 transition shadow-lg z-10"
+              aria-label="Next slide"
+            >
+              <ChevronRight className="w-6 h-6 icon-primary" />
+            </button>
+
+            {/* Dots Indicator */}
+            <div className="flex justify-center gap-2 mt-4">
+              {sliderImages.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentSlide(index)}
+                  className={`h-2 rounded-full transition-all ${
+                    index === currentSlide
+                      ? "bg-brand w-8"
+                      : "bg-gray-300 dark:bg-gray-600 w-2 hover:bg-brand/50"
+                  }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
               ))}
             </div>
           </div>
