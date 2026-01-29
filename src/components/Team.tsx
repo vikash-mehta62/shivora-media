@@ -86,7 +86,7 @@ export default function Team() {
         </div>
 
         {/* Join Team CTA */}
-        <div className="text-center">
+        {/* <div className="text-center">
           <div className="card rounded-2xl p-8 max-w-2xl mx-auto">
             <Star className="w-12 h-12 icon-gold mx-auto mb-4" />
             <h3 className="text-xl font-bold mb-2">Want to Join Our Team?</h3>
@@ -95,7 +95,7 @@ export default function Team() {
               View Open Positions <ArrowRight className="w-4 h-4" />
             </a>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

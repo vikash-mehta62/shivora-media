@@ -202,12 +202,12 @@ export default function Portfolio() {
         </div>
 
         {/* CTA */}
-        <div className="text-center">
+        {/* <div className="text-center">
           <p className="text-secondary mb-6">Ready to become our next success story?</p>
           <a href="#contact" className="inline-flex items-center gap-2 px-8 py-4 btn-gold rounded-full font-semibold text-lg">
             Start Your Project <ArrowRight className="w-5 h-5" />
           </a>
-        </div>
+        </div> */}
       </div>
 
       {/* Project Modal */}

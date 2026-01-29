@@ -95,7 +95,7 @@ export default function Process() {
         </div>
 
         {/* CTA */}
-        <div className="mt-16 text-center">
+        {/* <div className="mt-16 text-center">
           <div className="card rounded-2xl p-8 sm:p-12 shadow-xl max-w-3xl mx-auto bg-brand-section text-white">
             <h3 className="text-2xl sm:text-3xl font-bold mb-4 text-white">Ready to Start Your Growth Journey?</h3>
             <p className="text-baby-blue mb-8">
@@ -105,7 +105,7 @@ export default function Process() {
               Book Free Strategy Call <ArrowRight className="w-5 h-5" />
             </a>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

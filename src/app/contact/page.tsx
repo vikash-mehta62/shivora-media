@@ -5,10 +5,10 @@ import Footer from "@/components/Footer";
 import { Mail, Phone, MapPin, Clock, ArrowRight, Loader2, CheckCircle, MessageCircle, Send, Facebook, Instagram, Twitter, Linkedin } from "lucide-react";
 
 const contactInfo = [
-  { icon: Mail, label: "Email Us", value: "hello@shivoramedia.com", link: "mailto:hello@shivoramedia.com", desc: "We reply within 24 hours" },
-  { icon: Phone, label: "Call Us", value: "+91 98765 43210", link: "tel:+919876543210", desc: "Mon-Sat, 10AM-7PM" },
-  { icon: MapPin, label: "Visit Us", value: "Connaught Place, New Delhi, India", link: "#map", desc: "By appointment only" },
-  { icon: Clock, label: "Working Hours", value: "Mon - Sat: 10AM - 7PM", link: "#", desc: "Sunday closed" }
+  { icon: Mail, label: "Email Us", value: "shivoramedia@gmail.com", link: "mailto:shivoramedia@gmail.com", desc: "We reply within 24 hours" },
+  { icon: Phone, label: "Call Us", value: "+91 70672 35788", link: "tel:+917067235788", desc: "Mon-Sat, 10:00 AM - 7:00 PM" },
+  { icon: MapPin, label: "Visit Us", value: "Raisen Road Piplani, Bhopal", link: "#map", desc: "By appointment only" },
+  { icon: Clock, label: "Working Hours", value: "Mon - Sat: 10:00 AM - 7:00 PM", link: "#", desc: "Sunday closed" }
 ];
 
 const services = ["SEO Services", "Social Media Marketing", "PPC Advertising", "Content Marketing", "Brand Identity", "Web Development", "Complete Digital Marketing", "Other"];
@@ -235,14 +235,15 @@ export default function ContactPage() {
         <div className="max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">Visit Our Office</h2>
-            <p className="text-secondary">Connaught Place, New Delhi, India</p>
+            <p className="text-secondary">Raisen Road Piplani, Bhopal</p>
           </div>
           <div className="card rounded-2xl overflow-hidden shadow-xl h-[400px] flex items-center justify-center bg-[var(--bg-secondary)]">
             <div className="text-center">
               <MapPin className="w-16 h-16 badge-text mx-auto mb-4" />
               <h3 className="text-xl font-bold mb-2">Shivora Media</h3>
-              <p className="text-secondary">Connaught Place, New Delhi - 110001</p>
-              <p className="text-muted text-sm mt-2">By appointment only</p>
+              <p className="text-secondary">Raisen Road Piplani, Bhopal</p>
+              <p className="text-muted text-sm mt-2">Mon-Sat: 10:00 AM - 7:00 PM</p>
+              <p className="text-muted text-sm">By appointment only</p>
               <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 mt-4 px-6 py-3 btn-primary rounded-full font-semibold">
                 Get Directions <ArrowRight className="w-4 h-4" />

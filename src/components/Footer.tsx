@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ArrowRight, Facebook, Instagram, Twitter, Linkedin, Youtube, Mail, Phone, MapPin, Award, Star } from "lucide-react";
+import { ArrowRight, Facebook, Instagram, Twitter, Linkedin, Youtube, Mail, Phone, MapPin, Award, Star, Clock } from "lucide-react";
 
 const services = [
   { name: "SEO Services", href: "/services#seo" },
@@ -92,7 +92,10 @@ export default function Footer() {
                   <Phone className="w-4 h-4" /> +91 70672 35788
                 </a>
                 <div className="flex items-center gap-2 text-sm text-secondary">
-                  <MapPin className="w-4 h-4" /> Connaught Place, New Delhi
+                  <MapPin className="w-4 h-4" /> Raisen Road Piplani, Bhopal
+                </div>
+                <div className="flex items-center gap-2 text-sm text-secondary">
+                  <Clock className="w-4 h-4" /> Mon-Sat: 10:00 AM - 7:00 PM
                 </div>
               </div>
 

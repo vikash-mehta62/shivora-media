@@ -4,9 +4,9 @@ import { Mail, Phone, MapPin, Clock, ArrowRight, Loader2, CheckCircle, MessageCi
 
 const contactInfo = [
   { icon: Mail, label: "Email Us", value: "shivoramedia@gmail.com", link: "mailto:shivoramedia@gmail.com", desc: "We reply within 24 hours" },
-  { icon: Phone, label: "Call Us", value: "+91 70672 35788", link: "tel:+917067235788", desc: "Mon-Sat, 10AM-7PM" },
-  { icon: MapPin, label: "Visit Us", value: "Connaught Place, New Delhi", link: "#", desc: "By appointment only" },
-  { icon: Clock, label: "Working Hours", value: "Mon - Sat: 10AM - 7PM", link: "#", desc: "Sunday closed" }
+  { icon: Phone, label: "Call Us", value: "+91 70672 35788", link: "tel:+917067235788", desc: "Mon-Sat, 10:00 AM - 7:00 PM" },
+  { icon: MapPin, label: "Visit Us", value: "Raisen Road Piplani, Bhopal", link: "https://maps.google.com/?q=Raisen+Road+Piplani+Bhopal", desc: "By appointment only" },
+  { icon: Clock, label: "Working Hours", value: "Mon - Sat: 10:00 AM - 7:00 PM", link: "#", desc: "Sunday closed" }
 ];
 
 const services = ["SEO Services", "Social Media Marketing", "PPC Advertising", "Content Marketing", "Brand Identity", "Web Development", "Complete Digital Marketing", "Other"];

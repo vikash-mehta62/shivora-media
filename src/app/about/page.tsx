@@ -29,7 +29,6 @@ export default function AboutPage() {
     <>
       <Navbar />
       <main className="pt-[80px]">
-      <Navbar />
 
       {/* Hero Section */}
       <section className="pb-20 relative overflow-hidden">

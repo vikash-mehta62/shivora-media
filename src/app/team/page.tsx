@@ -148,7 +148,7 @@ export default function TeamPage() {
       </section>
 
       {/* Join Team CTA */}
-      <section className="py-20">
+      {/* <section className="py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="card rounded-3xl p-10 sm:p-16 text-center bg-brand-section text-white">
             <Star className="w-16 h-16 text-gold mx-auto mb-6" />
@@ -167,7 +167,7 @@ export default function TeamPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <Footer />
     </main>

@@ -38,11 +38,13 @@ export default function About() {
             <span className="text-sm font-medium badge-text">About Us</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-            The Minds Behind <span className="heading-primary">the Brand</span>
+            Driving Growth, <span className="heading-primary">Crafting Impact</span>
           </h2>
-          <p className="text-lg text-secondary max-w-3xl mx-auto">
-            At Shivora Media, we are a team of creative thinkers, strategists, and performance-driven marketers. 
-            We combine strategy, design, and technology to help brands stand out, connect with their audience, and grow.
+          <p className="text-lg text-secondary max-w-3xl mx-auto mb-4">
+            At Shivora Media, we create custom digital marketing solutions tailored to your brand, goals, and audience. As a leading digital marketing agency in India, we've helped 150+ businesses enhance their digital presence with campaigns that deliver real results.
+          </p>
+          <p className="text-base text-secondary max-w-3xl mx-auto">
+            Our team blends creativity, strategy, and data-driven insights to generate measurable growth and meaningful engagement. Partner with Shivora Media to elevate your brand online.
           </p>
         </div>
 
