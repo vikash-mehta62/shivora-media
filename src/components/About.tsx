@@ -51,22 +51,6 @@ export default function About() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-20">
           {/* Left Content */}
           <div>
-            <h3 className="text-2xl sm:text-3xl font-bold mb-6">
-              We Don&apos;t Just Market,
-              <span className="heading-primary"> We Transform</span>
-            </h3>
-            
-            <p className="text-secondary text-lg mb-6 leading-relaxed">
-              Every project starts with understanding your story. We don&apos;t do one-size-fits-all—we craft 
-              solutions that fit your brand, your goals, and your audience.
-            </p>
-            
-            <p className="text-muted mb-8">
-              Since 2018, Shivora Media has helped 150+ businesses across India transform their 
-              digital presence. From startups to enterprises, we&apos;ve delivered results that matter. 
-              Our team of 50+ experts combines creativity with data to deliver campaigns that 
-              don&apos;t just look good – they drive real business results.
-            </p>
 
             {/* Values Grid */}
             <div className="grid sm:grid-cols-2 gap-4 mb-8">

@@ -36,7 +36,7 @@ const services = [
   {
     id: "graphic",
     icon: Pen,
-    title: "Graphic Design",
+    title: "Creative Designing",
     description: "Build a powerful brand presence with professional graphic design services. From logos to ad creatives and social media visuals.",
     iconBg: "bg-[#6B8CFF]",
     media: "/vid/graphic designing .mp4",

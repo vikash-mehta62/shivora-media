@@ -21,7 +21,7 @@ const sliderImages = [
   { src: "/slider/1.jpeg", alt: "Project 1" },
   { src: "/slider/2.PNG", alt: "Project 2" },
   { src: "/slider/7.jpeg", alt: "Project 3" },
-  { src: "/slider/9.jpeg", alt: "Project 4" },
+  // { src: "/slider/9.jpeg", alt: "Project 4" },
 ];
 
 export default function Hero() {
@@ -179,20 +179,7 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Bottom Stats Bar */}
-        <div className="mt-6 sm:mt-8">
-          <div className="card rounded-xl p-3 sm:p-4 shadow-xl">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-              {stats.map((stat, i) => (
-                <div key={i} className="text-center">
-                  <stat.icon className="w-5 h-5 icon-gold mx-auto mb-1.5" />
-                  <div className="text-xl sm:text-2xl font-bold heading-primary">{stat.number}</div>
-                  <div className="text-xs text-muted mt-0.5">{stat.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+     
 
         {/* Image Slider - 2 Images Per Slide */}
         <div className="mt-8 sm:mt-12">

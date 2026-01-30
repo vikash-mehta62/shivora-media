@@ -79,21 +79,13 @@ export default function AboutPage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-                We Don&apos;t Just Market,
-                <span className="heading-primary"> We Transform</span>
+                Driving Growth, <span className="heading-primary">Crafting Impact</span>
               </h2>
               <p className="text-secondary text-lg mb-6 leading-relaxed">
-                Every project starts with understanding your story. We don&apos;t do one-size-fits-all—we craft 
-                solutions that fit your brand, your goals, and your audience.
-              </p>
-              <p className="text-muted mb-6">
-                At Shivora Media, we are a team of creative thinkers, strategists, and performance-driven marketers. 
-                We combine strategy, design, and technology to help brands stand out, connect with their audience, and grow.
+                At Shivora Media, we create custom digital marketing solutions tailored to your brand, goals, and audience. As a leading digital marketing agency in India, we've helped 150+ businesses enhance their digital presence with campaigns that deliver real results.
               </p>
               <p className="text-muted mb-8">
-                Since 2018, we&apos;ve helped 150+ businesses across India transform their digital presence. 
-                From startups to enterprises, we&apos;ve delivered results that matter. Our team of 50+ experts 
-                combines creativity with data to deliver campaigns that drive real business results.
+                Our team blends creativity, strategy, and data-driven insights to generate measurable growth and meaningful engagement. Partner with Shivora Media to elevate your brand online.
               </p>
               <a href="/contact" className="inline-flex items-center gap-2 px-6 py-3 btn-primary rounded-full font-semibold">
                 Work With Us <Rocket className="w-4 h-4" />

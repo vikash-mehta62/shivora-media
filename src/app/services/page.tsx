@@ -482,12 +482,12 @@ export default function ServicesPage() {
                     <div className="w-16 h-16 bg-[#6B8CFF] rounded-xl flex items-center justify-center mb-4 shadow-lg">
                       <Palette className="w-8 h-8 text-white" />
                     </div>
-                    <h3 className="text-2xl font-bold text-white mb-3">Graphic Design</h3>
+                    <h3 className="text-2xl font-bold text-white mb-3">Creative Designing</h3>
                     <p className="text-white/90 text-sm">Professional graphic design services for your brand.</p>
                   </div>
                 </div>
                 <div className="flip-card-back-side rounded-2xl shadow-lg bg-gradient-to-br from-pink-500 to-red-600 p-8 flex flex-col items-center justify-center text-center">
-                  <h3 className="text-2xl font-bold text-white mb-4">Graphic Design</h3>
+                  <h3 className="text-2xl font-bold text-white mb-4">Creative Designing</h3>
                   <p className="text-white text-base leading-relaxed mb-6">Build a powerful brand presence with professional graphic design services. From logos and branding to ad creatives and social media visuals, we design assets that convert. Our creative team delivers stunning designs that capture attention and communicate your brand message effectively.</p>
                   <a href="/services/graphic-design" className="inline-flex items-center gap-2 px-6 py-3 bg-white text-gray-900 rounded-full font-semibold hover:bg-gray-100 transition">
                     Learn More <ArrowRight className="w-5 h-5" />
