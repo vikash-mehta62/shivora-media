@@ -114,12 +114,19 @@ export default function Navbar() {
                 <div key={link.name}>
                   {link.dropdown ? (
                     <div>
+                      {/* Services Main Link - Clickable */}
+                      <Link href={link.href} onClick={() => setIsOpen(false)}
+                        className="block px-4 py-3 text-secondary hover-primary hover:bg-[var(--accent-bg)] rounded-xl transition font-medium">
+                        {link.name}
+                      </Link>
+                      {/* Dropdown Toggle Button */}
                       <button 
                         onClick={() => setActiveDropdown(activeDropdown === link.name ? null : link.name)}
-                        className="w-full flex items-center justify-between px-4 py-3 text-secondary hover-primary hover:bg-[var(--accent-bg)] rounded-xl transition font-medium">
-                        {link.name}
+                        className="w-full flex items-center justify-between px-4 py-2 text-sm text-muted hover-primary hover:bg-[var(--accent-bg)] rounded-xl transition">
+                        <span>View All {link.name}</span>
                         <ChevronDown className={`w-4 h-4 transition-transform ${activeDropdown === link.name ? 'rotate-180' : ''}`} />
                       </button>
+                      {/* Dropdown Items */}
                       {activeDropdown === link.name && (
                         <div className="pl-4 space-y-1 mt-1">
                           {link.dropdown.map((item) => (
