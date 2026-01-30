@@ -107,34 +107,47 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Menu */}
-        <div className={`lg:hidden overflow-hidden transition-all duration-500 ${isOpen ? "max-h-[600px] mt-4" : "max-h-0"}`}>
-          <div className="card rounded-2xl p-4 shadow-xl">
-            {navLinks.map((link) => (
-              <div key={link.name}>
-                <Link href={link.href} onClick={() => !link.dropdown && setIsOpen(false)}
-                  className="block px-4 py-3 text-secondary hover-primary hover:bg-[var(--accent-bg)] rounded-xl transition font-medium">
-                  {link.name}
+        {isOpen && (
+          <div className="lg:hidden absolute top-[80px] left-0 right-0 px-4">
+            <div className="card rounded-2xl p-4 shadow-xl max-h-[calc(100vh-100px)] overflow-y-auto">
+              {navLinks.map((link) => (
+                <div key={link.name}>
+                  {link.dropdown ? (
+                    <div>
+                      <button 
+                        onClick={() => setActiveDropdown(activeDropdown === link.name ? null : link.name)}
+                        className="w-full flex items-center justify-between px-4 py-3 text-secondary hover-primary hover:bg-[var(--accent-bg)] rounded-xl transition font-medium">
+                        {link.name}
+                        <ChevronDown className={`w-4 h-4 transition-transform ${activeDropdown === link.name ? 'rotate-180' : ''}`} />
+                      </button>
+                      {activeDropdown === link.name && (
+                        <div className="pl-4 space-y-1 mt-1">
+                          {link.dropdown.map((item) => (
+                            <Link key={item.name} href={item.href} onClick={() => setIsOpen(false)}
+                              className="block px-4 py-2 text-sm text-muted hover-primary rounded-lg transition">
+                              {item.name}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  ) : (
+                    <Link href={link.href} onClick={() => setIsOpen(false)}
+                      className="block px-4 py-3 text-secondary hover-primary hover:bg-[var(--accent-bg)] rounded-xl transition font-medium">
+                      {link.name}
+                    </Link>
+                  )}
+                </div>
+              ))}
+              <div className="pt-4 mt-4 border-t border-[var(--border-color)]">
+                <Link href="/contact" onClick={() => setIsOpen(false)}
+                  className="block px-4 py-3 btn-gold rounded-xl text-center font-semibold">
+                  Get Free Quote
                 </Link>
-                {link.dropdown && (
-                  <div className="pl-4 space-y-1">
-                    {link.dropdown.map((item) => (
-                      <Link key={item.name} href={item.href} onClick={() => setIsOpen(false)}
-                        className="block px-4 py-2 text-sm text-muted hover-primary rounded-lg transition">
-                        {item.name}
-                      </Link>
-                    ))}
-                  </div>
-                )}
               </div>
-            ))}
-            <div className="pt-4 mt-4 border-t border-[var(--border-color)]">
-              <Link href="/contact" onClick={() => setIsOpen(false)}
-                className="block px-4 py-3 btn-gold rounded-xl text-center font-semibold">
-                Get Free Quote
-              </Link>
             </div>
           </div>
-        </div>
+        )}
       </div>
     </nav>
   );
