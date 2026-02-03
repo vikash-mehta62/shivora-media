@@ -2,7 +2,8 @@
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Mail, Phone, MapPin, Clock, ArrowRight, Loader2, CheckCircle, MessageCircle, Send, Facebook, Instagram, Twitter, Linkedin } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, ArrowRight, Loader2, CheckCircle, MessageCircle, Send } from "lucide-react";
+import { FaFacebook, FaInstagram, FaGoogle } from "react-icons/fa";
 
 const contactInfo = [
   { icon: Mail, label: "Email Us", value: "shivoramedia@gmail.com", link: "mailto:shivoramedia@gmail.com", desc: "We reply within 24 hours" },
@@ -115,11 +116,15 @@ export default function ContactPage() {
               <div className="card rounded-2xl p-6">
                 <h4 className="font-semibold mb-4">Follow Us</h4>
                 <div className="flex gap-3">
-                  {[Facebook, Instagram, Twitter, Linkedin].map((Icon, i) => (
-                    <a key={i} href="#" className="w-12 h-12 card rounded-xl flex items-center justify-center hover:bg-brand hover:text-white transition">
-                      <Icon className="w-5 h-5" />
-                    </a>
-                  ))}
+                  <a href="https://www.facebook.com/shivoramedia" target="_blank" rel="noopener noreferrer" className="w-12 h-12 card rounded-xl flex items-center justify-center hover:bg-brand hover:text-white transition">
+                    <FaFacebook className="w-5 h-5" />
+                  </a>
+                  <a href="https://www.instagram.com/shivora_media?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" className="w-12 h-12 card rounded-xl flex items-center justify-center hover:bg-brand hover:text-white transition">
+                    <FaInstagram className="w-5 h-5" />
+                  </a>
+                  <a href="https://share.google/PZk9kq1IIeWDbCW5g" target="_blank" rel="noopener noreferrer" className="w-12 h-12 card rounded-xl flex items-center justify-center hover:bg-brand hover:text-white transition">
+                    <FaGoogle className="w-5 h-5" />
+                  </a>
                 </div>
               </div>
             </div>

@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Image from "next/image";
-import { Target, Lightbulb, Users, BarChart3, Rocket, Award, TrendingUp, Clock, Shield, Headphones, ArrowRight } from "lucide-react";
+import { Target, Lightbulb, Users, BarChart3, Rocket, Award, TrendingUp, Clock, Shield, Headphones, ArrowRight, Mail } from "lucide-react";
 
 const values = [
   { icon: Target, title: "Results-Driven", desc: "Every strategy is designed with measurable outcomes and ROI in mind. We focus on what matters - your business growth." },
@@ -56,8 +56,30 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Running Text Marquee */}
+      <section className="py-8 overflow-hidden bg-brand-section">
+        <div className="flex whitespace-nowrap animate-marquee">
+          <div className="flex items-center gap-8 px-8">
+            <span className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">Designed for Expansion</span>
+            <span className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gold">•</span>
+            <span className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">Built for Visibility</span>
+            <span className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gold">•</span>
+            <span className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">Focused on Growth</span>
+            <span className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gold">•</span>
+          </div>
+          <div className="flex items-center gap-8 px-8">
+            <span className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">Designed for Expansion</span>
+            <span className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gold">•</span>
+            <span className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">Built for Visibility</span>
+            <span className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gold">•</span>
+            <span className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">Focused on Growth</span>
+            <span className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gold">•</span>
+          </div>
+        </div>
+      </section>
+
       {/* Stats Section */}
-      <section className="py-12">
+      <section className="py-8">
         <div className="max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8">
           <div className="card rounded-3xl p-8 shadow-xl">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -229,50 +251,74 @@ export default function AboutPage() {
 
 
       {/* CTA - Let's Talk */}
-      <section className="py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="card rounded-3xl p-10 sm:p-16 text-center bg-brand-section text-white">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full mb-6">
-              <span className="text-sm font-medium text-baby-blue">LET&apos;S TALK</span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-white">Join Us</h2>
-            <p className="text-baby-blue mb-6 text-lg leading-relaxed max-w-2xl mx-auto">
-              We&apos;re excited to connect with you! Whether you have a question or a project idea, we&apos;re here to listen.
-            </p>
-            <p className="text-baby-blue mb-8 text-base leading-relaxed max-w-2xl mx-auto">
-              Send us a message using the contact form, or drop us an email—we&apos;ll get back to you promptly.
-            </p>
-            
-            {/* Contact Info */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-              <a 
-                href="https://wa.me/917067235788" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 rounded-full font-semibold transition"
-              >
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-                </svg>
-                WhatsApp: +91 70672 35788
-              </a>
-              <a 
-                href="mailto:shivoramedia@gmail.com"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 rounded-full font-semibold transition"
-              >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-                Email Us
-              </a>
-            </div>
+     <div className="border-t border-brand-light">
+  <div className="max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+    <div className="card rounded-3xl p-8 sm:p-12 lg:p-16 text-center relative overflow-hidden shadow-2xl bg-brand-section text-white">
+      
+      {/* Decorative blobs */}
+      <div className="absolute top-0 right-0 w-64 h-64 bg-baby-blue/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+      <div className="absolute bottom-0 left-0 w-48 h-48 bg-gold/10 rounded-full translate-y-1/2 -translate-x-1/2"></div>
 
-            <a href="/contact" className="inline-flex items-center gap-2 px-8 py-4 btn-gold rounded-full font-semibold text-lg">
-              Enquire Now <ArrowRight className="w-5 h-5" />
-            </a>
-          </div>
+      <div className="relative z-10">
+        <div className="flex items-center justify-center gap-2 mb-4">
+          <Mail className="w-6 h-6 icon-gold" />
+          <span className="text-baby-blue font-medium">LET’S CONNECT</span>
         </div>
-      </section>
+
+        <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
+          We’re Excited To Connect With You
+        </h3>
+
+        <p className="text-baby-blue mb-10 max-w-3xl mx-auto text-base leading-relaxed">
+          Having a question, a project idea, or need expert support? Our team is here to listen and help.
+          Reach out using the contact form or send us an email, and let’s start a conversation about your goals.
+          <br />
+          <span className="block mt-2">
+            We’ll get back to you promptly with clear and reliable assistance.
+          </span>
+        </p>
+
+        {/* Contact Buttons */}
+        <div className="flex flex-wrap items-center justify-center gap-4 mb-10">
+          <a
+            href="https://wa.me/917067235788"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-green-500/20 hover:bg-green-500/30 rounded-full font-semibold transition"
+          >
+            📱 WhatsApp
+          </a>
+
+          <a
+            href="mailto:shivoramedia@gmail.com"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 rounded-full font-semibold transition"
+          >
+            <Mail className="w-5 h-5" />
+            Email
+          </a>
+
+          <a
+            href="https://instagram.com/your_instagram"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-pink-500/20 hover:bg-pink-500/30 rounded-full font-semibold transition"
+          >
+            📸 Instagram
+          </a>
+        </div>
+
+        {/* CTA Button */}
+        <a
+          href="/contact"
+          className="inline-flex items-center gap-2 px-8 py-4 btn-gold rounded-full font-semibold text-lg"
+        >
+          Enquire Now <ArrowRight className="w-5 h-5" />
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
 
       <Footer />
     </main>

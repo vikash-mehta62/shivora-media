@@ -1,0 +1,55 @@
+.cursorDot {
+  width: 8px;
+  height: 8px;
+  background: linear-gradient(135deg, #0066ff, #00ccff);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s ease, height 0.2s ease, background 0.2s ease;
+  mix-blend-mode: difference;
+}
+
+.cursorCircle {
+  width: 40px;
+  height: 40px;
+  border: 2px solid rgba(0, 102, 255, 0.5);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease;
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.cursorDot.cursorPointer {
+  width: 16px;
+  height: 16px;
+  background: linear-gradient(135deg, #ff6b6b, #ffd93d);
+}
+
+.cursorCircle.cursorPointer {
+  width: 60px;
+  height: 60px;
+  border-color: rgba(255, 107, 107, 0.6);
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Hide custom cursor on mobile/touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .cursorDot,
+  .cursorCircle {
+    display: none;
+  }
+}

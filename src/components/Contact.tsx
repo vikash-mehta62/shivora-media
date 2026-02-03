@@ -53,9 +53,10 @@ export default function Contact() {
             Let&apos;s Start Your
             <span className="heading-primary"> Growth Journey</span>
           </h2>
-          <p className="text-lg text-secondary max-w-3xl mx-auto">
-            Ready to transform your digital presence? Get a free consultation and custom 
-            strategy tailored to your business goals.
+          <p className="text-lg text-secondary max-w-3xl mx-auto leading-relaxed">
+            Ready to elevate your digital presence and unlock new opportunities? Get a free consultation 
+            and a custom-built strategy designed around your brand, audience, and business goals. From 
+            visibility to conversions, we help you grow with clarity and confidence.
           </p>
         </div>
 

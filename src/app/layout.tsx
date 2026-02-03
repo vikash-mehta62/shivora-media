@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/context/ThemeContext";
+import CustomCursor from "@/components/CustomCursor";
+import ContactPopup from "@/components/ContactPopup";
+import FloatingIcons from "@/components/FloatingIcons";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,6 +21,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className={inter.className}>
+        <CustomCursor />
+        <ContactPopup />
+        <FloatingIcons />
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>

@@ -15,14 +15,11 @@ const navLinks = [
       { name: "Social Media Marketing", href: "/services/social-media" },
       { name: "PPC Advertising", href: "/services/ppc" },
       { name: "Content Marketing", href: "/services/content-marketing" },
-      { name: "Web Development", href: "/services/web-development" },
-      { name: "Brand Identity", href: "/services/brand-identity" },
+      { name: "Creative Designing", href: "/services/graphic-design" },
     ]
   },
   { name: "About", href: "/about" },
   { name: "Portfolio", href: "/portfolio" },
-  { name: "Team", href: "/team" },
-  { name: "Blog", href: "/blog" },
   { name: "Contact", href: "/contact" },
 ];
 

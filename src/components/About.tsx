@@ -24,7 +24,7 @@ const whyUs = [
 
 export default function About() {
   return (
-    <section id="about" className="py-12 sm:py-16 relative overflow-hidden section-alt">
+    <section id="about" className="py-4 relative overflow-hidden section-alt">
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] blob-blue opacity-20"></div>
@@ -51,6 +51,9 @@ export default function About() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-20">
           {/* Left Content */}
           <div>
+            <h3 className="text-2xl sm:text-3xl font-bold mb-6">
+              Moves That <span className="heading-primary">Power Real Growth</span>
+            </h3>
 
             {/* Values Grid */}
             <div className="grid sm:grid-cols-2 gap-4 mb-8">
@@ -89,16 +92,7 @@ export default function About() {
                 <p className="text-muted text-sm mt-2">Transforming Businesses Since 2018</p>
               </div>
 
-              {/* Stats Grid */}
-              <div className="grid grid-cols-2 gap-3">
-                {stats.map((s, i) => (
-                  <div key={i} className="bg-secondary-light rounded-xl p-4 text-center">
-                    <s.icon className="w-5 h-5 icon-gold mx-auto mb-2" />
-                    <div className="text-xl sm:text-2xl font-bold heading-primary">{s.number}</div>
-                    <div className="text-xs text-muted">{s.label}</div>
-                  </div>
-                ))}
-              </div>
+            
             </div>
 
             {/* Floating Badges */}
@@ -138,6 +132,80 @@ export default function About() {
             ))}
           </div>
         </div>
+
+        <section className="py-20 section-alt">
+        <div className="max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">What Makes Us Different?</h2>
+            <p className="text-secondary max-w-2xl mx-auto">See how we compare to other agencies</p>
+          </div>
+
+          <div className="card rounded-3xl p-6 sm:p-8 lg:p-12 shadow-xl">
+            {/* Header Row */}
+            <div className="grid grid-cols-2 gap-4 sm:gap-8 mb-8 pb-6 border-b border-brand-light">
+              <div className="text-center">
+                <h3 className="text-lg sm:text-2xl font-bold text-muted">Others</h3>
+              </div>
+              <div className="text-center">
+                <h3 className="text-lg sm:text-2xl font-bold heading-primary">Shivora Media</h3>
+              </div>
+            </div>
+
+            {/* Comparison Rows */}
+            <div className="space-y-4 sm:space-y-6">
+              {/* Row 1 */}
+              <div className="grid grid-cols-2 gap-4 sm:gap-8 items-center py-3 sm:py-4 border-b border-brand-light">
+                <div className="text-center">
+                  <p className="text-sm sm:text-base text-muted">Focus only on likes and views</p>
+                </div>
+                <div className="text-center">
+                  <p className="text-sm sm:text-base font-semibold text-secondary">Focus on performance and measurable growth</p>
+                </div>
+              </div>
+
+              {/* Row 2 */}
+              <div className="grid grid-cols-2 gap-4 sm:gap-8 items-center py-3 sm:py-4 border-b border-brand-light">
+                <div className="text-center">
+                  <p className="text-sm sm:text-base text-muted">Generic, one-size-fits-all campaigns</p>
+                </div>
+                <div className="text-center">
+                  <p className="text-sm sm:text-base font-semibold text-secondary">Tailored strategies for your brand and audience</p>
+                </div>
+              </div>
+
+              {/* Row 3 */}
+              <div className="grid grid-cols-2 gap-4 sm:gap-8 items-center py-3 sm:py-4 border-b border-brand-light">
+                <div className="text-center">
+                  <p className="text-sm sm:text-base text-muted">Designs that look good but don&apos;t convert</p>
+                </div>
+                <div className="text-center">
+                  <p className="text-sm sm:text-base font-semibold text-secondary">Creative, high-impact visuals that drive results</p>
+                </div>
+              </div>
+
+              {/* Row 4 */}
+              <div className="grid grid-cols-2 gap-4 sm:gap-8 items-center py-3 sm:py-4 border-b border-brand-light">
+                <div className="text-center">
+                  <p className="text-sm sm:text-base text-muted">Complicated processes and lack of support</p>
+                </div>
+                <div className="text-center">
+                  <p className="text-sm sm:text-base font-semibold text-secondary">Seamless execution from start to finish</p>
+                </div>
+              </div>
+
+              {/* Row 5 */}
+              <div className="grid grid-cols-2 gap-4 sm:gap-8 items-center py-3 sm:py-4">
+                <div className="text-center">
+                  <p className="text-sm sm:text-base text-muted">No clear insights or ROI</p>
+                </div>
+                <div className="text-center">
+                  <p className="text-sm sm:text-base font-semibold text-secondary">Data-backed campaigns that show real profit</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       </div>
     </section>
   );

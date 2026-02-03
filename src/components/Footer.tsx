@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { ArrowRight, Facebook, Instagram, Twitter, Linkedin, Youtube, Mail, Phone, MapPin, Award, Star, Clock } from "lucide-react";
+import { Mail, Phone, MapPin, Award, Star, Clock } from "lucide-react";
+import { FaFacebook, FaInstagram, FaGoogle } from "react-icons/fa";
 
 const services = [
   { name: "Search Engine Optimization", href: "/services/seo" },
@@ -12,57 +13,24 @@ const services = [
 const company = [
   { name: "About Us", href: "/about" },
   { name: "Our Work", href: "/portfolio" },
-  { name: "Our Team", href: "/team" },
-  { name: "Blog", href: "/blog" },
-  { name: "Careers", href: "/team" },
+  { name: "Careers", href: "#" },
   { name: "Contact", href: "/contact" }
 ];
 
 const resources = [
-  { name: "Blog", href: "/blog" },
   { name: "Case Studies", href: "/portfolio" },
-  { name: "Free Tools", href: "#" },
-  { name: "Marketing Guide", href: "/blog" },
   { name: "FAQs", href: "/contact" }
 ];
 
 const social = [
-  { icon: Facebook, href: "https://www.facebook.com/shivoramedia", label: "Facebook" },
-  { icon: Instagram, href: "https://www.instagram.com/shivoramedia", label: "Instagram" }
+  { icon: FaFacebook, href: "https://www.facebook.com/shivoramedia", label: "Facebook" },
+  { icon: FaInstagram, href: "https://www.instagram.com/shivora_media?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==", label: "Instagram" },
+  { icon: FaGoogle, href: "https://share.google/PZk9kq1IIeWDbCW5g", label: "Google" }
 ];
 
 export default function Footer() {
   return (
     <footer className="relative overflow-hidden section-alt">
-      {/* CTA Section - Enquire Now */}
-      <div className="border-t border-brand-light">
-        <div className="max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
-          <div className="card rounded-3xl p-8 sm:p-12 lg:p-16 text-center relative overflow-hidden shadow-2xl bg-brand-section text-white">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-baby-blue/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
-            <div className="absolute bottom-0 left-0 w-48 h-48 bg-gold/10 rounded-full translate-y-1/2 -translate-x-1/2"></div>
-            
-            <div className="relative z-10">
-              <div className="flex items-center justify-center gap-2 mb-4">
-                <Mail className="w-6 h-6 icon-gold" />
-                <span className="text-baby-blue font-medium">Get In Touch</span>
-              </div>
-              <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-white">
-                Ready to Start Your <span className="icon-gold">Project?</span>
-              </h3>
-              <p className="text-baby-blue mb-8 max-w-2xl mx-auto text-lg">
-                Have a question or want to discuss your project? Drop us an email and we&apos;ll get back to you promptly.
-              </p>
-              <a 
-                href="mailto:shivoramedia@gmail.com" 
-                className="inline-flex items-center gap-2 px-8 py-4 btn-gold rounded-full font-semibold text-lg"
-              >
-                Enquire Now <ArrowRight className="w-5 h-5" />
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* Main Footer */}
       <div className="border-t border-brand-light">
         <div className="max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -75,8 +43,7 @@ export default function Footer() {
                 </div>
               </div>
               <p className="text-secondary mb-6 max-w-md text-base leading-relaxed">
-                Full-service digital marketing agency helping businesses grow online since 2018. 
-                Your trusted partner for SEO, Social Media, PPC & more.
+                Helping Brands Grow, Connect, And Convert In The Digital World With End-To-End Marketing Solutions.
               </p>
               
               {/* Contact Info */}
@@ -101,12 +68,15 @@ export default function Footer() {
 
               {/* Social Links */}
               <div className="flex gap-2">
-                {social.map((s, i) => (
-                  <a key={i} href={s.href} aria-label={s.label}
-                    className="w-10 h-10 card rounded-lg flex items-center justify-center hover-primary transition">
-                    <s.icon className="w-5 h-5" />
-                  </a>
-                ))}
+                {social.map((s, i) => {
+                  const Icon = s.icon;
+                  return (
+                    <a key={i} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label}
+                      className="w-10 h-10 card rounded-lg flex items-center justify-center hover-primary transition">
+                      <Icon className="w-5 h-5" />
+                    </a>
+                  );
+                })}
               </div>
             </div>
 

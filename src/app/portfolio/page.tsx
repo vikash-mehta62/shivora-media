@@ -93,7 +93,7 @@ export default function PortfolioPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 relative overflow-hidden">
+      <section className="pt-4 pb-20 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-20 right-0 w-[600px] h-[600px] blob-blue opacity-30"></div>
         </div>
@@ -124,7 +124,7 @@ export default function PortfolioPage() {
       </section>
 
       {/* Category Filter */}
-      <section className="py-8 section-alt sticky top-20 z-30">
+      <section className="py-8 section-alt">
         <div className="max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap justify-center gap-3">
             {categories.map((cat) => (
