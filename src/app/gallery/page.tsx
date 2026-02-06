@@ -1,3 +1,4 @@
+"use client";
 import { useEffect, useState } from 'react';
 import { Image as ImageIcon, Video, Play, X } from 'lucide-react';
 import axios from 'axios';
