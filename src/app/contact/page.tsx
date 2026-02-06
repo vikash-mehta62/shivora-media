@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Mail, Phone, MapPin, Clock, ArrowRight, Loader2, CheckCircle, MessageCircle, Send } from "lucide-react";
 import { FaFacebook, FaInstagram, FaGoogle } from "react-icons/fa";
+import { submitContactForm } from "@/utils/contactApi";
 
 const contactInfo = [
   { icon: Mail, label: "Email Us", value: "shivoramedia@gmail.com", link: "mailto:shivoramedia@gmail.com", desc: "We reply within 24 hours" },
@@ -32,15 +33,27 @@ export default function ContactPage() {
   const [form, setForm] = useState({ name: "", email: "", phone: "", company: "", website: "", service: "", budget: "", message: "" });
   const [loading, setLoading] = useState(false);
   const [done, setDone] = useState(false);
+  const [error, setError] = useState("");
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    await new Promise(r => setTimeout(r, 2000));
+    setError("");
+    
+    const result = await submitContactForm({
+      ...form,
+      source: 'contact-page'
+    });
+    
     setLoading(false);
-    setDone(true);
-    setForm({ name: "", email: "", phone: "", company: "", website: "", service: "", budget: "", message: "" });
+    
+    if (result.success) {
+      setDone(true);
+      setForm({ name: "", email: "", phone: "", company: "", website: "", service: "", budget: "", message: "" });
+    } else {
+      setError(result.error || 'Failed to submit form. Please try again.');
+    }
   };
 
   return (
@@ -147,6 +160,13 @@ export default function ContactPage() {
                       <Send className="w-6 h-6 badge-text" />
                       <h3 className="text-xl font-bold">Get Your Free Quote</h3>
                     </div>
+
+                    {error && (
+                      <div className="mb-4 p-4 bg-red-500/10 border border-red-500/50 text-red-400 rounded-lg text-sm">
+                        {error}
+                      </div>
+                    )}
+
                     <div className="grid sm:grid-cols-2 gap-4 mb-4">
                       <div>
                         <label className="block text-sm font-medium mb-2">Full Name *</label>

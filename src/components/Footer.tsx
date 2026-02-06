@@ -19,7 +19,8 @@ const company = [
 
 const resources = [
   { name: "Case Studies", href: "/portfolio" },
-  { name: "FAQs", href: "/contact" }
+  { name: "FAQs", href: "/contact" },
+  { name: "Admin Login", href: "/admin" }
 ];
 
 const social = [
@@ -159,6 +160,7 @@ export default function Footer() {
               <a href="#" className="text-muted hover-primary transition">Privacy Policy</a>
               <a href="#" className="text-muted hover-primary transition">Terms of Service</a>
               <a href="#" className="text-muted hover-primary transition">Sitemap</a>
+              <a href="/admin" className="text-muted hover-primary transition">Admin Login</a>
             </div>
           </div>
         </div>

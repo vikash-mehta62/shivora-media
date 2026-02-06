@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { Mail, Phone, MapPin, Clock, ArrowRight, Loader2, CheckCircle, MessageCircle, Send } from "lucide-react";
+import { submitContactForm } from "@/utils/contactApi";
 
 const contactInfo = [
   { icon: Mail, label: "Email Us", value: "shivoramedia@gmail.com", link: "mailto:shivoramedia@gmail.com", desc: "We reply within 24 hours" },
@@ -23,15 +24,27 @@ export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", phone: "", company: "", website: "", service: "", budget: "", message: "" });
   const [loading, setLoading] = useState(false);
   const [done, setDone] = useState(false);
+  const [error, setError] = useState("");
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    await new Promise(r => setTimeout(r, 2000));
+    setError("");
+    
+    const result = await submitContactForm({
+      ...form,
+      source: 'home-page'
+    });
+    
     setLoading(false);
-    setDone(true);
-    setForm({ name: "", email: "", phone: "", company: "", website: "", service: "", budget: "", message: "" });
-    setTimeout(() => setDone(false), 5000);
+    
+    if (result.success) {
+      setDone(true);
+      setForm({ name: "", email: "", phone: "", company: "", website: "", service: "", budget: "", message: "" });
+      setTimeout(() => setDone(false), 5000);
+    } else {
+      setError(result.error || 'Failed to submit form. Please try again.');
+    }
   };
 
   return (
@@ -125,16 +138,24 @@ export default function Contact() {
                     <h3 className="text-xl font-bold">Get Your Free Quote</h3>
                   </div>
 
+                  {error && (
+                    <div className="mb-4 p-4 bg-red-500/10 border border-red-500/50 text-red-400 rounded-lg text-sm">
+                      {error}
+                    </div>
+                  )}
+
                   <div className="grid sm:grid-cols-2 gap-4 mb-4">
                     <div>
                       <label className="block text-sm font-medium mb-2">Full Name *</label>
                       <input type="text" required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })}
-                        className="w-full px-4 py-3 input-field rounded-xl" placeholder="John Doe" />
+                        disabled={loading}
+                        className="w-full px-4 py-3 input-field rounded-xl disabled:opacity-50" placeholder="John Doe" />
                     </div>
                     <div>
                       <label className="block text-sm font-medium mb-2">Email Address *</label>
                       <input type="email" required value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })}
-                        className="w-full px-4 py-3 input-field rounded-xl" placeholder="john@company.com" />
+                        disabled={loading}
+                        className="w-full px-4 py-3 input-field rounded-xl disabled:opacity-50" placeholder="john@company.com" />
                     </div>
                   </div>
 
@@ -142,26 +163,30 @@ export default function Contact() {
                     <div>
                       <label className="block text-sm font-medium mb-2">Phone Number</label>
                       <input type="tel" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                        className="w-full px-4 py-3 input-field rounded-xl" placeholder="+91 70672 35788" />
+                        disabled={loading}
+                        className="w-full px-4 py-3 input-field rounded-xl disabled:opacity-50" placeholder="+91 70672 35788" />
                     </div>
                     <div>
                       <label className="block text-sm font-medium mb-2">Company Name</label>
                       <input type="text" value={form.company} onChange={(e) => setForm({ ...form, company: e.target.value })}
-                        className="w-full px-4 py-3 input-field rounded-xl" placeholder="Your Company" />
+                        disabled={loading}
+                        className="w-full px-4 py-3 input-field rounded-xl disabled:opacity-50" placeholder="Your Company" />
                     </div>
                   </div>
 
                   <div className="mb-4">
                     <label className="block text-sm font-medium mb-2">Website URL</label>
                     <input type="url" value={form.website} onChange={(e) => setForm({ ...form, website: e.target.value })}
-                      className="w-full px-4 py-3 input-field rounded-xl" placeholder="https://yourwebsite.com" />
+                      disabled={loading}
+                      className="w-full px-4 py-3 input-field rounded-xl disabled:opacity-50" placeholder="https://yourwebsite.com" />
                   </div>
 
                   <div className="grid sm:grid-cols-2 gap-4 mb-4">
                     <div>
                       <label className="block text-sm font-medium mb-2">Service Interested In *</label>
                       <select required value={form.service} onChange={(e) => setForm({ ...form, service: e.target.value })}
-                        className="w-full px-4 py-3 input-field rounded-xl appearance-none cursor-pointer">
+                        disabled={loading}
+                        className="w-full px-4 py-3 input-field rounded-xl appearance-none cursor-pointer disabled:opacity-50">
                         <option value="">Select a service</option>
                         {services.map((s) => (<option key={s} value={s}>{s}</option>))}
                       </select>
@@ -169,7 +194,8 @@ export default function Contact() {
                     <div>
                       <label className="block text-sm font-medium mb-2">Monthly Budget</label>
                       <select value={form.budget} onChange={(e) => setForm({ ...form, budget: e.target.value })}
-                        className="w-full px-4 py-3 input-field rounded-xl appearance-none cursor-pointer">
+                        disabled={loading}
+                        className="w-full px-4 py-3 input-field rounded-xl appearance-none cursor-pointer disabled:opacity-50">
                         <option value="">Select budget range</option>
                         {budgets.map((b) => (<option key={b.value} value={b.value}>{b.label}</option>))}
                       </select>
@@ -179,7 +205,8 @@ export default function Contact() {
                   <div className="mb-6">
                     <label className="block text-sm font-medium mb-2">Tell Us About Your Project</label>
                     <textarea rows={4} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })}
-                      className="w-full px-4 py-3 input-field rounded-xl resize-none" placeholder="Describe your goals, challenges, and what you're looking to achieve..."></textarea>
+                      disabled={loading}
+                      className="w-full px-4 py-3 input-field rounded-xl resize-none disabled:opacity-50" placeholder="Describe your goals, challenges, and what you're looking to achieve..."></textarea>
                   </div>
 
                   <button type="submit" disabled={loading}
