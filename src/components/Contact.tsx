@@ -68,8 +68,13 @@ export default function Contact() {
           </h2>
           <p className="text-lg text-secondary max-w-3xl mx-auto leading-relaxed">
             Ready to elevate your digital presence and unlock new opportunities? Get a free consultation 
-            and a custom-built strategy designed around your brand, audience, and business goals. From 
-            visibility to conversions, we help you grow with clarity and confidence.
+            and a custom-built strategy designed around your brand, audience, and business goals.
+          </p>
+          <p className="text-lg text-secondary max-w-3xl mx-auto leading-relaxed mt-4">
+            We&apos;re Excited To Connect With You! Having a question, a project idea, or need expert support? 
+            Our team is here to listen and help. Reach out using the contact form or send us an email, and 
+            let&apos;s start a conversation about your goals. We&apos;ll get back to you promptly with clear 
+            and reliable assistance.
           </p>
         </div>
 

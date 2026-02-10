@@ -16,6 +16,7 @@ const navLinks = [
       { name: "PPC Advertising", href: "/services/ppc" },
       { name: "Content Marketing", href: "/services/content-marketing" },
       { name: "Creative Designing", href: "/services/graphic-design" },
+      { name: "Video Production", href: "/services/video-production" },
     ]
   },
   { name: "About", href: "/about" },

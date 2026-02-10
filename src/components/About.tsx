@@ -24,7 +24,7 @@ const whyUs = [
 
 export default function About() {
   return (
-    <section id="about" className="py-4 relative overflow-hidden section-alt">
+    <section id="about" className="pt-24 pb-4 relative overflow-hidden section-alt">
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] blob-blue opacity-20"></div>

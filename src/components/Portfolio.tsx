@@ -2,110 +2,110 @@
 import { useState } from "react";
 import { Briefcase, ArrowRight, ExternalLink, TrendingUp, Users, DollarSign, Eye, Target } from "lucide-react";
 
-const categories = ["All Projects", "SEO", "Social Media", "PPC", "Branding", "Web Design"];
+const categories = ["All Projects", "SEO", "Social Media", "PPC", "Content Marketing", "Graphic Design", "Video Production"];
 
 const projects = [
   {
     id: 1,
-    title: "E-commerce SEO Transformation",
-    client: "Fashion Retailer",
+    title: "SEO Service",
+    client: "Vertex Industrial Solutions",
     category: "SEO",
-    industry: "E-commerce",
+    industry: "Industrial",
     gradient: "from-[#0011C4] to-[#AAD2FF]",
     icon: TrendingUp,
-    challenge: "Low organic visibility and declining traffic",
-    solution: "Complete technical SEO overhaul, content strategy, and link building campaign",
+    challenge: "Stagnant organic growth, low-quality traffic, and minimal visibility for core service keywords, resulting in poor lead generation.",
+    solution: "Implemented a data-driven SEO strategy including in-depth keyword research, on-page optimization, technical fixes, content optimization, and authority-building backlinks focused on conversion-ready keywords.",
     results: [
-      { metric: "450%", label: "Traffic Increase" },
-      { metric: "₹2Cr", label: "Revenue Generated" },
-      { metric: "#1", label: "Google Rankings" }
+      { metric: "380%", label: "Organic Traffic Growth" },
+      { metric: "₹1.6Cr", label: "Revenue Influenced by SEO" },
+      { metric: "Top 3", label: "Rankings for High-Intent Keywords" }
     ],
-    testimonial: "Shivora Media transformed our online presence completely!"
+    testimonial: "Shivora helped us achieve remarkable organic growth and quality traffic."
   },
   {
     id: 2,
-    title: "Viral Social Media Campaign",
-    client: "Food Delivery App",
+    title: "Social Media Management",
+    client: "Aura Living Co.",
     category: "Social Media",
-    industry: "Food Tech",
+    industry: "Lifestyle",
     gradient: "from-[#FDD835] to-[#FFB300]",
     icon: Users,
-    challenge: "Low brand awareness and engagement",
-    solution: "Multi-platform content strategy with influencer partnerships",
+    challenge: "Limited brand visibility and low engagement within the target audience.",
+    solution: "Developed a focused social media strategy using platform-specific content, micro-influencer collaborations, and trend-based campaigns.",
     results: [
-      { metric: "10M+", label: "Reach Generated" },
-      { metric: "500K", label: "New Followers" },
-      { metric: "50K", label: "App Downloads" }
+      { metric: "2.5M+", label: "Total Reach Achieved" },
+      { metric: "10K+", label: "New Followers Gained" },
+      { metric: "9K+", label: "Qualified Leads Generated" }
     ],
-    testimonial: "Our social media exploded after working with Shivora!"
+    testimonial: "Shivora helped us build a strong and engaged social community with consistent growth."
   },
   {
     id: 3,
-    title: "Lead Generation Machine",
-    client: "Real Estate Company",
+    title: "Pay Per Click Advertising",
+    client: "BuildEdge Realty",
     category: "PPC",
     industry: "Real Estate",
     gradient: "from-green-600 to-emerald-500",
     icon: DollarSign,
-    challenge: "High cost per lead and low conversion rates",
-    solution: "Optimized Google & Facebook ad campaigns with landing page redesign",
+    challenge: "Paid advertising was driving traffic but failing to deliver quality conversions, resulting in wasted ad spend and inconsistent lead quality.",
+    solution: "Redesigned the paid media approach with audience refinement, creative testing, funnel-based ad structures, and conversion-focused landing page improvements across search and social platforms.",
     results: [
-      { metric: "5x", label: "ROAS Achieved" },
-      { metric: "2000+", label: "Qualified Leads" },
-      { metric: "60%", label: "Cost Reduction" }
+      { metric: "3.8x", label: "Return on Ad Spend" },
+      { metric: "1,350+", label: "High-Intent Leads Generated" },
+      { metric: "45%", label: "Lower Cost per Conversion" }
     ],
-    testimonial: "Best ROI we've ever seen from digital marketing!"
+    testimonial: "Shivora completely turned around our paid campaigns. Better leads, smarter spending, and real business growth."
   },
   {
     id: 4,
-    title: "Complete Brand Overhaul",
-    client: "Tech Startup",
-    category: "Branding",
-    industry: "Technology",
+    title: "Content Marketing Service",
+    client: "PureVeda Wellness",
+    category: "Content Marketing",
+    industry: "Wellness",
     gradient: "from-purple-600 to-pink-500",
     icon: Eye,
-    challenge: "Outdated brand identity not resonating with target audience",
-    solution: "Full rebrand including logo, visual identity, and brand guidelines",
+    challenge: "Struggling to connect with the target audience through meaningful, value-driven content.",
+    solution: "Built a content marketing engine using SEO blogs, social-first storytelling, short-form videos, and consistent brand messaging across platforms.",
     results: [
-      { metric: "100%", label: "Brand Refresh" },
-      { metric: "3x", label: "Brand Recall" },
-      { metric: "40%", label: "More Inquiries" }
+      { metric: "120+", label: "Content Pieces Published" },
+      { metric: "3.2M+", label: "Content Impressions" },
+      { metric: "180%", label: "Increase in Engagement" }
     ],
-    testimonial: "Our new brand identity perfectly captures who we are!"
+    testimonial: "The content strategy brought our brand to life. Engagement and visibility grew consistently month after month."
   },
   {
     id: 5,
-    title: "High-Converting Website",
-    client: "SaaS Company",
-    category: "Web Design",
-    industry: "Software",
+    title: "Video Production Service",
+    client: "Vista Retreats",
+    category: "Video Production",
+    industry: "Hospitality",
     gradient: "from-[#0011C4] to-[#353442]",
     icon: Target,
-    challenge: "Poor website performance and low conversion rates",
-    solution: "Complete website redesign with conversion optimization",
+    challenge: "Low audience retention and limited impact from existing video content across digital platforms.",
+    solution: "End-to-end video production including concept development, scripting, professional shoots, editing, motion graphics, and platform-optimized video formats.",
     results: [
-      { metric: "200%", label: "More Signups" },
-      { metric: "2s", label: "Load Time" },
-      { metric: "99%", label: "Satisfaction" }
+      { metric: "60+", label: "Videos Produced" },
+      { metric: "2.8M+", label: "Total Video Views" },
+      { metric: "210%", label: "Increase in Watch Time" }
     ],
-    testimonial: "Our new website is a lead generation machine!"
+    testimonial: "The videos elevated our brand storytelling and dramatically improved audience engagement."
   },
   {
     id: 6,
-    title: "Influencer Marketing Success",
-    client: "Beauty Brand",
-    category: "Social Media",
-    industry: "Beauty & Cosmetics",
+    title: "Creative Designing Service",
+    client: "Nexora Brands",
+    category: "Graphic Design",
+    industry: "Branding",
     gradient: "from-pink-500 to-rose-400",
     icon: Users,
-    challenge: "Need to reach younger demographic authentically",
-    solution: "Strategic influencer partnerships and UGC campaigns",
+    challenge: "Lack of visual consistency and outdated creatives were reducing brand impact across digital platforms.",
+    solution: "Developed a unified creative design system including social media creatives, ad designs, brand templates, visual storytelling, and campaign-specific artwork.",
     results: [
-      { metric: "50+", label: "Influencers" },
-      { metric: "5M+", label: "Video Views" },
-      { metric: "300%", label: "Sales Increase" }
+      { metric: "90%", label: "Visual Consistency Improved" },
+      { metric: "2.2x", label: "Higher Content Engagement" },
+      { metric: "30%", label: "Increase in Brand Inquiries" }
     ],
-    testimonial: "The influencer campaign exceeded all our expectations!"
+    testimonial: "The new creative designs gave our brand a premium look and instantly improved engagement."
   }
 ];
 
@@ -118,7 +118,7 @@ export default function Portfolio() {
     : projects.filter(p => p.category === activeCategory);
 
   return (
-    <section id="portfolio" className="py-12 sm:py-16 relative overflow-hidden">
+    <section id="portfolio" className="pt-32 pb-12 sm:pt-36 sm:pb-16 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] blob-blue opacity-20"></div>

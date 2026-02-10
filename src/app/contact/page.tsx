@@ -79,6 +79,12 @@ export default function ContactPage() {
               Ready to transform your digital presence? Get a free consultation and custom 
               strategy tailored to your business goals.
             </p>
+            <p className="text-xl text-secondary max-w-3xl mx-auto mt-4">
+              We&apos;re Excited To Connect With You! Having a question, a project idea, or need expert support? 
+              Our team is here to listen and help. Reach out using the contact form or send us an email, and 
+              let&apos;s start a conversation about your goals. We&apos;ll get back to you promptly with clear 
+              and reliable assistance.
+            </p>
           </div>
         </div>
       </section>

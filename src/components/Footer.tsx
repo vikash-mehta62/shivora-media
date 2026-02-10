@@ -6,6 +6,7 @@ const services = [
   { name: "Search Engine Optimization", href: "/services/seo" },
   { name: "Social Media Marketing", href: "/services/social-media" },
   { name: "Pay-Per-Click Advertising", href: "/services/ppc" },
+  { name: "Content Marketing", href: "/services/content-marketing" },
   { name: "Creative Designing", href: "/services/graphic-design" },
   { name: "Video Production", href: "/services/video-production" }
 ];
