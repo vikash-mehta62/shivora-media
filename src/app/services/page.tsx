@@ -148,7 +148,7 @@ export default function ServicesPage() {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-20 relative overflow-hidden">
+      <section className="pt-20 pb-10 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-20 right-0 w-[600px] h-[600px] blob-blue opacity-30"></div>
           <div className="absolute bottom-0 left-0 w-[400px] h-[400px] blob-gold opacity-20"></div>
@@ -191,7 +191,7 @@ export default function ServicesPage() {
       {/* Service Tabs */}
       <section className="py-12 section-alt">
         <div className="max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap justify-center gap-3 mb-12">
+          <div className="flex flex-wrap justify-center gap-3 mb-6">
             {services.map((service) => (
               <button
                 key={service.id}
@@ -211,7 +211,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Active Service Detail */}
-      <section className="py-20">
+      <section className="py-10">
         <div className="max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Left - Info */}
@@ -293,7 +293,7 @@ export default function ServicesPage() {
     <Services/>
 
       {/* CTA */}
-      <section className="py-20">
+      <section className="py-10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="card rounded-3xl p-10 sm:p-16 text-center bg-brand-section text-white">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-white">Ready to Grow Your Business?</h2>

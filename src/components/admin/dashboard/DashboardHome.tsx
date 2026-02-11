@@ -129,47 +129,47 @@ export default function DashboardHome() {
   return (
     <div className="space-y-6">
       {/* Stats Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
         {statsCards.map((stat, index) => {
           const Icon = stat.icon;
           return (
             <div
               key={index}
-              className="bg-gray-800 rounded-xl p-6 border border-gray-700 hover:border-gray-600 transition-colors"
+              className="bg-gray-800 rounded-xl p-4 sm:p-6 border border-gray-700 hover:border-gray-600 transition-colors"
             >
-              <div className="flex items-center justify-between mb-4">
-                <div className={`p-3 rounded-lg bg-linear-to-br ${stat.color}`}>
-                  <Icon className="text-white" size={24} />
+              <div className="flex items-center justify-between mb-3 sm:mb-4">
+                <div className={`p-2 sm:p-3 rounded-lg bg-gradient-to-br ${stat.color}`}>
+                  <Icon className="text-white" size={20} />
                 </div>
               </div>
-              <h3 className="text-gray-400 text-sm mb-1">{stat.label}</h3>
-              <p className="text-3xl font-bold text-white">{stat.value}</p>
+              <h3 className="text-gray-400 text-xs sm:text-sm mb-1">{stat.label}</h3>
+              <p className="text-2xl sm:text-3xl font-bold text-white">{stat.value}</p>
             </div>
           );
         })}
       </div>
 
       {/* Recent Activity */}
-      <div className="bg-gray-800 rounded-xl p-6 border border-gray-700">
-        <h2 className="text-xl font-bold text-white mb-4">Recent Activity</h2>
+      <div className="bg-gray-800 rounded-xl p-4 sm:p-6 border border-gray-700">
+        <h2 className="text-lg sm:text-xl font-bold text-white mb-4">Recent Activity</h2>
         {recentActivity.length === 0 ? (
-          <div className="text-center py-8 text-gray-400">
+          <div className="text-center py-8 text-gray-400 text-sm sm:text-base">
             No recent activity. Upload some media to get started!
           </div>
         ) : (
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4">
             {recentActivity.map((item) => (
-              <div key={item._id} className="flex items-center gap-4 p-4 bg-gray-700/50 rounded-lg">
-                <div className={`w-10 h-10 rounded-full flex items-center justify-center ${
+              <div key={item._id} className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 bg-gray-700/50 rounded-lg">
+                <div className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 ${
                   item.type === 'image' 
-                    ? 'bg-linear-to-br from-blue-500 to-purple-600' 
-                    : 'bg-linear-to-br from-green-500 to-teal-600'
+                    ? 'bg-gradient-to-br from-blue-500 to-purple-600' 
+                    : 'bg-gradient-to-br from-green-500 to-teal-600'
                 }`}>
-                  <Image size={20} className="text-white" />
+                  <Image size={18} className="text-white" />
                 </div>
-                <div className="flex-1">
-                  <p className="text-white font-medium">{item.title}</p>
-                  <p className="text-gray-400 text-sm">
+                <div className="flex-1 min-w-0">
+                  <p className="text-white font-medium text-sm sm:text-base truncate">{item.title}</p>
+                  <p className="text-gray-400 text-xs sm:text-sm">
                     {item.type === 'image' ? 'Image' : 'Video'} uploaded {formatDate(item.createdAt)}
                     {item.uploadedBy && ` by ${item.uploadedBy.username}`}
                   </p>

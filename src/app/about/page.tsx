@@ -31,7 +31,7 @@ export default function AboutPage() {
       <main className="pt-[80px]">
 
       {/* Hero Section */}
-      <section className="pb-20 relative overflow-hidden">
+      <section className="pb-10 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-20 right-0 w-[600px] h-[600px] blob-blue opacity-30"></div>
         </div>
@@ -96,7 +96,7 @@ export default function AboutPage() {
       </section>
 
       {/* Story Section */}
-      <section className="py-20 section-alt">
+      <section className="py-10 section-alt">
         <div className="max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -128,9 +128,9 @@ export default function AboutPage() {
       </section>
 
       {/* Values Section */}
-      <section className="py-20">
+      <section className="py-10">
         <div className="max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center mb-6">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">Our Core Values</h2>
             <p className="text-secondary max-w-2xl mx-auto">The principles that guide everything we do</p>
           </div>
@@ -149,9 +149,9 @@ export default function AboutPage() {
       </section>
 
       {/* What Makes Us Different */}
-      <section className="py-20 section-alt">
+      <section className="py-10 section-alt">
         <div className="max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center mb-6">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">What Makes Us Different?</h2>
             <p className="text-secondary max-w-2xl mx-auto">See how we compare to other agencies</p>
           </div>
@@ -226,7 +226,7 @@ export default function AboutPage() {
 
 
       {/* Why Choose Us */}
-      <section className="py-20">
+      <section className="py-10">
         <div className="max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8">
           <div className="card rounded-3xl p-8 sm:p-12 shadow-xl bg-brand-section text-white">
             <div className="text-center mb-10">
@@ -252,7 +252,7 @@ export default function AboutPage() {
 
       {/* CTA - Let's Talk */}
      <div className="border-t border-brand-light">
-  <div className="max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+  <div className="max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
     <div className="card rounded-3xl p-8 sm:p-12 lg:p-16 text-center relative overflow-hidden shadow-2xl bg-brand-section text-white">
       
       {/* Decorative blobs */}

@@ -17,7 +17,7 @@ const stats = [
 
 export default function Team() {
   return (
-    <section className="py-12 sm:py-16 relative overflow-hidden section-alt">
+    <section className="py-8 sm:py-10 relative overflow-hidden section-alt">
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] blob-blue opacity-20"></div>
@@ -25,7 +25,7 @@ export default function Team() {
 
       <div className="max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-8">
           <div className="inline-flex items-center gap-2 px-4 py-2 badge-bg rounded-full mb-4">
             <Users className="w-4 h-4 icon-primary" />
             <span className="text-sm font-medium badge-text">Our Team</span>
@@ -41,7 +41,7 @@ export default function Team() {
         </div>
 
         {/* Team Stats */}
-        <div className="grid grid-cols-3 gap-4 sm:gap-8 mb-16 max-w-2xl mx-auto">
+        <div className="grid grid-cols-3 gap-4 sm:gap-8 mb-8 max-w-2xl mx-auto">
           {stats.map((stat, i) => (
             <div key={i} className="text-center">
               <div className="text-3xl sm:text-4xl font-bold icon-gold">{stat.number}</div>

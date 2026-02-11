@@ -54,7 +54,7 @@ export default function Hero() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] blob-blue opacity-20"></div>
       </div>
 
-      <div className="mx-auto max-w-[92%] px-4 sm:px-6 lg:px-8 py-6 sm:py-8 relative z-10">
+      <div className="mx-auto max-w-[92%] px-4 sm:px-6 lg:px-8 py-4 sm:py-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-center">
           {/* Left Content */}
           <div className={`${mounted ? "animate-slide-up" : "opacity-0"}`}>

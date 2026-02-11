@@ -135,7 +135,7 @@ export default function PortfolioPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 relative overflow-hidden">
+      <section className="pt-20 pb-10 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-20 right-0 w-[600px] h-[600px] blob-blue opacity-30"></div>
         </div>
@@ -180,7 +180,7 @@ export default function PortfolioPage() {
       </section>
 
       {/* Projects Grid */}
-      <section className="py-20">
+      <section className="py-10">
         <div className="max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredProjects.map((project) => (
@@ -218,7 +218,7 @@ export default function PortfolioPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 section-alt">
+      <section className="py-10 section-alt">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="card rounded-3xl p-10 sm:p-16 text-center bg-brand-section text-white">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">Ready to Be Our Next Success Story?</h2>

@@ -35,7 +35,7 @@ export default function TeamPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 relative overflow-hidden">
+      <section className="pt-20 pb-10 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-20 right-0 w-[600px] h-[600px] blob-blue opacity-30"></div>
         </div>
@@ -74,9 +74,9 @@ export default function TeamPage() {
       </section>
 
       {/* Leadership Team */}
-      <section className="py-20 section-alt">
+      <section className="py-10 section-alt">
         <div className="max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center mb-6">
             <h2 className="text-3xl font-bold mb-4">Leadership Team</h2>
             <p className="text-secondary">The experts driving your success</p>
           </div>
@@ -108,9 +108,9 @@ export default function TeamPage() {
       </section>
 
       {/* Departments */}
-      <section className="py-20">
+      <section className="py-10">
         <div className="max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center mb-6">
             <h2 className="text-3xl font-bold mb-4">Our Departments</h2>
             <p className="text-secondary">Specialized teams for every aspect of digital marketing</p>
           </div>
@@ -130,9 +130,9 @@ export default function TeamPage() {
       </section>
 
       {/* Certifications */}
-      <section className="py-20 section-alt">
+      <section className="py-10 section-alt">
         <div className="max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center mb-6">
             <h2 className="text-3xl font-bold mb-4">Our Certifications</h2>
             <p className="text-secondary">Industry-recognized expertise</p>
           </div>
@@ -148,7 +148,7 @@ export default function TeamPage() {
       </section>
 
       {/* Join Team CTA */}
-      {/* <section className="py-20">
+      {/* <section className="py-10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="card rounded-3xl p-10 sm:p-16 text-center bg-brand-section text-white">
             <Star className="w-16 h-16 text-gold mx-auto mb-6" />

@@ -35,7 +35,7 @@ export default function Footer() {
     <footer className="relative overflow-hidden section-alt">
       {/* Main Footer */}
       <div className="border-t border-brand-light">
-        <div className="max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 lg:gap-12">
             {/* Brand */}
             <div className="col-span-2">

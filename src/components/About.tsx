@@ -24,15 +24,15 @@ const whyUs = [
 
 export default function About() {
   return (
-    <section id="about" className="pt-24 pb-4 relative overflow-hidden section-alt">
+    <section id="about" className="pt-12 pb-4 relative overflow-hidden section-alt">
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] blob-blue opacity-20"></div>
       </div>
 
       <div className="max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Header */}
-        <div className="text-center mb-16">
+            {/* Section Header */}
+        <div className="text-center mb-8">
           <div className="inline-flex items-center gap-2 px-4 py-2 badge-bg rounded-full mb-4">
             <Award className="w-4 h-4 icon-primary" />
             <span className="text-sm font-medium badge-text">About Us</span>
@@ -48,7 +48,7 @@ export default function About() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-20">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-10">
           {/* Left Content */}
           <div>
             <h3 className="text-2xl sm:text-3xl font-bold mb-6">
@@ -133,7 +133,7 @@ export default function About() {
           </div>
         </div>
 
-        <section className="py-20 section-alt">
+        <section className="py-10 section-alt">
         <div className="max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">What Makes Us Different?</h2>

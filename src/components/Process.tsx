@@ -34,7 +34,7 @@ export default function Process() {
 
       <div className="max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-8">
           <div className="inline-flex items-center gap-2 px-4 py-2 badge-bg rounded-full mb-4">
             <Workflow className="w-4 h-4 icon-primary" />
             <span className="text-sm font-medium badge-text">Our Process</span>

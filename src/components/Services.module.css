@@ -1,5 +1,5 @@
 .section {
-  padding: 3rem 0;
+  padding: 1.5rem 0;
   background: #f9fafb;
 }
 
@@ -11,7 +11,7 @@
 
 .header {
   text-align: center;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .title {
@@ -169,7 +169,7 @@
 
 @media (max-width: 768px) {
   .section {
-    padding: 2rem 0;
+    padding: 1rem 0;
   }
   
   .cardWrapper {

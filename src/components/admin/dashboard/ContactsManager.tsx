@@ -124,19 +124,19 @@ export default function ContactsManager() {
   return (
     <div className="space-y-6">
       {/* Stats Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
         {[
           { label: 'Total Contacts', value: stats.total, color: 'from-blue-500 to-blue-600' },
           { label: 'New', value: stats.new, color: 'from-purple-500 to-purple-600' },
           { label: 'Contacted', value: stats.contacted, color: 'from-yellow-500 to-yellow-600' },
           { label: 'Converted', value: stats.converted, color: 'from-green-500 to-green-600' },
         ].map((stat, index) => (
-          <div key={index} className="bg-gray-800 rounded-xl p-6 border border-gray-700">
-            <div className={`w-12 h-12 rounded-lg bg-linear-to-br ${stat.color} flex items-center justify-center mb-4`}>
-              <Mail className="text-white" size={24} />
+          <div key={index} className="bg-gray-800 rounded-xl p-4 sm:p-6 border border-gray-700">
+            <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-gradient-to-br ${stat.color} flex items-center justify-center mb-3 sm:mb-4`}>
+              <Mail className="text-white" size={20} />
             </div>
-            <h3 className="text-gray-400 text-sm mb-1">{stat.label}</h3>
-            <p className="text-3xl font-bold text-white">{stat.value}</p>
+            <h3 className="text-gray-400 text-xs sm:text-sm mb-1">{stat.label}</h3>
+            <p className="text-2xl sm:text-3xl font-bold text-white">{stat.value}</p>
           </div>
         ))}
       </div>
@@ -183,72 +183,142 @@ export default function ContactsManager() {
           <p className="text-gray-400">Contacts will appear here when users submit forms</p>
         </div>
       ) : (
-        <div className="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden">
-          <div className="overflow-x-auto">
-            <table className="w-full">
-              <thead className="bg-gray-700/50">
-                <tr>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-300">Name</th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-300">Contact</th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-300">Service</th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-300">Source</th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-300">Status</th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-300">Date</th>
-                  <th className="px-6 py-4 text-right text-sm font-semibold text-gray-300">Actions</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-700">
-                {contacts.map((contact) => (
-                  <tr key={contact._id} className="hover:bg-gray-700/30 transition-colors">
-                    <td className="px-6 py-4">
-                      <div className="text-white font-medium">{contact.name}</div>
-                      {contact.company && <div className="text-gray-400 text-sm">{contact.company}</div>}
-                    </td>
-                    <td className="px-6 py-4">
-                      <div className="text-gray-400 text-sm">{contact.email}</div>
-                      {contact.phone && <div className="text-gray-400 text-sm">{contact.phone}</div>}
-                    </td>
-                    <td className="px-6 py-4 text-gray-400 text-sm">{contact.service || '-'}</td>
-                    <td className="px-6 py-4">
-                      <span className="px-2 py-1 rounded text-xs font-medium bg-gray-700 text-gray-300">
-                        {getSourceLabel(contact.source)}
-                      </span>
-                    </td>
-                    <td className="px-6 py-4">
-                      <select
-                        value={contact.status}
-                        onChange={(e) => updateStatus(contact._id, e.target.value)}
-                        className={`px-3 py-1 rounded-full text-xs font-medium ${getStatusColor(contact.status)} bg-transparent border-0 cursor-pointer`}
-                      >
-                        <option value="new">New</option>
-                        <option value="contacted">Contacted</option>
-                        <option value="converted">Converted</option>
-                        <option value="closed">Closed</option>
-                      </select>
-                    </td>
-                    <td className="px-6 py-4 text-gray-400 text-sm">{formatDate(contact.createdAt)}</td>
-                    <td className="px-6 py-4">
-                      <div className="flex items-center justify-end gap-2">
-                        <button
-                          onClick={() => setSelectedContact(contact)}
-                          className="p-2 hover:bg-gray-700 rounded-lg text-gray-400 hover:text-white transition-colors"
-                        >
-                          <Eye size={18} />
-                        </button>
-                        <button
-                          onClick={() => deleteContact(contact._id)}
-                          className="p-2 hover:bg-red-500/10 rounded-lg text-gray-400 hover:text-red-400 transition-colors"
-                        >
-                          <Trash2 size={18} />
-                        </button>
-                      </div>
-                    </td>
+        <>
+          {/* Desktop Table View */}
+          <div className="hidden lg:block bg-gray-800 rounded-xl border border-gray-700 overflow-hidden">
+            <div className="overflow-x-auto">
+              <table className="w-full">
+                <thead className="bg-gray-700/50">
+                  <tr>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-gray-300">Name</th>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-gray-300">Contact</th>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-gray-300">Service</th>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-gray-300">Source</th>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-gray-300">Status</th>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-gray-300">Date</th>
+                    <th className="px-6 py-4 text-right text-sm font-semibold text-gray-300">Actions</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody className="divide-y divide-gray-700">
+                  {contacts.map((contact) => (
+                    <tr key={contact._id} className="hover:bg-gray-700/30 transition-colors">
+                      <td className="px-6 py-4">
+                        <div className="text-white font-medium">{contact.name}</div>
+                        {contact.company && <div className="text-gray-400 text-sm">{contact.company}</div>}
+                      </td>
+                      <td className="px-6 py-4">
+                        <div className="text-gray-400 text-sm">{contact.email}</div>
+                        {contact.phone && <div className="text-gray-400 text-sm">{contact.phone}</div>}
+                      </td>
+                      <td className="px-6 py-4 text-gray-400 text-sm">{contact.service || '-'}</td>
+                      <td className="px-6 py-4">
+                        <span className="px-2 py-1 rounded text-xs font-medium bg-gray-700 text-gray-300">
+                          {getSourceLabel(contact.source)}
+                        </span>
+                      </td>
+                      <td className="px-6 py-4">
+                        <select
+                          value={contact.status}
+                          onChange={(e) => updateStatus(contact._id, e.target.value)}
+                          className={`px-3 py-1 rounded-full text-xs font-medium ${getStatusColor(contact.status)} bg-transparent border-0 cursor-pointer`}
+                        >
+                          <option value="new">New</option>
+                          <option value="contacted">Contacted</option>
+                          <option value="converted">Converted</option>
+                          <option value="closed">Closed</option>
+                        </select>
+                      </td>
+                      <td className="px-6 py-4 text-gray-400 text-sm">{formatDate(contact.createdAt)}</td>
+                      <td className="px-6 py-4">
+                        <div className="flex items-center justify-end gap-2">
+                          <button
+                            onClick={() => setSelectedContact(contact)}
+                            className="p-2 hover:bg-gray-700 rounded-lg text-gray-400 hover:text-white transition-colors"
+                          >
+                            <Eye size={18} />
+                          </button>
+                          <button
+                            onClick={() => deleteContact(contact._id)}
+                            className="p-2 hover:bg-red-500/10 rounded-lg text-gray-400 hover:text-red-400 transition-colors"
+                          >
+                            <Trash2 size={18} />
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
-        </div>
+
+          {/* Mobile Card View */}
+          <div className="lg:hidden space-y-4">
+            {contacts.map((contact) => (
+              <div key={contact._id} className="bg-gray-800 rounded-xl border border-gray-700 p-4">
+                <div className="flex items-start justify-between mb-3">
+                  <div className="flex-1">
+                    <h3 className="text-white font-medium mb-1">{contact.name}</h3>
+                    {contact.company && <p className="text-gray-400 text-sm">{contact.company}</p>}
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <button
+                      onClick={() => setSelectedContact(contact)}
+                      className="p-2 hover:bg-gray-700 rounded-lg text-gray-400 hover:text-white transition-colors"
+                    >
+                      <Eye size={18} />
+                    </button>
+                    <button
+                      onClick={() => deleteContact(contact._id)}
+                      className="p-2 hover:bg-red-500/10 rounded-lg text-gray-400 hover:text-red-400 transition-colors"
+                    >
+                      <Trash2 size={18} />
+                    </button>
+                  </div>
+                </div>
+                
+                <div className="space-y-2 mb-3">
+                  <div className="flex items-center gap-2 text-sm">
+                    <Mail size={14} className="text-gray-500" />
+                    <span className="text-gray-400">{contact.email}</span>
+                  </div>
+                  {contact.phone && (
+                    <div className="flex items-center gap-2 text-sm">
+                      <Phone size={14} className="text-gray-500" />
+                      <span className="text-gray-400">{contact.phone}</span>
+                    </div>
+                  )}
+                  {contact.service && (
+                    <div className="flex items-center gap-2 text-sm">
+                      <Building size={14} className="text-gray-500" />
+                      <span className="text-gray-400">{contact.service}</span>
+                    </div>
+                  )}
+                  <div className="flex items-center gap-2 text-sm">
+                    <Calendar size={14} className="text-gray-500" />
+                    <span className="text-gray-400">{formatDate(contact.createdAt)}</span>
+                  </div>
+                </div>
+
+                <div className="flex items-center justify-between pt-3 border-t border-gray-700">
+                  <span className="px-2 py-1 rounded text-xs font-medium bg-gray-700 text-gray-300">
+                    {getSourceLabel(contact.source)}
+                  </span>
+                  <select
+                    value={contact.status}
+                    onChange={(e) => updateStatus(contact._id, e.target.value)}
+                    className={`px-3 py-1 rounded-full text-xs font-medium ${getStatusColor(contact.status)} bg-gray-900 border border-gray-700 cursor-pointer`}
+                  >
+                    <option value="new">New</option>
+                    <option value="contacted">Contacted</option>
+                    <option value="converted">Converted</option>
+                    <option value="closed">Closed</option>
+                  </select>
+                </div>
+              </div>
+            ))}
+          </div>
+        </>
       )}
 
       {/* Contact Detail Modal */}

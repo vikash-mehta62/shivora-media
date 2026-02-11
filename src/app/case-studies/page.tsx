@@ -129,7 +129,7 @@ export default function CaseStudiesPage() {
         </section>
 
         {/* Case Studies */}
-        <section className="pb-16">
+        <section className="pb-8">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="space-y-10">
               {caseStudies.map((study, index) => (
@@ -197,7 +197,7 @@ export default function CaseStudiesPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-16 section-alt">
+        <section className="py-10 section-alt">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="card rounded-2xl p-8 sm:p-12 text-center bg-brand-section text-white shadow-xl">
               <h2 className="text-2xl sm:text-3xl font-bold mb-3">
