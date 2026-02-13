@@ -182,7 +182,7 @@ export default function Hero() {
      
 
         {/* Image Slider - 2 Images Per Slide */}
-        <div className="mt-6 sm:mt-8">
+        <div className="mt-6 sm:mt-8 hidden">
           <div className="relative">
             {/* Slider Container */}
             <div className="overflow-hidden rounded-xl">
