@@ -31,13 +31,13 @@ export default function AboutPage() {
       <main className="pt-[80px]">
 
       {/* Hero Section */}
-      <section className="pb-10 relative overflow-hidden">
+      <section className="pt-6 pb-10 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-20 right-0 w-[600px] h-[600px] blob-blue opacity-30"></div>
         </div>
 
         <div className="max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10">
             <div className="inline-flex items-center gap-2 px-4 py-2 badge-bg rounded-full mb-4">
               <Award className="w-4 h-4 icon-primary" />
               <span className="text-sm font-medium badge-text">About Us</span>
@@ -96,9 +96,9 @@ export default function AboutPage() {
       </section>
 
       {/* Story Section */}
-      <section className="py-10 section-alt">
+      <section className="py-6 section-alt">
         <div className="max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 items-center">
             <div>
               <h2 className="text-3xl sm:text-4xl font-bold mb-6">
                 Driving Growth, <span className="heading-primary">Crafting Impact</span>
@@ -128,7 +128,7 @@ export default function AboutPage() {
       </section>
 
       {/* Values Section */}
-      <section className="py-10">
+      <section className="py-6">
         <div className="max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-6">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">Our Core Values</h2>
@@ -149,7 +149,7 @@ export default function AboutPage() {
       </section>
 
       {/* What Makes Us Different */}
-      <section className="py-10 section-alt">
+      <section className="py-6 section-alt">
         <div className="max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-6">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">What Makes Us Different?</h2>
@@ -226,9 +226,9 @@ export default function AboutPage() {
 
 
       {/* Why Choose Us */}
-      <section className="py-10">
+      <section className="py-6">
         <div className="max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="card rounded-3xl p-8 sm:p-12 shadow-xl bg-brand-section text-white">
+          <div className="card rounded-3xl p-6 sm:p-8 shadow-xl bg-brand-section text-white">
             <div className="text-center mb-10">
               <h2 className="text-3xl sm:text-4xl font-bold mb-2 text-white">Why Choose Shivora Media?</h2>
               <p className="text-baby-blue">What sets us apart from other agencies</p>
@@ -252,8 +252,8 @@ export default function AboutPage() {
 
       {/* CTA - Let's Talk */}
      <div className="border-t border-brand-light">
-  <div className="max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
-    <div className="card rounded-3xl p-8 sm:p-12 lg:p-16 text-center relative overflow-hidden shadow-2xl bg-brand-section text-white">
+  <div className="max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+    <div className="card rounded-3xl p-6 sm:p-8 lg:p-10 text-center relative overflow-hidden shadow-2xl bg-brand-section text-white">
       
       {/* Decorative blobs */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-baby-blue/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>

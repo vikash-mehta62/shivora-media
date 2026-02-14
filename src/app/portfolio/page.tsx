@@ -135,17 +135,17 @@ export default function PortfolioPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-20 pb-10 relative overflow-hidden">
+      <section className="pt-24 pb-10 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-20 right-0 w-[600px] h-[600px] blob-blue opacity-30"></div>
         </div>
         <div className="max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10">
             <div className="inline-flex items-center gap-2 px-4 py-2 badge-bg rounded-full mb-4">
               <Briefcase className="w-4 h-4 badge-text" />
               <span className="text-sm font-medium badge-text">Our Portfolio</span>
             </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">
               Success Stories That <span className="badge-text">Inspire</span>
             </h1>
             <p className="text-xl text-secondary max-w-3xl mx-auto">
@@ -154,7 +154,7 @@ export default function PortfolioPage() {
             </p>
           </div>
           {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[{ num: "500+", label: "Projects Completed" }, { num: "₹50Cr+", label: "Revenue Generated" }, { num: "150+", label: "Happy Clients" }, { num: "5x", label: "Avg. ROI" }].map((s, i) => (
               <div key={i} className="card rounded-2xl p-6 text-center">
                 <div className="text-3xl font-bold text-[var(--deep-blue)] dark:text-gold">{s.num}</div>
@@ -180,9 +180,9 @@ export default function PortfolioPage() {
       </section>
 
       {/* Projects Grid */}
-      <section className="py-10">
+      <section className="py-6">
         <div className="max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredProjects.map((project) => (
               <div key={project.id} onClick={() => setSelectedProject(project)}
                 className="group card rounded-2xl overflow-hidden cursor-pointer hover:shadow-2xl transition-all hover:-translate-y-2">
@@ -218,9 +218,9 @@ export default function PortfolioPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-10 section-alt">
+      <section className="py-6 section-alt">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="card rounded-3xl p-10 sm:p-16 text-center bg-brand-section text-white">
+          <div className="card rounded-3xl p-8 sm:p-10 text-center bg-brand-section text-white">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">Ready to Be Our Next Success Story?</h2>
             <p className="text-baby-blue mb-8 text-lg">Let&apos;s discuss how we can help achieve similar results for your business.</p>
             <a href="/contact" className="inline-flex items-center gap-2 px-8 py-4 btn-gold rounded-full font-semibold text-lg">

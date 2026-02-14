@@ -136,7 +136,14 @@ export default function Hero() {
               <div className="card rounded-2xl p-5 sm:p-6 shadow-2xl">
                 {/* Logo */}
                 <div className="relative w-full aspect-square max-w-[350px] mx-auto rounded-xl overflow-hidden shadow-xl border-4 border-brand-light">
-                  <Image src="/logo.jpeg" alt="Shivora Media" fill className="object-cover" priority />
+                  <video 
+                    src="/logolandscape.mp4" 
+                    autoPlay 
+                    muted 
+                    loop 
+                    playsInline
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 
                 {/* Stats below logo */}

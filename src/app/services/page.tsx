@@ -148,7 +148,7 @@ export default function ServicesPage() {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="pt-20 pb-10 relative overflow-hidden">
+      <section className="pt-24 pb-10 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-20 right-0 w-[600px] h-[600px] blob-blue opacity-30"></div>
           <div className="absolute bottom-0 left-0 w-[400px] h-[400px] blob-gold opacity-20"></div>

@@ -9,7 +9,7 @@ export default function SEOPage() {
       <main className="pt-[80px]">
 
       {/* Hero Section */}
-      <section className="pb-10 relative overflow-hidden">
+      <section className="pt-6 pb-10 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-20 right-0 w-[600px] h-[600px] blob-blue opacity-30"></div>
         </div>

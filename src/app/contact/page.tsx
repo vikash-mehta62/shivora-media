@@ -13,7 +13,7 @@ const contactInfo = [
   { icon: Clock, label: "Working Hours", value: "Mon - Sat: 10:00 AM - 7:00 PM", link: "#", desc: "Sunday closed" }
 ];
 
-const services = ["SEO Services", "Social Media Marketing", "PPC Advertising", "Content Marketing", "Brand Identity", "Web Development", "Complete Digital Marketing", "Other"];
+const services = ["SEO Services", "Social Media Marketing", "PPC Advertising", "Content Marketing", "Brand Identity", "Complete Digital Marketing", "Other"];
 const budgets = [
   { value: "10-25k", label: "₹10,000 - ₹25,000/month" },
   { value: "25-50k", label: "₹25,000 - ₹50,000/month" },
@@ -61,20 +61,20 @@ export default function ContactPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-24 pb-8 relative overflow-hidden">
+      <section className="pt-24 pb-6 relative overflow-hidden">
   <div className="absolute inset-0 pointer-events-none">
     <div className="absolute top-20 right-0 w-[600px] h-[600px] blob-blue opacity-30"></div>
     <div className="absolute bottom-0 left-0 w-[400px] h-[400px] blob-gold opacity-20"></div>
   </div>
 
   <div className="max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <div className="text-center mb-16">
+    <div className="text-center mb-10">
       <div className="inline-flex items-center gap-2 px-4 py-2 badge-bg rounded-full mb-4">
         <MessageCircle className="w-4 h-4 badge-text" />
         <span className="text-sm font-medium badge-text">Contact Us</span>
       </div>
 
-      <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
+      <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">
         Let&apos;s Start Your <span className="badge-text">Growth Journey</span>
       </h1>
 
@@ -83,7 +83,7 @@ export default function ContactPage() {
   Get a free consultation and custom strategy tailored to your business goals.
 </p>
 
-<p className="text-base sm:text-lg text-secondary max-w-3xl mx-auto mt-6 leading-relaxed">
+<p className="text-base sm:text-lg text-secondary max-w-3xl mx-auto mt-4 leading-relaxed">
   We&apos;re Excited To Connect With You . Having a question, a project idea, or need expert support .
   Our team is here to listen and help. 
   Reach out using the contact form or send us an email, and let&apos;s start a conversation about your goals. 
@@ -97,9 +97,9 @@ export default function ContactPage() {
 
 
       {/* Contact Info Cards */}
-      <section className="py-6">
+      <section className="py-4">
         <div className="max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {contactInfo.map((info, i) => (
               <a key={i} href={info.link} className="card rounded-2xl p-6 hover:shadow-xl hover-primary transition-all group">
                 <div className="w-14 h-14 icon-bg rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
@@ -115,20 +115,20 @@ export default function ContactPage() {
       </section>
 
       {/* Main Contact Section */}
-      <section className="py-10 section-alt">
+      <section className="py-6 section-alt">
         <div className="max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-5 gap-12">
+          <div className="grid lg:grid-cols-5 gap-8">
             {/* Left - Info */}
-            <div className="lg:col-span-2 space-y-8">
+            <div className="lg:col-span-2 space-y-6">
               <div>
-                <h2 className="text-3xl font-bold mb-4">Get in Touch</h2>
+                <h2 className="text-3xl font-bold mb-3">Get in Touch</h2>
                 <p className="text-secondary">Have a project in mind? Fill out the form and we&apos;ll get back to you within 24 hours with a custom proposal.</p>
               </div>
 
               {/* Quick Stats */}
-              <div className="card rounded-2xl p-6 shadow-lg bg-brand-section text-white">
-                <h4 className="font-semibold mb-4 text-baby-blue">Why Contact Us?</h4>
-                <div className="grid grid-cols-2 gap-4">
+              <div className="card rounded-2xl p-5 shadow-lg bg-brand-section text-white">
+                <h4 className="font-semibold mb-3 text-baby-blue">Why Contact Us?</h4>
+                <div className="grid grid-cols-2 gap-3">
                   {[{ num: "24hr", label: "Response Time" }, { num: "Free", label: "Consultation" }, { num: "150+", label: "Happy Clients" }, { num: "5.0", label: "Client Rating" }].map((s, i) => (
                     <div key={i} className="text-center p-4 bg-white/10 rounded-xl">
                       <div className="text-2xl font-bold text-gold">{s.num}</div>
@@ -139,8 +139,8 @@ export default function ContactPage() {
               </div>
 
               {/* Social Links */}
-              <div className="card rounded-2xl p-6">
-                <h4 className="font-semibold mb-4">Follow Us</h4>
+              <div className="card rounded-2xl p-5">
+                <h4 className="font-semibold mb-3">Follow Us</h4>
                 <div className="flex gap-3">
                   <a href="https://www.facebook.com/shivoramedia" target="_blank" rel="noopener noreferrer" className="w-12 h-12 card rounded-xl flex items-center justify-center hover:bg-brand hover:text-white transition">
                     <FaFacebook className="w-5 h-5" />
@@ -157,7 +157,7 @@ export default function ContactPage() {
 
             {/* Right - Form */}
             <div className="lg:col-span-3">
-              <div className="card rounded-2xl p-6 sm:p-8 shadow-xl">
+              <div className="card rounded-2xl p-5 sm:p-6 shadow-xl">
                 {done ? (
                   <div className="text-center py-12">
                     <div className="w-20 h-20 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -245,22 +245,22 @@ export default function ContactPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-10">
+      <section className="py-6">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Frequently Asked Questions</h2>
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold mb-3">Frequently Asked Questions</h2>
             <p className="text-secondary">Quick answers to common questions</p>
           </div>
-          <div className="space-y-4">
+          <div className="space-y-3">
             {faqs.map((faq, i) => (
               <div key={i} className="card rounded-xl overflow-hidden">
                 <button onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  className="w-full px-6 py-4 text-left font-semibold flex items-center justify-between hover:bg-[var(--bg-secondary)] transition">
+                  className="w-full px-5 py-3 text-left font-semibold flex items-center justify-between hover:bg-[var(--bg-secondary)] transition">
                   {faq.q}
                   <span className={`transform transition-transform ${openFaq === i ? "rotate-180" : ""}`}>▼</span>
                 </button>
                 {openFaq === i && (
-                  <div className="px-6 pb-4 text-secondary">{faq.a}</div>
+                  <div className="px-5 pb-3 text-secondary">{faq.a}</div>
                 )}
               </div>
             ))}
@@ -269,10 +269,10 @@ export default function ContactPage() {
       </section>
 
       {/* Map Section */}
-      <section id="map" className="py-10 section-alt">
+      <section id="map" className="py-6 section-alt">
         <div className="max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Visit Our Office</h2>
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold mb-3">Visit Our Office</h2>
             <p className="text-secondary">Raisen Road Piplani, Bhopal</p>
           </div>
           <div className="card rounded-2xl overflow-hidden shadow-xl h-[400px] flex items-center justify-center bg-[var(--bg-secondary)]">

@@ -33,7 +33,6 @@ export default function GalleryPage() {
     { value: 'content-marketing', label: 'Content Marketing' },
     { value: 'creative-designing', label: 'Creative Designing' },
     { value: 'video-production', label: 'Video Production' },
-    { value: 'web-development', label: 'Web Development' },
   ];
 
   useEffect(() => {
@@ -88,31 +87,31 @@ export default function GalleryPage() {
   }, {} as Record<string, MediaItem[]>);
 
   return (
-    <div className="min-h-screen bg-gray-900">
+    <div className="min-h-screen bg-bg-primary">
       <Navbar />
       
-      <main className="pt-16 pb-8">
+      <main className="pt-24 pb-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <div className="text-center mb-8">
+            <h1 className="text-4xl md:text-5xl font-bold heading-primary mb-3">
               Our Gallery
             </h1>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+            <p className="text-xl text-secondary max-w-2xl mx-auto">
               Explore our creative work across different services
             </p>
           </div>
 
           {/* Filters */}
-          <div className="mb-8 space-y-4">
+          <div className="mb-6 space-y-3">
             {/* Type Filter */}
             <div className="flex justify-center gap-4">
               <button
                 onClick={() => setSelectedType('all')}
                 className={`px-6 py-3 rounded-lg font-medium transition-all ${
                   selectedType === 'all'
-                    ? 'bg-linear-to-r from-blue-600 to-purple-600 text-white'
-                    : 'bg-gray-800 text-gray-400 hover:text-white'
+                    ? 'btn-primary'
+                    : 'card text-secondary hover:text-primary'
                 }`}
               >
                 All Media
@@ -121,8 +120,8 @@ export default function GalleryPage() {
                 onClick={() => setSelectedType('image')}
                 className={`px-6 py-3 rounded-lg font-medium transition-all flex items-center gap-2 ${
                   selectedType === 'image'
-                    ? 'bg-linear-to-r from-blue-600 to-purple-600 text-white'
-                    : 'bg-gray-800 text-gray-400 hover:text-white'
+                    ? 'btn-primary'
+                    : 'card text-secondary hover:text-primary'
                 }`}
               >
                 <ImageIcon size={20} />
@@ -132,8 +131,8 @@ export default function GalleryPage() {
                 onClick={() => setSelectedType('video')}
                 className={`px-6 py-3 rounded-lg font-medium transition-all flex items-center gap-2 ${
                   selectedType === 'video'
-                    ? 'bg-linear-to-r from-blue-600 to-purple-600 text-white'
-                    : 'bg-gray-800 text-gray-400 hover:text-white'
+                    ? 'btn-primary'
+                    : 'card text-secondary hover:text-primary'
                 }`}
               >
                 <Video size={20} />
@@ -149,8 +148,8 @@ export default function GalleryPage() {
                   onClick={() => setSelectedCategory(category.value)}
                   className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                     selectedCategory === category.value
-                      ? 'bg-blue-600 text-white'
-                      : 'bg-gray-800 text-gray-400 hover:text-white hover:bg-gray-700'
+                      ? 'bg-brand text-white'
+                      : 'card text-secondary hover:text-primary'
                   }`}
                 >
                   {category.label}
@@ -160,7 +159,7 @@ export default function GalleryPage() {
           </div>
 
           {/* Stats */}
-          <div className="text-center mb-8 text-gray-400">
+          <div className="text-center mb-6 text-secondary">
             Showing {filteredMedia.length} items
             {selectedType !== 'all' && ` (${selectedType}s)`}
             {selectedCategory !== 'all' && ` in ${getCategoryLabel(selectedCategory)}`}
@@ -169,33 +168,33 @@ export default function GalleryPage() {
           {/* Loading State */}
           {loading ? (
             <div className="flex items-center justify-center h-64">
-              <div className="text-white text-lg">Loading gallery...</div>
+              <div className="heading-primary text-lg">Loading gallery...</div>
             </div>
           ) : filteredMedia.length === 0 ? (
-            <div className="text-center py-16 bg-gray-800 rounded-xl border border-gray-700">
-              <ImageIcon size={64} className="mx-auto text-gray-600 mb-4" />
-              <h3 className="text-xl font-semibold text-white mb-2">No media found</h3>
-              <p className="text-gray-400">Try selecting different filters</p>
+            <div className="text-center py-16 card rounded-xl">
+              <ImageIcon size={64} className="mx-auto text-muted mb-4" />
+              <h3 className="text-xl font-semibold heading-primary mb-2">No media found</h3>
+              <p className="text-secondary">Try selecting different filters</p>
             </div>
           ) : (
             /* Gallery by Category */
-            <div className="space-y-12">
+            <div className="space-y-8">
               {Object.entries(groupedMedia).map(([category, items]) => (
                 <div key={category}>
-                  <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                    <span className="w-12 h-1 bg-linear-to-r from-blue-600 to-purple-600 rounded"></span>
+                  <h2 className="text-2xl font-bold heading-primary mb-4 flex items-center gap-3">
+                    <span className="w-12 h-1 bg-brand rounded"></span>
                     {getCategoryLabel(category)}
-                    <span className="text-gray-500 text-lg">({items.length})</span>
+                    <span className="text-muted text-lg">({items.length})</span>
                   </h2>
                   
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                     {items.map((item) => (
                       <div
                         key={item._id}
                         onClick={() => setSelectedMedia(item)}
-                        className="group relative bg-gray-800 rounded-xl overflow-hidden border border-gray-700 hover:border-blue-500 transition-all cursor-pointer"
+                        className="group relative card rounded-xl overflow-hidden hover:border-brand transition-all cursor-pointer"
                       >
-                        <div className="aspect-video bg-gray-900 relative overflow-hidden">
+                        <div className="aspect-video bg-secondary-light relative overflow-hidden">
                           {item.type === 'image' ? (
                             <img
                               src={item.url}
@@ -217,7 +216,7 @@ export default function GalleryPage() {
                           <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100">
                             <div className="text-white text-center">
                               <p className="font-medium mb-1">View {item.type}</p>
-                              <p className="text-sm text-gray-300">{item.format?.toUpperCase()}</p>
+                              <p className="text-sm">{item.format?.toUpperCase()}</p>
                             </div>
                           </div>
 
@@ -233,9 +232,9 @@ export default function GalleryPage() {
                           </div>
                         </div>
                         
-                        <div className="p-4">
-                          <h3 className="text-white font-medium truncate">{item.title}</h3>
-                          <p className="text-gray-400 text-sm">
+                        <div className="p-3">
+                          <h3 className="heading-primary font-medium truncate text-sm">{item.title}</h3>
+                          <p className="text-secondary text-xs">
                             {new Date(item.createdAt).toLocaleDateString()}
                           </p>
                         </div>
@@ -255,12 +254,12 @@ export default function GalleryPage() {
           <div className="relative max-w-6xl w-full" onClick={(e) => e.stopPropagation()}>
             <button
               onClick={() => setSelectedMedia(null)}
-              className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors"
+              className="absolute -top-12 right-0 text-white hover:text-secondary transition-colors"
             >
               <X size={32} />
             </button>
             
-            <div className="bg-gray-900 rounded-xl overflow-hidden border border-gray-700">
+            <div className="card rounded-xl overflow-hidden">
               {selectedMedia.type === 'image' ? (
                 <img
                   src={selectedMedia.url}
@@ -276,9 +275,9 @@ export default function GalleryPage() {
                 />
               )}
               
-              <div className="p-6 bg-gray-800">
-                <h3 className="text-2xl font-bold text-white mb-2">{selectedMedia.title}</h3>
-                <div className="flex items-center gap-4 text-gray-400 text-sm">
+              <div className="p-6 bg-secondary-light">
+                <h3 className="text-2xl font-bold heading-primary mb-2">{selectedMedia.title}</h3>
+                <div className="flex items-center gap-4 text-secondary text-sm">
                   <span className="capitalize">{selectedMedia.type}</span>
                   <span>•</span>
                   <span>{getCategoryLabel(selectedMedia.category)}</span>

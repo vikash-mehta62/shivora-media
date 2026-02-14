@@ -8,7 +8,7 @@ export default function SocialMediaPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-20 pb-10 relative overflow-hidden">
+      <section className="pt-24 pb-10 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-20 right-0 w-[600px] h-[600px] blob-blue opacity-30"></div>
         </div>

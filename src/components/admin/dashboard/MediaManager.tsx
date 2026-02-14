@@ -298,7 +298,6 @@ export default function MediaManager() {
                   <option value="content-marketing">Content Marketing</option>
                   <option value="creative-designing">Creative Designing</option>
                   <option value="video-production">Video Production</option>
-                  <option value="web-development">Web Development</option>
                   <option value="other">Other</option>
                 </select>
               </div>

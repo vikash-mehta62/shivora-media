@@ -10,7 +10,7 @@ const contactInfo = [
   { icon: Clock, label: "Working Hours", value: "Mon - Sat: 10:00 AM - 7:00 PM", link: "#", desc: "Sunday closed" }
 ];
 
-const services = ["SEO Services", "Social Media Marketing", "PPC Advertising", "Content Marketing", "Brand Identity", "Web Development", "Complete Digital Marketing", "Other"];
+const services = ["SEO Services", "Social Media Marketing", "PPC Advertising", "Content Marketing", "Brand Identity", "Complete Digital Marketing", "Other"];
 
 const budgets = [
   { value: "10-25k", label: "₹10,000 - ₹25,000/month" },
