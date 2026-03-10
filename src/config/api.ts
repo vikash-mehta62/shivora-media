@@ -25,6 +25,16 @@ export const API_ENDPOINTS = {
     BY_ID: (id: string) => `${API_BASE_URL}/api/contact/${id}`,
     DELETE: (id: string) => `${API_BASE_URL}/api/contact/${id}`,
   },
+
+  // Blog endpoints
+  BLOG: {
+    BASE: `${API_BASE_URL}/api/blogs`,
+    BY_ID: (id: string) => `${API_BASE_URL}/api/blogs/${id}`,
+    BY_SLUG: (slug: string) => `${API_BASE_URL}/api/blogs/slug/${slug}`,
+    DELETE: (id: string) => `${API_BASE_URL}/api/blogs/${id}`,
+    CATEGORIES: `${API_BASE_URL}/api/blogs/meta/categories`,
+    TAGS: `${API_BASE_URL}/api/blogs/meta/tags`,
+  },
 };
 
 export default API_BASE_URL;

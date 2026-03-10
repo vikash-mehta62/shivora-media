@@ -7,7 +7,8 @@ import {
   Menu,
   X,
   ChevronLeft,
-  ChevronRight
+  ChevronRight,
+  BookOpen
 } from 'lucide-react';
 
 interface AdminSidebarProps {
@@ -29,6 +30,7 @@ export default function AdminSidebar({
 }: AdminSidebarProps) {
   const menuItems = [
     { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
+    { id: 'blogs', label: 'Blogs', icon: BookOpen },
     { id: 'media', label: 'Media', icon: Image },
     { id: 'contacts', label: 'Contacts', icon: Mail },
   ];

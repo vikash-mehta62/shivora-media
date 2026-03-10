@@ -23,6 +23,7 @@ const mediaSchema = new mongoose.Schema({
     type: String,
     enum: [
       'portfolio',
+      'blog',
       'seo',
       'social-media-marketing',
       'ppc-advertising',

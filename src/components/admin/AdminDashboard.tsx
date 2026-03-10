@@ -8,6 +8,7 @@ import AdminSidebar from './AdminSidebar';
 import DashboardHome from './dashboard/DashboardHome';
 import MediaManager from './dashboard/MediaManager';
 import ContactsManager from './dashboard/ContactsManager';
+import BlogManager from './dashboard/BlogManager';
 
 export default function AdminDashboard() {
   const [activeSection, setActiveSection] = useState('dashboard');
@@ -29,6 +30,8 @@ export default function AdminDashboard() {
         return <MediaManager />;
       case 'contacts':
         return <ContactsManager />;
+      case 'blogs':
+        return <BlogManager />;
       default:
         return <DashboardHome />;
     }
