@@ -215,7 +215,14 @@ export default function BlogManager() {
         name: blog.author.name, 
         avatar: blog.author.avatar || '' 
       },
-      seo: blog.seo,
+      seo: {
+        metaTitle: blog.seo.metaTitle,
+        metaDescription: blog.seo.metaDescription,
+        keywords: blog.seo.keywords,
+        focusKeyword: blog.seo.focusKeyword,
+        ogImage: blog.seo.ogImage || '',
+        canonicalUrl: blog.seo.canonicalUrl || ''
+      },
       tags: blog.tags,
       status: blog.status,
       featured: blog.featured
