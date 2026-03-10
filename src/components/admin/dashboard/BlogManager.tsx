@@ -211,7 +211,10 @@ export default function BlogManager() {
       content: blog.content,
       featuredImage: blog.featuredImage,
       category: blog.category,
-      author: blog.author,
+      author: { 
+        name: blog.author.name, 
+        avatar: blog.author.avatar || '' 
+      },
       seo: blog.seo,
       tags: blog.tags,
       status: blog.status,
