@@ -137,13 +137,17 @@ export default function BlogPage() {
               {blogs.map((blog) => (
                 <article key={blog._id} className="group card rounded-2xl overflow-hidden hover:shadow-2xl transition-all hover:-translate-y-2">
                   <a href={`/blog/${blog.slug}`} className="block">
-                    <div className={`h-48 bg-gradient-to-br ${getCategoryGradient(blog.category)} p-6 flex flex-col justify-end relative overflow-hidden`}>
-                      <div className="absolute inset-0">
-                        <img src={blog.featuredImage} alt={blog.title} className="w-full h-full object-cover opacity-30" />
+                    <div className="h-48 relative overflow-hidden">
+                      <img 
+                        src={blog.featuredImage} 
+                        alt={blog.title} 
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" 
+                      />
+                      <div className="absolute bottom-4 left-4">
+                        <span className="inline-block px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-gray-900 text-sm font-semibold shadow-lg">
+                          {blog.category}
+                        </span>
                       </div>
-                      <span className="relative inline-block px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-white text-sm font-medium w-fit mb-2">
-                        {blog.category}
-                      </span>
                     </div>
                     <div className="p-6">
                       <h2 className="text-xl font-bold mb-3 group-hover:text-[var(--deep-blue)] dark:group-hover:text-baby-blue transition">
