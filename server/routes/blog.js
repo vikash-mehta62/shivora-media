@@ -3,62 +3,67 @@ const router = express.Router();
 const Blog = require('../models/Blog');
 const { auth } = require('../middleware/auth');
 
-// Get all blogs (public)
-router.get('/', async (req, res) => {
+// Optional auth middleware - doesn't fail if no token
+const optionalAuth = async (req, res, next) => {
   try {
-    const { 
-      category, 
-      tag, 
-      search, 
-      status, 
-      page = 1, 
-      limit = 10,
+    const token = req.header('Authorization')?.replace('Bearer ', '');
+    if (token) {
+      const jwt = require('jsonwebtoken');
+      const User = require('../models/User');
+      const decoded = jwt.verify(token, process.env.JWT_SECRET);
+      const user = await User.findById(decoded.userId);
+      if (user && user.isActive) req.user = user;
+    }
+  } catch (e) { /* no token or invalid, continue as public */ }
+  next();
+};
+
+// Get all blogs
+router.get('/', optionalAuth, async (req, res) => {
+  try {
+    const {
+      category,
+      tag,
+      search,
+      status,
+      page = 1,
+      limit = 9,
       featured,
-      sort = '-createdAt'
     } = req.query;
 
     const query = {};
-    console.log(req.user)
-    // Only show published blogs for public (non-authenticated users)
-    if(status && status !== 'all') {
-      // Admin can filter by specific status
+
+    // Public users only see published blogs
+    if (!req.user) {
+      query.status = 'published';
+    } else if (status && status !== 'all') {
       query.status = status;
     }
-    // If admin and status is 'all' or not provided, show all blogs
 
-    if (category && category !== 'All') {
-      query.category = category;
-    }
+    if (category && category !== 'All') query.category = category;
+    if (tag) query.tags = tag;
+    if (featured !== undefined) query.featured = featured === 'true';
+    if (search) query.$text = { $search: search };
 
-    if (tag) {
-      query.tags = tag;
-    }
-
-    if (featured !== undefined) {
-      query.featured = featured === 'true';
-    }
-
-    if (search) {
-      query.$text = { $search: search };
-    }
-
-    const skip = (page - 1) * limit;
+    const pageNum = parseInt(page);
+    const limitNum = parseInt(limit);
+    const skip = (pageNum - 1) * limitNum;
 
     const blogs = await Blog.find(query)
-      .sort(sort)
+      .sort({ createdAt: -1 }) // latest first
       .skip(skip)
-      .limit(parseInt(limit))
-      .select('-content'); // Exclude full content in list view
+      .limit(limitNum)
+      .select('-content');
 
     const total = await Blog.countDocuments(query);
 
     res.json({
       blogs,
       pagination: {
-        page: parseInt(page),
-        limit: parseInt(limit),
+        page: pageNum,
+        limit: limitNum,
         total,
-        pages: Math.ceil(total / limit)
+        pages: Math.ceil(total / limitNum)
       }
     });
   } catch (error) {
@@ -68,18 +73,17 @@ router.get('/', async (req, res) => {
 });
 
 // Get single blog by slug (public)
-router.get('/slug/:slug', async (req, res) => {
+router.get('/slug/:slug', optionalAuth, async (req, res) => {
   try {
     const blog = await Blog.findOne({ slug: req.params.slug });
-console.log("hello",req.params)
-    if (!blog) {
+
+    if (!blog) return res.status(404).json({ message: 'Blog not found' });
+
+    // Public can only see published
+    if (!req.user && blog.status !== 'published') {
       return res.status(404).json({ message: 'Blog not found' });
     }
 
-    // Only show published blogs for public
-    
-
-    // Increment views
     blog.views += 1;
     await blog.save();
 
@@ -94,14 +98,9 @@ console.log("hello",req.params)
 router.get('/:id', auth, async (req, res) => {
   try {
     const blog = await Blog.findById(req.params.id);
-
-    if (!blog) {
-      return res.status(404).json({ message: 'Blog not found' });
-    }
-
+    if (!blog) return res.status(404).json({ message: 'Blog not found' });
     res.json(blog);
   } catch (error) {
-    console.error('Get blog error:', error);
     res.status(500).json({ message: 'Server error', error: error.message });
   }
 });
@@ -113,7 +112,6 @@ router.post('/', auth, async (req, res) => {
     await blog.save();
     res.status(201).json({ message: 'Blog created successfully', blog });
   } catch (error) {
-    console.error('Create blog error:', error);
     if (error.code === 11000) {
       return res.status(400).json({ message: 'Blog with this slug already exists' });
     }
@@ -124,19 +122,10 @@ router.post('/', auth, async (req, res) => {
 // Update blog (admin only)
 router.put('/:id', auth, async (req, res) => {
   try {
-    const blog = await Blog.findByIdAndUpdate(
-      req.params.id,
-      req.body,
-      { new: true, runValidators: true }
-    );
-
-    if (!blog) {
-      return res.status(404).json({ message: 'Blog not found' });
-    }
-
+    const blog = await Blog.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true });
+    if (!blog) return res.status(404).json({ message: 'Blog not found' });
     res.json({ message: 'Blog updated successfully', blog });
   } catch (error) {
-    console.error('Update blog error:', error);
     if (error.code === 11000) {
       return res.status(400).json({ message: 'Blog with this slug already exists' });
     }
@@ -148,48 +137,9 @@ router.put('/:id', auth, async (req, res) => {
 router.delete('/:id', auth, async (req, res) => {
   try {
     const blog = await Blog.findByIdAndDelete(req.params.id);
-
-    if (!blog) {
-      return res.status(404).json({ message: 'Blog not found' });
-    }
-
+    if (!blog) return res.status(404).json({ message: 'Blog not found' });
     res.json({ message: 'Blog deleted successfully' });
   } catch (error) {
-    console.error('Delete blog error:', error);
-    res.status(500).json({ message: 'Server error', error: error.message });
-  }
-});
-
-// Get categories with count
-router.get('/meta/categories', async (req, res) => {
-  try {
-    const categories = await Blog.aggregate([
-      { $match: { status: 'published' } },
-      { $group: { _id: '$category', count: { $sum: 1 } } },
-      { $sort: { count: -1 } }
-    ]);
-
-    res.json(categories);
-  } catch (error) {
-    console.error('Get categories error:', error);
-    res.status(500).json({ message: 'Server error', error: error.message });
-  }
-});
-
-// Get all tags
-router.get('/meta/tags', async (req, res) => {
-  try {
-    const tags = await Blog.aggregate([
-      { $match: { status: 'published' } },
-      { $unwind: '$tags' },
-      { $group: { _id: '$tags', count: { $sum: 1 } } },
-      { $sort: { count: -1 } },
-      { $limit: 50 }
-    ]);
-
-    res.json(tags);
-  } catch (error) {
-    console.error('Get tags error:', error);
     res.status(500).json({ message: 'Server error', error: error.message });
   }
 });

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { BookOpen, Plus, Edit, Trash2, Eye, Search, X, Save, Image as ImageIcon, Tag, Hash, FileText, Globe, Upload, Loader } from 'lucide-react';
+import { BookOpen, Plus, Edit, Trash2, Eye, Search, X, Save, Image as ImageIcon, Tag, Hash, FileText, Globe, Upload, Loader, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useAppSelector } from '@/store/hooks';
 import { API_ENDPOINTS } from '@/config/api';
 import axios from 'axios';
@@ -46,6 +46,9 @@ export default function BlogManager() {
   const [filterStatus, setFilterStatus] = useState('all');
   const [uploadingImage, setUploadingImage] = useState(false);
   const [uploadingOgImage, setUploadingOgImage] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+  const [totalBlogs, setTotalBlogs] = useState(0);
   const featuredImageRef = useRef<HTMLInputElement>(null);
   const ogImageRef = useRef<HTMLInputElement>(null);
 
@@ -75,24 +78,29 @@ export default function BlogManager() {
 
   useEffect(() => {
     if (token) {
-      fetchBlogs();
+      fetchBlogs(1);
+      setCurrentPage(1);
     }
   }, [filterCategory, filterStatus, token]);
 
-  const fetchBlogs = async () => {
+  const fetchBlogs = async (page = 1) => {
     try {
       setLoading(true);
       const params = new URLSearchParams();
-      
       if (filterCategory !== 'All') params.append('category', filterCategory);
       if (filterStatus !== 'all') params.append('status', filterStatus);
-      
+      params.append('page', String(page));
+      params.append('limit', '10');
+
       const response = await fetch(`${API_ENDPOINTS.BLOG.BASE}?${params}`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
-      
+
       const data = await response.json();
       setBlogs(data.blogs || []);
+      setTotalPages(data.pagination?.pages || 1);
+      setTotalBlogs(data.pagination?.total || 0);
+      setCurrentPage(page);
     } catch (error) {
       console.error('Error fetching blogs:', error);
     } finally {
@@ -172,7 +180,7 @@ export default function BlogManager() {
       if (response.ok) {
         alert(editingBlog ? 'Blog updated successfully!' : 'Blog created successfully!');
         resetForm();
-        fetchBlogs();
+        fetchBlogs(currentPage);
       } else {
         const error = await response.json();
         alert(error.message || 'Failed to save blog');
@@ -194,7 +202,7 @@ export default function BlogManager() {
 
       if (response.ok) {
         alert('Blog deleted successfully!');
-        fetchBlogs();
+        fetchBlogs(currentPage);
       }
     } catch (error) {
       console.error('Error deleting blog:', error);
@@ -363,62 +371,96 @@ export default function BlogManager() {
               <p className="text-gray-400">No blogs found. Create your first blog post!</p>
             </div>
           ) : (
-            <div className="grid gap-4">
-              {filteredBlogs.map((blog) => (
-                <div key={blog._id} className="bg-gray-800 rounded-lg p-4 sm:p-6 hover:bg-gray-750 transition">
-                  <div className="flex flex-col sm:flex-row gap-4">
-                    <img
-                      src={blog.featuredImage}
-                      alt={blog.title}
-                      className="w-full sm:w-32 h-32 object-cover rounded-lg"
-                    />
-                    <div className="flex-1">
-                      <div className="flex flex-col sm:flex-row items-start justify-between gap-2 mb-2">
-                        <div className="flex-1">
-                          <h3 className="text-xl font-bold text-white mb-1">{blog.title}</h3>
-                          <p className="text-sm text-gray-400 line-clamp-2">{blog.excerpt}</p>
+            <>
+              <p className="text-gray-400 text-sm mb-4">Showing {filteredBlogs.length} of {totalBlogs} blogs</p>
+              <div className="grid gap-4">
+                {filteredBlogs.map((blog) => (
+                  <div key={blog._id} className="bg-gray-800 rounded-lg p-4 sm:p-6 hover:bg-gray-750 transition">
+                    <div className="flex flex-col sm:flex-row gap-4">
+                      <img
+                        src={blog.featuredImage}
+                        alt={blog.title}
+                        className="w-full sm:w-32 h-32 object-cover rounded-lg"
+                      />
+                      <div className="flex-1">
+                        <div className="flex flex-col sm:flex-row items-start justify-between gap-2 mb-2">
+                          <div className="flex-1">
+                            <h3 className="text-xl font-bold text-white mb-1">{blog.title}</h3>
+                            <p className="text-sm text-gray-400 line-clamp-2">{blog.excerpt}</p>
+                          </div>
+                          <div className="flex gap-2">
+                            <button
+                              onClick={() => handleEdit(blog)}
+                              className="p-2 hover:bg-blue-600 rounded-lg transition text-blue-400 hover:text-white"
+                            >
+                              <Edit className="w-4 h-4" />
+                            </button>
+                            <button
+                              onClick={() => handleDelete(blog._id)}
+                              className="p-2 hover:bg-red-600 rounded-lg transition text-red-400 hover:text-white"
+                            >
+                              <Trash2 className="w-4 h-4" />
+                            </button>
+                          </div>
                         </div>
-                        <div className="flex gap-2">
-                          <button
-                            onClick={() => handleEdit(blog)}
-                            className="p-2 hover:bg-blue-600 rounded-lg transition text-blue-400 hover:text-white"
-                          >
-                            <Edit className="w-4 h-4" />
-                          </button>
-                          <button
-                            onClick={() => handleDelete(blog._id)}
-                            className="p-2 hover:bg-red-600 rounded-lg transition text-red-400 hover:text-white"
-                          >
-                            <Trash2 className="w-4 h-4" />
-                          </button>
-                        </div>
-                      </div>
-                      <div className="flex flex-wrap gap-2 mt-3">
-                        <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                          blog.status === 'published' ? 'bg-green-600 text-white' :
-                          blog.status === 'draft' ? 'bg-yellow-600 text-white' :
-                          'bg-gray-600 text-white'
-                        }`}>
-                          {blog.status}
-                        </span>
-                        <span className="px-3 py-1 bg-blue-600 text-white rounded-full text-xs font-medium">
-                          {blog.category}
-                        </span>
-                        <span className="px-3 py-1 bg-purple-600 text-white rounded-full text-xs font-medium flex items-center gap-1">
-                          <Eye className="w-3 h-3" />
-                          {blog.views}
-                        </span>
-                        {blog.featured && (
-                          <span className="px-3 py-1 bg-orange-600 text-white rounded-full text-xs font-medium">
-                            Featured
+                        <div className="flex flex-wrap gap-2 mt-3">
+                          <span className={`px-3 py-1 rounded-full text-xs font-medium ${
+                            blog.status === 'published' ? 'bg-green-600 text-white' :
+                            blog.status === 'draft' ? 'bg-yellow-600 text-white' :
+                            'bg-gray-600 text-white'
+                          }`}>
+                            {blog.status}
                           </span>
-                        )}
+                          <span className="px-3 py-1 bg-blue-600 text-white rounded-full text-xs font-medium">
+                            {blog.category}
+                          </span>
+                          <span className="px-3 py-1 bg-purple-600 text-white rounded-full text-xs font-medium flex items-center gap-1">
+                            <Eye className="w-3 h-3" />
+                            {blog.views}
+                          </span>
+                          {blog.featured && (
+                            <span className="px-3 py-1 bg-orange-600 text-white rounded-full text-xs font-medium">
+                              Featured
+                            </span>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </div>
+                ))}
+              </div>
+
+              {/* Pagination */}
+              {totalPages > 1 && (
+                <div className="flex items-center justify-center gap-2 mt-8">
+                  <button
+                    onClick={() => fetchBlogs(currentPage - 1)}
+                    disabled={currentPage === 1}
+                    className="flex items-center gap-1 px-3 py-2 bg-gray-700 text-white rounded-lg disabled:opacity-40 hover:bg-gray-600 transition"
+                  >
+                    <ChevronLeft className="w-4 h-4" /> Prev
+                  </button>
+                  {Array.from({ length: totalPages }, (_, i) => i + 1).map((p) => (
+                    <button
+                      key={p}
+                      onClick={() => fetchBlogs(p)}
+                      className={`w-9 h-9 rounded-lg font-semibold transition ${
+                        currentPage === p ? 'bg-blue-600 text-white' : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+                      }`}
+                    >
+                      {p}
+                    </button>
+                  ))}
+                  <button
+                    onClick={() => fetchBlogs(currentPage + 1)}
+                    disabled={currentPage === totalPages}
+                    className="flex items-center gap-1 px-3 py-2 bg-gray-700 text-white rounded-lg disabled:opacity-40 hover:bg-gray-600 transition"
+                  >
+                    Next <ChevronRight className="w-4 h-4" />
+                  </button>
                 </div>
-              ))}
-            </div>
+              )}
+            </>
           )}
         </>
       ) : (
