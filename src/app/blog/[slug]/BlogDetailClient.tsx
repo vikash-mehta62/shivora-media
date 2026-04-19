@@ -206,12 +206,12 @@ export default function BlogDetailClient({ blog }: { blog: Blog }) {
           </article>
 
           {/* Tags */}
-          {blog.tags.length > 0 && (
+          {(blog.tags || []).length > 0 && (
             <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800">
               <div className="flex items-center gap-3 flex-wrap">
                 <Tag className="w-5 h-5 text-muted" />
                 <span className="font-semibold">Tags:</span>
-                {blog.tags.map((tag, index) => (
+                {(blog.tags || []).map((tag, index) => (
                   <span
                     key={index}
                     className="px-4 py-2 bg-gray-100 dark:bg-gray-800 rounded-full text-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition cursor-pointer"

@@ -122,7 +122,11 @@ router.post('/', auth, async (req, res) => {
 // Update blog (admin only)
 router.put('/:id', auth, async (req, res) => {
   try {
-    const blog = await Blog.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true });
+    const blog = await Blog.findByIdAndUpdate(
+      req.params.id,
+      { $set: req.body },
+      { new: true, runValidators: true }
+    );
     if (!blog) return res.status(404).json({ message: 'Blog not found' });
     res.json({ message: 'Blog updated successfully', blog });
   } catch (error) {

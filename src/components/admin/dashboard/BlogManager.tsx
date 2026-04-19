@@ -210,32 +210,45 @@ export default function BlogManager() {
     }
   };
 
-  const handleEdit = (blog: Blog) => {
-    setEditingBlog(blog);
-    setFormData({
-      title: blog.title,
-      slug: blog.slug,
-      excerpt: blog.excerpt,
-      content: blog.content,
-      featuredImage: blog.featuredImage,
-      category: blog.category,
-      author: { 
-        name: blog.author.name, 
-        avatar: blog.author.avatar || '' 
-      },
-      seo: {
-        metaTitle: blog.seo.metaTitle,
-        metaDescription: blog.seo.metaDescription,
-        keywords: blog.seo.keywords,
-        focusKeyword: blog.seo.focusKeyword,
-        ogImage: blog.seo.ogImage || '',
-        canonicalUrl: blog.seo.canonicalUrl || ''
-      },
-      tags: blog.tags,
-      status: blog.status,
-      featured: blog.featured
-    });
-    setShowForm(true);
+  const handleEdit = async (blog: Blog) => {
+    try {
+      // Fetch full blog data (list API excludes content field)
+      const response = await fetch(API_ENDPOINTS.BLOG.BY_ID(blog._id), {
+        headers: { 'Authorization': `Bearer ${token}` }
+      });
+      const fullBlog: Blog = await response.json();
+
+      setEditingBlog(fullBlog);
+      setFormData({
+        title: fullBlog.title,
+        slug: fullBlog.slug,
+        excerpt: fullBlog.excerpt,
+        content: fullBlog.content || '',
+        featuredImage: fullBlog.featuredImage,
+        category: fullBlog.category,
+        author: {
+          name: fullBlog.author?.name || '',
+          avatar: fullBlog.author?.avatar || ''
+        },
+        seo: {
+          metaTitle: fullBlog.seo?.metaTitle || '',
+          metaDescription: fullBlog.seo?.metaDescription || '',
+          keywords: fullBlog.seo?.keywords || [],
+          focusKeyword: fullBlog.seo?.focusKeyword || '',
+          ogImage: fullBlog.seo?.ogImage || '',
+          canonicalUrl: fullBlog.seo?.canonicalUrl || ''
+        },
+        tags: fullBlog.tags || [],
+        status: fullBlog.status,
+        featured: fullBlog.featured
+      });
+      setKeywordInput('');
+      setTagInput('');
+      setShowForm(true);
+    } catch (error) {
+      console.error('Error fetching blog for edit:', error);
+      alert('Failed to load blog data');
+    }
   };
 
   const resetForm = () => {
