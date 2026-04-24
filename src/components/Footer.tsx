@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Mail, Phone, MapPin, Award, Star, Clock } from "lucide-react";
-import { FaFacebook, FaInstagram, FaGoogle } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaGoogle, FaLinkedin } from "react-icons/fa";
 
 const services = [
   { name: "Search Engine Optimization", href: "/services/seo" },
@@ -25,8 +25,9 @@ const resources = [
 ];
 
 const social = [
-  { icon: FaFacebook, href: "https://www.facebook.com/shivoramedia", label: "Facebook" },
+  { icon: FaFacebook, href: "https://www.facebook.com/shivoramediabhopal", label: "Facebook" },
   { icon: FaInstagram, href: "https://www.instagram.com/shivora_media?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==", label: "Instagram" },
+  { icon: FaLinkedin, href: "https://www.linkedin.com/company/shivoramediabhopaldigitalmarketingagency/?viewAsMember=true", label: "LinkedIn" },
   { icon: FaGoogle, href: "https://share.google/PZk9kq1IIeWDbCW5g", label: "Google" }
 ];
 

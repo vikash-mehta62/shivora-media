@@ -69,10 +69,10 @@ export default function Team() {
               
               <div className="flex items-center justify-between">
                 <div className="flex gap-2">
-                  <a href="#" className="w-8 h-8 card rounded-lg flex items-center justify-center hover:bg-brand hover:text-white transition">
+                  <a href="https://www.linkedin.com/company/shivoramediabhopaldigitalmarketingagency/?viewAsMember=true" target="_blank" rel="noopener noreferrer" className="w-8 h-8 card rounded-lg flex items-center justify-center hover:bg-brand hover:text-white transition">
                     <Linkedin className="w-4 h-4" />
                   </a>
-                  <a href="#" className="w-8 h-8 card rounded-lg flex items-center justify-center hover:bg-brand hover:text-white transition">
+                  <a href="https://www.facebook.com/shivoramediabhopal" target="_blank" rel="noopener noreferrer" className="w-8 h-8 card rounded-lg flex items-center justify-center hover:bg-brand hover:text-white transition">
                     <Twitter className="w-4 h-4" />
                   </a>
                 </div>
