@@ -1,6 +1,14 @@
+import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Video, Check, ArrowRight, Target, TrendingUp, Zap } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Video Production Services in Bhopal | Shivora Media",
+  description: "Creative video production services for branding and promotions.",
+  keywords: ["video production bhopal", "marketing videos"],
+  alternates: { canonical: "https://www.shivoramedia.com/services/video" },
+};
 
 export default function VideoPage() {
   return (

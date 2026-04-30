@@ -1,6 +1,14 @@
+import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { FileText, Check, ArrowRight, Target, TrendingUp, Zap } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Content Marketing in Bhopal | Shivora Media",
+  description: "Engaging content marketing to build authority and trust.",
+  keywords: ["content marketing bhopal", "blog writing seo"],
+  alternates: { canonical: "https://www.shivoramedia.com/services/content-marketing" },
+};
 
 export default function ContentMarketingPage() {
   return (

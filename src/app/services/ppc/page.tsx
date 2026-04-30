@@ -1,6 +1,14 @@
+import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { DollarSign, Check, ArrowRight, Target, TrendingUp, Zap } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "PPC Advertising in Bhopal | Shivora Media",
+  description: "Run high-converting Google Ads and paid campaigns for instant leads.",
+  keywords: ["ppc marketing bhopal", "google ads agency"],
+  alternates: { canonical: "https://www.shivoramedia.com/services/ppc" },
+};
 
 export default function PPCPage() {
   return (

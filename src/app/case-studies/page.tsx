@@ -1,6 +1,14 @@
+import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { TrendingUp, Users, DollarSign, Video, Palette, FileText, ArrowRight, Award } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Case Studies | Shivora Media",
+  description: "Detailed case studies showing real results achieved for clients by Shivora Media.",
+  keywords: ["seo case studies bhopal", "marketing results"],
+  alternates: { canonical: "https://www.shivoramedia.com/case-studies" },
+};
 
 const caseStudies = [
   {

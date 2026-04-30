@@ -1,10 +1,7 @@
-# robots.txt for Shivora Media
 User-agent: *
 Allow: /
 
-# Disallow admin or private pages if any
-Disallow: /api/
-Disallow: /_next/
+Disallow: /admin
+Disallow: /admin/
 
-# Sitemap location
-Sitemap: https://shivoramedia.com/sitemap.xml
+Sitemap: https://www.shivoramedia.com/sitemap.xml

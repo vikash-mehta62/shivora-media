@@ -1,6 +1,14 @@
+import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Palette, Check, ArrowRight, Target, TrendingUp, Zap } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Graphic Design Services in Bhopal | Shivora Media",
+  description: "Professional graphic design services for branding and social media.",
+  keywords: ["graphic design bhopal", "logo design services"],
+  alternates: { canonical: "https://www.shivoramedia.com/services/graphic-design" },
+};
 
 export default function GraphicDesignPage() {
   return (

@@ -1,6 +1,14 @@
+import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Share2, Check, ArrowRight, Target, TrendingUp, Users } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Social Media Marketing in Bhopal | Shivora Media",
+  description: "Grow your brand with powerful social media marketing strategies.",
+  keywords: ["social media marketing bhopal", "instagram marketing"],
+  alternates: { canonical: "https://www.shivoramedia.com/services/social-media" },
+};
 
 export default function SocialMediaPage() {
   return (

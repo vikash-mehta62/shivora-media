@@ -1,7 +1,15 @@
+import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Image from "next/image";
 import { Target, Lightbulb, Users, BarChart3, Rocket, Award, TrendingUp, Clock, Shield, Headphones, ArrowRight, Mail } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "About Us | Shivora Media",
+  description: "Learn about Shivora Media, a result-driven digital marketing agency helping businesses grow online.",
+  keywords: ["about shivora media", "digital marketing company bhopal"],
+  alternates: { canonical: "https://www.shivoramedia.com/about" },
+};
 
 const values = [
   { icon: Target, title: "Results-Driven", desc: "Every strategy is designed with measurable outcomes and ROI in mind. We focus on what matters - your business growth." },

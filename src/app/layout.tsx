@@ -10,8 +10,32 @@ import FloatingIcons from "@/components/FloatingIcons";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Shivora Media | Digital Marketing Agency",
-  description: "We build brands that stand out. Digital marketing, branding, web development & more.",
+  title: {
+    default: "Shivora Media | Digital Marketing Agency in Bhopal",
+    template: "%s | Shivora Media"
+  },
+  description: "Shivora Media is a leading digital marketing agency in Bhopal offering SEO, PPC, social media marketing, content marketing and website services.",
+  keywords: ["digital marketing agency in bhopal", "seo services bhopal", "social media marketing bhopal"],
+  metadataBase: new URL("https://www.shivoramedia.com"),
+  alternates: { canonical: "https://www.shivoramedia.com/" },
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    url: "https://www.shivoramedia.com/",
+    siteName: "Shivora Media",
+    title: "Shivora Media | Digital Marketing Agency in Bhopal",
+    description: "Shivora Media is a leading digital marketing agency in Bhopal offering SEO, PPC, social media marketing, content marketing and website services.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Shivora Media | Digital Marketing Agency in Bhopal",
+    description: "Shivora Media is a leading digital marketing agency in Bhopal offering SEO, PPC, social media marketing, content marketing and website services.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-snippet": -1, "max-image-preview": "large" }
+  }
 };
 
 export default function RootLayout({
