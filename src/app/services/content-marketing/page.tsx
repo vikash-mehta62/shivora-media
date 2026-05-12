@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Content Marketing in Bhopal | Shivora Media",
   description: "Engaging content marketing to build authority and trust.",
   keywords: ["content marketing bhopal", "blog writing seo"],
-  alternates: { canonical: "https://www.shivoramedia.com/services/content-marketing" },
+  alternates: { canonical: "https://shivoramedia.com/services/content-marketing" },
 };
 
 export default function ContentMarketingPage() {

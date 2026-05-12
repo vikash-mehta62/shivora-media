@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "SEO Services in Bhopal | Shivora Media",
   description: "Professional SEO services to improve Google ranking and organic traffic.",
   keywords: ["seo services bhopal", "google ranking seo"],
-  alternates: { canonical: "https://www.shivoramedia.com/services/seo" },
+  alternates: { canonical: "https://shivoramedia.com/services/seo" },
 };
 
 export default function SEOPage() {

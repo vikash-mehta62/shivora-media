@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Graphic Design Services in Bhopal | Shivora Media",
   description: "Professional graphic design services for branding and social media.",
   keywords: ["graphic design bhopal", "logo design services"],
-  alternates: { canonical: "https://www.shivoramedia.com/services/graphic-design" },
+  alternates: { canonical: "https://shivoramedia.com/services/graphic-design" },
 };
 
 export default function GraphicDesignPage() {

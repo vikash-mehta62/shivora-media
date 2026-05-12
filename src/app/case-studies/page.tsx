@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Case Studies | Shivora Media",
   description: "Detailed case studies showing real results achieved for clients by Shivora Media.",
   keywords: ["seo case studies bhopal", "marketing results"],
-  alternates: { canonical: "https://www.shivoramedia.com/case-studies" },
+  alternates: { canonical: "https://shivoramedia.com/case-studies" },
 };
 
 const caseStudies = [

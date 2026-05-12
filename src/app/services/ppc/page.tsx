@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "PPC Advertising in Bhopal | Shivora Media",
   description: "Run high-converting Google Ads and paid campaigns for instant leads.",
   keywords: ["ppc marketing bhopal", "google ads agency"],
-  alternates: { canonical: "https://www.shivoramedia.com/services/ppc" },
+  alternates: { canonical: "https://shivoramedia.com/services/ppc" },
 };
 
 export default function PPCPage() {

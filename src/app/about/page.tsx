@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "About Us | Shivora Media",
   description: "Learn about Shivora Media, a result-driven digital marketing agency helping businesses grow online.",
   keywords: ["about shivora media", "digital marketing company bhopal"],
-  alternates: { canonical: "https://www.shivoramedia.com/about" },
+  alternates: { canonical: "https://shivoramedia.com/about" },
 };
 
 const values = [
