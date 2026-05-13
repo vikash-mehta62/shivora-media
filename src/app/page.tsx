@@ -15,6 +15,11 @@ export const metadata: Metadata = {
   description: "Shivora Media is a leading digital marketing agency in Bhopal offering SEO, PPC, social media marketing, content marketing and website services.",
   keywords: ["digital marketing agency in bhopal", "seo services bhopal", "social media marketing bhopal"],
   alternates: { canonical: "https://shivoramedia.com" },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-snippet": -1, "max-image-preview": "large" },
+  },
 };
 
 export default function Home() {

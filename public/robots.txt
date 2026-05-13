@@ -4,4 +4,4 @@ Allow: /
 Disallow: /admin
 Disallow: /admin/
 
-Sitemap: https://www.shivoramedia.com/sitemap.xml
+Sitemap: https://shivoramedia.com/sitemap.xml
