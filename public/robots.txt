@@ -4,4 +4,13 @@ Allow: /
 Disallow: /admin
 Disallow: /admin/
 
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
 Sitemap: https://shivoramedia.com/sitemap.xml
