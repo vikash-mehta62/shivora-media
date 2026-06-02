@@ -68,8 +68,48 @@ export default function BlogPage() {
     return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "What services does Shivora Media offer?", "acceptedAnswer": { "@type": "Answer", "text": "Shivora Media offers SEO, PPC, social media marketing, content creation, website development, and AI-powered digital marketing services in Bhopal." } },
+      { "@type": "Question", "name": "Is Shivora Media an AI-powered agency?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, Shivora Media is an AI-powered digital marketing and video production agency that uses AI tools for better marketing results." } },
+      { "@type": "Question", "name": "Where is Shivora Media located?", "acceptedAnswer": { "@type": "Answer", "text": "Shivora Media is located in Indore, Madhya Pradesh, India." } },
+      { "@type": "Question", "name": "What is digital marketing?", "acceptedAnswer": { "@type": "Answer", "text": "Digital marketing is promoting businesses using online channels like SEO, social media, PPC, content marketing, and email to reach customers." } },
+      { "@type": "Question", "name": "How does SEO help my business grow?", "acceptedAnswer": { "@type": "Answer", "text": "SEO improves your website's ranking on Google, driving organic traffic, increasing visibility, and bringing more potential customers to your business." } },
+      { "@type": "Question", "name": "Why choose Shivora Media for digital marketing?", "acceptedAnswer": { "@type": "Answer", "text": "We use AI-powered strategies, have local expertise in Madhya Pradesh, offer affordable pricing, and deliver measurable growth for businesses." } },
+      { "@type": "Question", "name": "Do you offer video production services?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, Shivora Media offers video production services including reels, YouTube videos, corporate videos, and content creation for social media." } }
+    ]
+  };
+
+  const blogSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://shivoramedia.com/blog" },
+    "url": "https://shivoramedia.com/blog",
+    "headline": "Shivora Media Blog | Digital Marketing, SEO & AI Marketing Insights",
+    "description": "Shivora Media is an AI-powered digital marketing and video production agency in Bhopal offering SEO, PPC, social media marketing, content creation, website development, and business growth solutions.",
+    "image": "https://shivoramedia.com/_next/image?url=%2Flogo.jpeg&w=1920&q=75",
+    "author": { "@type": "Person", "name": "Mahi", "url": "https://shivoramedia.com" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Shivora Media",
+      "logo": { "@type": "ImageObject", "url": "https://shivoramedia.com/_next/image?url=%2Flogo.jpeg&w=1920&q=75", "width": 550, "height": 60 }
+    },
+    "datePublished": "2026-02-15",
+    "dateModified": "2026-05-30"
+  };
+
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }}
+      />
       <Navbar />
 
       {/* Hero */}

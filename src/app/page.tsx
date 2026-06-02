@@ -22,9 +22,44 @@ export const metadata: Metadata = {
   },
 };
 
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": "https://shivoramedia.com/#professionalservice",
+  "name": "Shivora Media - AI Powered Digital Marketing & Video Production Agency",
+  "url": "https://shivoramedia.com/",
+  "image": "https://shivoramedia.com/Logo_new.png",
+  "telephone": "+917067235788",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Raisen Rd, Piplani, BHEL",
+    "addressLocality": "Bhopal",
+    "addressRegion": "Madhya Pradesh",
+    "postalCode": "462022",
+    "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 23.2489259,
+    "longitude": 77.4737912
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      "opens": "10:00",
+      "closes": "19:00"
+    }
+  ]
+};
+
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
       <Navbar />
       <main className="noise pt-[80px]">
         <Hero />
