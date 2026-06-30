@@ -44,6 +44,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark">
+      <head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4YHMYWQ3WL"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-4YHMYWQ3WL');`,
+          }}
+        />
+      </head>
       <body className={inter.className}>
         <ReduxProvider>
           <CustomCursor />
