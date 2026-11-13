@@ -4,9 +4,9 @@ import Footer from "@/components/Footer";
 import { Video, Check, ArrowRight, Target, TrendingUp, Zap } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Video Production Services in Bhopal | Shivora Media",
-  description: "Creative video production services for branding and promotions.",
-  keywords: ["video production bhopal", "marketing videos"],
+  title: "AI Video Production Services in Bhopal | Shivora Media",
+  description: "Cutting-edge AI video production services for high-retention reels, ads, and brand visuals.",
+  keywords: ["ai video production bhopal", "marketing videos", "ai reels production", "video production"],
   alternates: { canonical: "https://shivoramedia.com/services/video" },
 };
 
@@ -25,14 +25,14 @@ export default function VideoPage() {
           <div className="text-center mb-8">
             <div className="inline-flex items-center gap-2 px-4 py-2 badge-bg rounded-full mb-4">
               <Video className="w-4 h-4 icon-primary" />
-              <span className="text-sm font-medium badge-text">Video Production</span>
+              <span className="text-sm font-medium badge-text">AI Video Production</span>
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-              Video Production &{" "}
+              AI Video Production &{" "}
               <span className="heading-primary">Performance Marketing</span>
             </h1>
             <p className="text-xl text-secondary max-w-3xl mx-auto">
-              Capture attention and drive results with high-impact video production. We create reels, ad videos, promotional videos, brand films, and product videos optimized for ads and social media.
+              Capture attention and drive results with next-generation AI video production. We craft high-retention reels, ad creatives, promotional videos, and brand visuals engineered for maximum engagement and conversions.
             </p>
           </div>
 

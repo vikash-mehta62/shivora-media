@@ -11,12 +11,13 @@ const navLinks = [
     name: "Services", 
     href: "/services",
     dropdown: [
-      { name: "SEO Services", href: "/services/seo" },
       { name: "Social Media Marketing", href: "/services/social-media" },
+      { name: "SEO + AEO + GEO", href: "/services/seo" },
+      { name: "Website Development", href: "/services/web-development" },
+      { name: "AI Video Production", href: "/services/video" },
       { name: "PPC Advertising", href: "/services/ppc" },
       { name: "Content Marketing", href: "/services/content-marketing" },
       { name: "Creative Designing", href: "/services/graphic-design" },
-      { name: "Video Production", href: "/services/video-production" },
     ]
   },
   { name: "About", href: "/about" },

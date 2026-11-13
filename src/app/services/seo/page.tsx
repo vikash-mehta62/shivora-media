@@ -4,9 +4,9 @@ import Footer from "@/components/Footer";
 import { Search, Check, ArrowRight, Target, TrendingUp, Zap } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "SEO Services in Bhopal | Shivora Media",
-  description: "Professional SEO services to improve Google ranking and organic traffic.",
-  keywords: ["seo services bhopal", "google ranking seo"],
+  title: "SEO, AEO & GEO Services in Bhopal | Shivora Media",
+  description: "Advanced SEO, Answer Engine (AEO) & Generative Engine (GEO) optimization services to rank on Google, Perplexity, ChatGPT and AI Overviews.",
+  keywords: ["seo services bhopal", "aeo services", "geo optimization", "google ranking seo"],
   alternates: { canonical: "https://shivoramedia.com/services/seo" },
 };
 
@@ -26,14 +26,14 @@ export default function SEOPage() {
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-2 badge-bg rounded-full mb-4">
               <Search className="w-4 h-4 icon-primary" />
-              <span className="text-sm font-medium badge-text">SEO Services</span>
+              <span className="text-sm font-medium badge-text">SEO + AEO + GEO Services</span>
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-              Search Engine Optimization{" "}
-              <span className="heading-primary">(SEO) Services</span>
+              Search, Answer & Generative{" "}
+              <span className="heading-primary">(SEO + AEO + GEO)</span>
             </h1>
             <p className="text-xl text-secondary max-w-3xl mx-auto">
-              Improve your Google rankings and organic visibility with advanced SEO services. We focus on keyword research, on-page SEO, off-page SEO, technical SEO, and local SEO.
+              Improve your rankings across Google, ChatGPT, Perplexity, and AI Overviews. We combine data-driven SEO with Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO) for unstoppable digital visibility.
             </p>
           </div>
 

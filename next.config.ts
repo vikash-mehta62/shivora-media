@@ -33,6 +33,11 @@ const nextConfig: NextConfig = {
         destination: "https://shivoramedia.com/:path*",
         permanent: true,
       },
+      {
+        source: "/services/video-production",
+        destination: "/services/video",
+        permanent: true,
+      },
     ];
   },
 };

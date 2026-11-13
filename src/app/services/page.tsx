@@ -7,33 +7,11 @@ import Services from "@/components/Services";
 
 const services = [
   {
-    id: "seo",
-    icon: Search,
-    title: "Search Engine Optimization",
-    tagline: "Rank Higher, Get Found",
-    description: "Dominate Google search results and drive organic traffic that converts. Our data-driven SEO strategies help you outrank competitors and capture high-intent customers actively searching for your products or services.",
-    longDesc: "Our comprehensive SEO services cover everything from technical optimization to content strategy. We analyze your website's current performance, identify opportunities, and implement proven strategies that deliver sustainable organic growth.",
-    features: [
-      "Comprehensive SEO Audit & Analysis",
-      "Keyword Research & Strategy",
-      "On-Page & Technical SEO",
-      "High-Quality Link Building",
-      "Local SEO & Google My Business",
-      "E-commerce SEO",
-      "Content Optimization",
-      "Monthly Ranking Reports"
-    ],
-    benefits: ["300% Average Traffic Increase", "Top 10 Rankings Guaranteed", "Long-term Sustainable Growth", "Higher Quality Leads"],
-    stats: { metric: "300%", label: "Avg. Traffic Growth" },
-    process: ["SEO Audit", "Keyword Research", "On-Page Optimization", "Link Building", "Monitor & Report"],
-    link: "/services/seo"
-  },
-  {
     id: "smm",
     icon: Share2,
     title: "Social Media Marketing",
-    tagline: "Build Your Community",
-    description: "Transform followers into loyal customers. We create engaging content, manage your social presence, and run targeted campaigns across Facebook, Instagram, LinkedIn, Twitter & more.",
+    tagline: "Build Your Community & Convert",
+    description: "Transform followers into loyal customers. We create engaging content, manage your social presence, and run targeted campaigns across Facebook, Instagram, LinkedIn, YouTube & more.",
     longDesc: "Social media is where your customers spend their time. Our social media marketing services help you build a strong presence, engage with your audience, and convert followers into paying customers through strategic content and advertising.",
     features: [
       "Social Media Strategy & Planning",
@@ -49,6 +27,72 @@ const services = [
     stats: { metric: "10M+", label: "Reach Generated" },
     process: ["Strategy Planning", "Content Creation", "Publishing", "Community Engagement", "Analytics"],
     link: "/services/social-media"
+  },
+  {
+    id: "seo",
+    icon: Search,
+    title: "SEO + AEO + GEO",
+    tagline: "Rank on Google, Perplexity & AI Overviews",
+    description: "Dominate search engine results and next-generation AI answer engines. Our modern SEO, AEO & GEO strategies optimize your business for Google, ChatGPT, Perplexity, and AI search.",
+    longDesc: "Search has evolved beyond just blue links. Our cutting-edge SEO + AEO + GEO services cover traditional search ranking, answer engine optimization (AEO), and generative engine optimization (GEO) to ensure your brand is cited and discovered wherever customers search.",
+    features: [
+      "Comprehensive SEO, AEO & GEO Audit",
+      "AI Search & Keyword Strategy",
+      "On-Page, Technical & Schema SEO",
+      "Answer Engine Optimization (ChatGPT, Perplexity)",
+      "Generative Engine Optimization (Google AI)",
+      "High-Authority Digital PR & Backlinks",
+      "Local SEO & Google Business Profile",
+      "Monthly Ranking & AI Citation Reports"
+    ],
+    benefits: ["300% Average Traffic Increase", "Top AI & Google Rankings", "Future-Proof Search Strategy", "Higher Intent Leads"],
+    stats: { metric: "300%", label: "Avg. Traffic Growth" },
+    process: ["Audit & Entity Map", "Keyword & Prompt Research", "On-Page & Schema Setup", "AI Citation Building", "Monitor & Report"],
+    link: "/services/seo"
+  },
+  {
+    id: "web",
+    icon: Code,
+    title: "Website Development",
+    tagline: "Websites That Convert & Perform",
+    description: "Beautiful, fast, and conversion-optimized websites that represent your brand and drive business results. Mobile-first design with modern tech stack and SEO built-in.",
+    longDesc: "Your website is your digital storefront. We design and develop stunning, high-performance websites that not only look great but also convert visitors into customers. Every site we build is optimized for speed, responsiveness, and user experience.",
+    features: [
+      "Custom Website Design & Development",
+      "E-commerce & Web App Development",
+      "High-Converting Landing Pages",
+      "UI/UX Design & Optimization",
+      "Mobile Responsive & Fast Loading",
+      "SEO & Analytics Integration",
+      "Modern CMS & Full Control",
+      "Ongoing Maintenance & Support"
+    ],
+    benefits: ["99% Client Satisfaction", "Mobile-First Design", "SEO Optimized", "Blazing Fast Speed"],
+    stats: { metric: "99%", label: "Client Satisfaction" },
+    process: ["Discovery", "Wireframing", "Design", "Development", "Launch & Support"],
+    link: "/services/web-development"
+  },
+  {
+    id: "video",
+    icon: Video,
+    title: "AI Video Production",
+    tagline: "High-Impact AI Visuals & Reels",
+    description: "Capture attention and drive explosive growth with cutting-edge AI video production. We craft high-retention reels, ads, promotional videos, and brand films engineered for performance.",
+    longDesc: "Video is the #1 driver of digital engagement. Combining creative storytelling with state-of-the-art AI video tools, we produce high-retention content that cuts through the noise and scales your brand faster than traditional production.",
+    features: [
+      "AI Video Generation & Editing",
+      "High-Retention Reels & Shorts",
+      "High-Converting Ad Creatives",
+      "Cinematic Brand Films",
+      "Product Demos & 3D Visuals",
+      "AI Voiceover & Scriptwriting",
+      "Performance Video Marketing",
+      "Multi-Platform Aspect Ratio Delivery"
+    ],
+    benefits: ["10x Production Speed", "50M+ Video Views", "Lower Cost Per Creative", "Maximum Engagement"],
+    stats: { metric: "50M+", label: "Video Views Generated" },
+    process: ["Concept & AI Scripting", "AI Video Generation", "Editing & Sound Design", "Ad Optimization", "Delivery"],
+    link: "/services/video"
   },
   {
     id: "ppc",
@@ -93,28 +137,6 @@ const services = [
     stats: { metric: "200%", label: "Engagement Increase" },
     process: ["Content Audit", "Strategy Development", "Content Creation", "Distribution", "Performance Analysis"],
     link: "/services/content-marketing"
-  },
-  {
-    id: "web",
-    icon: Code,
-    title: "Web Design & Development",
-    tagline: "Websites That Convert",
-    description: "Beautiful, fast, and conversion-optimized websites that represent your brand and drive business results. Mobile-first design with SEO built-in from day one.",
-    longDesc: "Your website is your digital storefront. We design and develop stunning, high-performance websites that not only look great but also convert visitors into customers. Every site we build is optimized for speed, SEO, and user experience.",
-    features: [
-      "Custom Website Design",
-      "E-commerce Development",
-      "Landing Page Design",
-      "UI/UX Optimization",
-      "Mobile Responsive Design",
-      "Speed & Performance Optimization",
-      "CMS Integration",
-      "Ongoing Maintenance & Support"
-    ],
-    benefits: ["99% Client Satisfaction", "Mobile-First Design", "SEO Optimized", "Fast Loading Speed"],
-    stats: { metric: "99%", label: "Client Satisfaction" },
-    process: ["Discovery", "Wireframing", "Design", "Development", "Launch & Support"],
-    link: "/services/web-development"
   },
   {
     id: "branding",

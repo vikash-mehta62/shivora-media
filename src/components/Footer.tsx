@@ -3,12 +3,13 @@ import { Mail, Phone, MapPin, Award, Star, Clock } from "lucide-react";
 import { FaFacebook, FaInstagram, FaGoogle, FaLinkedin } from "react-icons/fa";
 
 const services = [
-  { name: "Search Engine Optimization", href: "/services/seo" },
   { name: "Social Media Marketing", href: "/services/social-media" },
+  { name: "SEO + AEO + GEO", href: "/services/seo" },
+  { name: "Website Development", href: "/services/web-development" },
+  { name: "AI Video Production", href: "/services/video" },
   { name: "Pay-Per-Click Advertising", href: "/services/ppc" },
   { name: "Content Marketing", href: "/services/content-marketing" },
-  { name: "Creative Designing", href: "/services/graphic-design" },
-  { name: "Video Production", href: "/services/video-production" }
+  { name: "Creative Designing", href: "/services/graphic-design" }
 ];
 
 const company = [
